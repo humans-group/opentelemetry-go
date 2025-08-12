@@ -158,14 +158,14 @@ OpenTelemetry is split into two parts: an API to instrument code with, and SDKs
 that implement the API. To start integrating OpenTelemetry into any project, the
 API is used to define how telemetry is generated. To generate tracing telemetry
 in your application you will use the OpenTelemetry Trace API from the
-[`github.com/humans-group/otel/trace`] package.
+[`github.com/humans-group/opentelemetry-go/trace`] package.
 
 First, you need to install the necessary packages for the Trace API. Run the
 following command in your working directory.
 
 ```sh
-go get github.com/humans-group/otel \
-       github.com/humans-group/otel/trace
+go get github.com/humans-group/opentelemetry-go \
+       github.com/humans-group/opentelemetry-go/trace
 ```
 
 Now that the packages installed you can start updating your application with
@@ -179,9 +179,9 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 ```
 
@@ -246,7 +246,7 @@ func (a *App) Run(ctx context.Context) error {
 
 The above code creates a span for every iteration of the for loop. The span is
 created using a [`Tracer`] from the
-[global `TracerProvider`](https://pkg.go.dev/github.com/humans-group/otel#GetTracerProvider).
+[global `TracerProvider`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go#GetTracerProvider).
 You will learn more about [`TracerProvider`]s and handle the other side of
 setting up a global [`TracerProvider`] when you install an SDK in a later
 section. For now, as an instrumentation author, all you need to worry about is
@@ -334,15 +334,15 @@ configure and install an SDK.
 
 OpenTelemetry is designed to be modular in its implementation of the
 OpenTelemetry API. The OpenTelemetry Go project offers an SDK package,
-[`github.com/humans-group/otel/sdk`], that implements this API and adheres to the
+[`github.com/humans-group/opentelemetry-go/sdk`], that implements this API and adheres to the
 OpenTelemetry specification. To start using this SDK you will first need to
 create an exporter, but before anything can happen we need to install some
 packages. Run the following in the `fib` directory to install the trace STDOUT
 exporter and the SDK.
 
 ```sh
-go get github.com/humans-group/otel/sdk \
-       github.com/humans-group/otel/exporters/stdout/stdouttrace
+go get github.com/humans-group/opentelemetry-go/sdk \
+       github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace
 ```
 
 Now add the needed imports to `main.go`.
@@ -355,12 +355,12 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/exporters/stdout/stdouttrace"
-	"github.com/humans-group/otel/sdk/resource"
-	"github.com/humans-group/otel/sdk/trace"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	"github.com/humans-group/opentelemetry-go/sdk/trace"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
 )
 ```
 
@@ -371,9 +371,9 @@ are packages that allow telemetry data to be emitted somewhere - either to the
 console (which is what we're doing here), or to a remote system or collector for
 further analysis and/or enrichment. OpenTelemetry supports a variety of
 exporters through its ecosystem including popular open source tools like
-[Jaeger](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger),
-[Zipkin](https://pkg.go.dev/github.com/humans-group/otel/exporters/zipkin), and
-[Prometheus](https://pkg.go.dev/github.com/humans-group/otel/exporters/prometheus).
+[Jaeger](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger),
+[Zipkin](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/zipkin), and
+[Prometheus](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/prometheus).
 
 To initialize the console exporter, add the following function to the `main.go`
 file:
@@ -601,7 +601,7 @@ func (a *App) Poll(ctx context.Context) (uint, error) {
 ```
 
 All that is left is updating imports for the `app.go` file to include the
-[`github.com/humans-group/otel/codes`] package.
+[`github.com/humans-group/opentelemetry-go/codes`] package.
 
 ```go
 import (
@@ -611,10 +611,10 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 ```
 
@@ -675,19 +675,19 @@ You'll also want to configure an appropriate exporter to
 [export your telemetry data](/docs/instrumentation/go/exporters/) to one or more
 telemetry backends.
 
-[`github.com/humans-group/otel/trace`]:
-  https://pkg.go.dev/github.com/humans-group/otel/trace
-[`github.com/humans-group/otel/sdk`]:
-  https://pkg.go.dev/github.com/humans-group/otel/sdk
-[`github.com/humans-group/otel/codes`]:
-  https://pkg.go.dev/github.com/humans-group/otel/codes
-[`tracer`]: https://pkg.go.dev/github.com/humans-group/otel/trace#Tracer
+[`github.com/humans-group/opentelemetry-go/trace`]:
+  https://pkg.go.dev/github.com/humans-group/opentelemetry-go/trace
+[`github.com/humans-group/opentelemetry-go/sdk`]:
+  https://pkg.go.dev/github.com/humans-group/opentelemetry-go/sdk
+[`github.com/humans-group/opentelemetry-go/codes`]:
+  https://pkg.go.dev/github.com/humans-group/opentelemetry-go/codes
+[`tracer`]: https://pkg.go.dev/github.com/humans-group/opentelemetry-go/trace#Tracer
 [`tracerprovider`]:
-  https://pkg.go.dev/github.com/humans-group/otel/trace#TracerProvider
-[`resource`]: https://pkg.go.dev/github.com/humans-group/otel/sdk/resource#Resource
+  https://pkg.go.dev/github.com/humans-group/opentelemetry-go/trace#TracerProvider
+[`resource`]: https://pkg.go.dev/github.com/humans-group/opentelemetry-go/sdk/resource#Resource
 [`spanprocessor`]:
-  https://pkg.go.dev/github.com/humans-group/otel/sdk/trace#SpanProcessor
+  https://pkg.go.dev/github.com/humans-group/opentelemetry-go/sdk/trace#SpanProcessor
 [`batchspanprocessor`]:
-  https://pkg.go.dev/github.com/humans-group/otel/sdk/trace#NewBatchSpanProcessor
+  https://pkg.go.dev/github.com/humans-group/opentelemetry-go/sdk/trace#NewBatchSpanProcessor
 [`trace.withbatcher`]:
-  https://pkg.go.dev/github.com/humans-group/otel/sdk/trace#WithBatcher
+  https://pkg.go.dev/github.com/humans-group/opentelemetry-go/sdk/trace#WithBatcher

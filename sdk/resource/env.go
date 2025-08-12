@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 import (
 	"context"
@@ -21,9 +21,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
 )
 
 const (

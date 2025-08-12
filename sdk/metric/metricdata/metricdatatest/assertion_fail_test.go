@@ -15,12 +15,12 @@
 //go:build tests_fail
 // +build tests_fail
 
-package metricdatatest // import "github.com/humans-group/otel/sdk/metric/metricdata/metricdatatest"
+package metricdatatest // import "github.com/humans-group/opentelemetry-go/sdk/metric/metricdata/metricdatatest"
 
 import (
 	"testing"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 // These tests are used to develop the failure messages of this package's

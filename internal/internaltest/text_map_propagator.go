@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package internaltest // import "github.com/humans-group/otel/internal/internaltest"
+package internaltest // import "github.com/humans-group/opentelemetry-go/internal/internaltest"
 
 import (
 	"context"
@@ -21,7 +21,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/humans-group/otel/propagation"
+	"github.com/humans-group/opentelemetry-go/propagation"
 )
 
 type ctxKeyType string

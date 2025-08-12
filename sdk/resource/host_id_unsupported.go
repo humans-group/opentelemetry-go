@@ -21,7 +21,7 @@
 // +build !solaris
 // +build !windows
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 // hostIDReaderUnsupported is a placeholder implementation for operating systems
 // for which this project currently doesn't support host.id

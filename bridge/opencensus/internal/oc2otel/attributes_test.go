@@ -19,7 +19,7 @@ import (
 
 	octrace "go.opencensus.io/trace"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 func TestAttributes(t *testing.T) {

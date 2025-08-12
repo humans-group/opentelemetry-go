@@ -26,18 +26,18 @@ import (
 	"testing"
 	"time"
 
-	ottest "github.com/humans-group/otel/internal/internaltest"
+	ottest "github.com/humans-group/opentelemetry-go/internal/internaltest"
 
 	zkmodel "github.com/openzipkin/zipkin-go/model"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/codes"
-	"github.com/humans-group/otel/sdk/resource"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
-	"github.com/humans-group/otel/sdk/trace/tracetest"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/codes"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 func TestNewRawExporter(t *testing.T) {

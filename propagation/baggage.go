@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package propagation // import "github.com/humans-group/otel/propagation"
+package propagation // import "github.com/humans-group/opentelemetry-go/propagation"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/baggage"
+	"github.com/humans-group/opentelemetry-go/baggage"
 )
 
 const baggageHeader = "baggage"

@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/sdk/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/sdk/metric"
 
 import (
 	"os"
 	"strconv"
 	"time"
 
-	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/opentelemetry-go/internal/global"
 )
 
 // Environment variable names.

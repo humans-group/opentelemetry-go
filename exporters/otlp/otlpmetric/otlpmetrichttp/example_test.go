@@ -17,9 +17,9 @@ package otlpmetrichttp_test
 import (
 	"context"
 
-	"github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetrichttp"
-	"github.com/humans-group/otel/metric/global"
-	"github.com/humans-group/otel/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/otlpmetrichttp"
+	"github.com/humans-group/opentelemetry-go/metric/global"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
 )
 
 func Example() {

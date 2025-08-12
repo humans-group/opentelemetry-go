@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/humans-group/otel/exporters/jaeger/internal/third_party/thrift/lib/go/thrift"
+	"github.com/humans-group/opentelemetry-go/exporters/jaeger/internal/third_party/thrift/lib/go/thrift"
 )
 
 // (needed to ensure safety because of naive import list construction.)

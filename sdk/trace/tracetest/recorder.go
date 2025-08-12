@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package tracetest // import "github.com/humans-group/otel/sdk/trace/tracetest"
+package tracetest // import "github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
 
 import (
 	"context"
 	"sync"
 
-	sdktrace "github.com/humans-group/otel/sdk/trace"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
 )
 
 // SpanRecorder records started and ended spans.

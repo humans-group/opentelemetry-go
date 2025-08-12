@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package transform // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/transform"
+package transform // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/transform"
 
 import (
 	"testing"
@@ -21,11 +21,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/sdk/instrumentation"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
-	"github.com/humans-group/otel/sdk/resource"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
 	cpb "go.opentelemetry.io/proto/otlp/common/v1"
 	mpb "go.opentelemetry.io/proto/otlp/metrics/v1"
 	rpb "go.opentelemetry.io/proto/otlp/resource/v1"

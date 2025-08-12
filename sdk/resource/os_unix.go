@@ -15,7 +15,7 @@
 //go:build aix || darwin || dragonfly || freebsd || linux || netbsd || openbsd || solaris || zos
 // +build aix darwin dragonfly freebsd linux netbsd openbsd solaris zos
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 import (
 	"fmt"

@@ -15,8 +15,8 @@
 package propagation_test
 
 import (
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/propagation"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/propagation"
 )
 
 func ExampleTraceContext() {

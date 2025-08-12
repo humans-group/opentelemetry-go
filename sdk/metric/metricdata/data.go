@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metricdata // import "github.com/humans-group/otel/sdk/metric/metricdata"
+package metricdata // import "github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 
 import (
 	"time"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/sdk/instrumentation"
-	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
 )
 
 // ResourceMetrics is a collection of ScopeMetrics and the associated Resource

@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/sdk/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/sdk/metric"
 
 import (
 	"context"
 	"fmt"
 	"sync"
 
-	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
 )
 
 // config contains configuration options for a MeterProvider.
@@ -109,7 +109,7 @@ func (o optionFunc) apply(conf config) config {
 // the MeterProvider will create.
 //
 // By default, if this Option is not used, the default Resource from the
-// github.com/humans-group/otel/sdk/resource package will be used.
+// github.com/humans-group/opentelemetry-go/sdk/resource package will be used.
 func WithResource(res *resource.Resource) Option {
 	return optionFunc(func(conf config) config {
 		conf.res = res

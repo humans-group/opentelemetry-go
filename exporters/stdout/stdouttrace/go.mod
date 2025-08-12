@@ -1,17 +1,17 @@
-module github.com/humans-group/otel/exporters/stdout/stdouttrace
+module github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace
 
 go 1.19
 
 replace (
-	github.com/humans-group/otel => ../../..
-	github.com/humans-group/otel/sdk => ../../../sdk
+	github.com/humans-group/opentelemetry-go => ../../..
+	github.com/humans-group/opentelemetry-go/sdk => ../../../sdk
 )
 
 require (
 	github.com/stretchr/testify v1.8.2
-	github.com/humans-group/otel v1.15.1
-	github.com/humans-group/otel/sdk v1.15.1
-	github.com/humans-group/otel/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.1
+	github.com/humans-group/opentelemetry-go/sdk v1.15.1
+	github.com/humans-group/opentelemetry-go/trace v1.15.1
 )
 
 require (
@@ -23,4 +23,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/humans-group/otel/trace => ../../../trace
+replace github.com/humans-group/opentelemetry-go/trace => ../../../trace

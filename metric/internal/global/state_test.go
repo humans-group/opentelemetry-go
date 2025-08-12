@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "github.com/humans-group/otel/metric/internal/global"
+package global // import "github.com/humans-group/opentelemetry-go/metric/internal/global"
 
 import (
 	"sync"
@@ -20,8 +20,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/metric/noop"
+	"github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/metric/noop"
 )
 
 func resetGlobalMeterProvider() {

@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/metric"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
 )
 
 // Int64Observable describes a set of instruments used asynchronously to record
@@ -37,7 +37,7 @@ type Int64Observable interface {
 // assumed the to be the cumulative sum of the count.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [github.com/humans-group/otel/metric] package documentation on API
+// [github.com/humans-group/opentelemetry-go/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Int64ObservableCounter interface {
@@ -92,7 +92,7 @@ type Int64ObservableCounterOption interface {
 // be the cumulative sum of the count.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [github.com/humans-group/otel/metric] package documentation on API
+// [github.com/humans-group/opentelemetry-go/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Int64ObservableUpDownCounter interface {
@@ -147,7 +147,7 @@ type Int64ObservableUpDownCounterOption interface {
 // only made within a callback for this instrument.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [github.com/humans-group/otel/metric] package documentation on API
+// [github.com/humans-group/opentelemetry-go/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Int64ObservableGauge interface {
@@ -199,7 +199,7 @@ type Int64ObservableGaugeOption interface {
 // Int64Observer is a recorder of int64 measurements.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [github.com/humans-group/otel/metric] package documentation on API
+// [github.com/humans-group/opentelemetry-go/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Int64Observer interface {

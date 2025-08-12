@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package baggage // import "github.com/humans-group/otel/internal/baggage"
+package baggage // import "github.com/humans-group/opentelemetry-go/internal/baggage"
 
 import "context"
 

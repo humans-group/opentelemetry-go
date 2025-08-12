@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlpmetric // import "github.com/humans-group/otel/exporters/otlp/otlpmetric"
+package otlpmetric // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric"
 
 // Version is the current release version of the OpenTelemetry OTLP metrics exporter in use.
 func Version() string {

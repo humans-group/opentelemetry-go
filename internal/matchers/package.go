@@ -12,4 +12,4 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package matchers // import "github.com/humans-group/otel/internal/matchers"
+package matchers // import "github.com/humans-group/opentelemetry-go/internal/matchers"

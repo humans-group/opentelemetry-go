@@ -20,7 +20,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 func TestKeyValueConstructors(t *testing.T) {

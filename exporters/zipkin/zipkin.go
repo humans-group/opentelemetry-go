@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package zipkin // import "github.com/humans-group/otel/exporters/zipkin"
+package zipkin // import "github.com/humans-group/opentelemetry-go/exporters/zipkin"
 
 import (
 	"bytes"
@@ -28,7 +28,7 @@ import (
 	"github.com/go-logr/logr"
 	"github.com/go-logr/stdr"
 
-	sdktrace "github.com/humans-group/otel/sdk/trace"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
 )
 
 const (

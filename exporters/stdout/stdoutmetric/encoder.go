@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package stdoutmetric // import "github.com/humans-group/otel/exporters/stdout/stdoutmetric"
+package stdoutmetric // import "github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric"
 
 import (
 	"errors"

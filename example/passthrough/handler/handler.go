@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package handler // import "github.com/humans-group/otel/example/passthrough/handler"
+package handler // import "github.com/humans-group/opentelemetry-go/example/passthrough/handler"
 
 import (
 	"context"
@@ -20,9 +20,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/propagation"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/propagation"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // Handler is a minimal implementation of the handler and client from

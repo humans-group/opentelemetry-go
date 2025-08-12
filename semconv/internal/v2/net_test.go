@@ -21,7 +21,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 const (

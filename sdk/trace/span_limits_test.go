@@ -22,10 +22,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/attribute"
-	ottest "github.com/humans-group/otel/internal/internaltest"
-	"github.com/humans-group/otel/sdk/internal/env"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	ottest "github.com/humans-group/opentelemetry-go/internal/internaltest"
+	"github.com/humans-group/opentelemetry-go/sdk/internal/env"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 func TestSettingSpanLimits(t *testing.T) {

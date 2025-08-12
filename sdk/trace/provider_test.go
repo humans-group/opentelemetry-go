@@ -24,8 +24,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	ottest "github.com/humans-group/otel/internal/internaltest"
-	"github.com/humans-group/otel/trace"
+	ottest "github.com/humans-group/opentelemetry-go/internal/internaltest"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 type basicSpanProcessor struct {

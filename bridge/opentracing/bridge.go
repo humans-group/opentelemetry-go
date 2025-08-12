@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package opentracing // import "github.com/humans-group/otel/bridge/opentracing"
+package opentracing // import "github.com/humans-group/opentelemetry-go/bridge/opentracing"
 
 import (
 	"context"
@@ -25,14 +25,14 @@ import (
 	otext "github.com/opentracing/opentracing-go/ext"
 	otlog "github.com/opentracing/opentracing-go/log"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/baggage"
-	"github.com/humans-group/otel/bridge/opentracing/migration"
-	"github.com/humans-group/otel/codes"
-	iBaggage "github.com/humans-group/otel/internal/baggage"
-	"github.com/humans-group/otel/propagation"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/baggage"
+	"github.com/humans-group/opentelemetry-go/bridge/opentracing/migration"
+	"github.com/humans-group/opentelemetry-go/codes"
+	iBaggage "github.com/humans-group/opentelemetry-go/internal/baggage"
+	"github.com/humans-group/opentelemetry-go/propagation"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 var (
@@ -437,7 +437,7 @@ func (t *BridgeTracer) StartSpan(operationName string, opts ...ot.StartSpanOptio
 	)
 	if ot.SpanFromContext(checkCtx2) != nil {
 		t.warnOnce.Do(func() {
-			t.warningHandler("SDK should have deferred the context setup, see the documentation of github.com/humans-group/otel/bridge/opentracing/migration\n")
+			t.warningHandler("SDK should have deferred the context setup, see the documentation of github.com/humans-group/opentelemetry-go/bridge/opentracing/migration\n")
 		})
 	}
 	if hadTrueErrorTag {

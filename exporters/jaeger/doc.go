@@ -13,4 +13,4 @@
 // limitations under the License.
 
 // Package jaeger contains an OpenTelemetry tracing exporter for Jaeger.
-package jaeger // import "github.com/humans-group/otel/exporters/jaeger"
+package jaeger // import "github.com/humans-group/opentelemetry-go/exporters/jaeger"

@@ -1,14 +1,14 @@
-module github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracehttp
+module github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracehttp
 
 go 1.19
 
 require (
 	github.com/stretchr/testify v1.8.2
-	github.com/humans-group/otel v1.15.1
-	github.com/humans-group/otel/exporters/otlp/internal/retry v1.15.1
-	github.com/humans-group/otel/exporters/otlp/otlptrace v1.15.1
-	github.com/humans-group/otel/sdk v1.15.1
-	github.com/humans-group/otel/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.1
+	github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry v1.15.1
+	github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace v1.15.1
+	github.com/humans-group/opentelemetry-go/sdk v1.15.1
+	github.com/humans-group/opentelemetry-go/trace v1.15.1
 	go.opentelemetry.io/proto/otlp v0.19.0
 	google.golang.org/protobuf v1.30.0
 )
@@ -29,12 +29,12 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/humans-group/otel/exporters/otlp/otlptrace => ../
+replace github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace => ../
 
-replace github.com/humans-group/otel => ../../../..
+replace github.com/humans-group/opentelemetry-go => ../../../..
 
-replace github.com/humans-group/otel/sdk => ../../../../sdk
+replace github.com/humans-group/opentelemetry-go/sdk => ../../../../sdk
 
-replace github.com/humans-group/otel/trace => ../../../../trace
+replace github.com/humans-group/opentelemetry-go/trace => ../../../../trace
 
-replace github.com/humans-group/otel/exporters/otlp/internal/retry => ../../internal/retry
+replace github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry => ../../internal/retry

@@ -20,7 +20,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 func TestIterator(t *testing.T) {

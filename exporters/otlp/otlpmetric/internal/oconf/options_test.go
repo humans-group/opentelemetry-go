@@ -21,11 +21,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/exporters/otlp/internal/envconfig"
-	"github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/oconf"
-	"github.com/humans-group/otel/sdk/metric"
-	"github.com/humans-group/otel/sdk/metric/aggregation"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal/envconfig"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/oconf"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 )
 
 const (

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package jaeger // import "github.com/humans-group/otel/exporters/jaeger"
+package jaeger // import "github.com/humans-group/opentelemetry-go/exporters/jaeger"
 
 import (
 	"fmt"

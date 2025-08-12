@@ -15,7 +15,7 @@
 //go:build dragonfly || freebsd || netbsd || openbsd || solaris
 // +build dragonfly freebsd netbsd openbsd solaris
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 var platformHostIDReader hostIDReader = &hostIDReaderBSD{
 	execCommand: execCommand,

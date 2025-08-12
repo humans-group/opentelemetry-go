@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/sdk/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/sdk/metric"
 
 import (
 	"context"
 	"errors"
 	"fmt"
 
-	"github.com/humans-group/otel/internal/global"
-	"github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/metric/embedded"
-	"github.com/humans-group/otel/sdk/instrumentation"
-	"github.com/humans-group/otel/sdk/metric/internal"
+	"github.com/humans-group/opentelemetry-go/internal/global"
+	"github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/internal"
 )
 
 // meter handles the creation and coordination of all metric instruments. A

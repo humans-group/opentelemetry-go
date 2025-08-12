@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/metric"
 
 import (
 	"context"
@@ -21,7 +21,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
 )
 
 func TestFloat64ObservableConfiguration(t *testing.T) {

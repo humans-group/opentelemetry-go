@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlpmetricgrpc // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetricgrpc"
+package otlpmetricgrpc // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/otlpmetricgrpc"
 
 import (
 	"fmt"
@@ -21,10 +21,10 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/exporters/otlp/internal/retry"
-	"github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/oconf"
-	"github.com/humans-group/otel/sdk/metric"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/oconf"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
 )
 
 // Option applies a configuration option to the Exporter.
@@ -241,7 +241,7 @@ func WithRetry(settings RetryConfig) Option {
 // WithTemporalitySelector sets the TemporalitySelector the client will use to
 // determine the Temporality of an instrument based on its kind. If this option
 // is not used, the client will use the DefaultTemporalitySelector from the
-// github.com/humans-group/otel/sdk/metric package.
+// github.com/humans-group/opentelemetry-go/sdk/metric package.
 func WithTemporalitySelector(selector metric.TemporalitySelector) Option {
 	return wrappedOption{oconf.WithTemporalitySelector(selector)}
 }
@@ -249,7 +249,7 @@ func WithTemporalitySelector(selector metric.TemporalitySelector) Option {
 // WithAggregationSelector sets the AggregationSelector the client will use to
 // determine the aggregation to use for an instrument based on its kind. If
 // this option is not used, the reader will use the DefaultAggregationSelector
-// from the github.com/humans-group/otel/sdk/metric package, or the aggregation
+// from the github.com/humans-group/opentelemetry-go/sdk/metric package, or the aggregation
 // explicitly passed for a view matching an instrument.
 func WithAggregationSelector(selector metric.AggregationSelector) Option {
 	return wrappedOption{oconf.WithAggregationSelector(selector)}

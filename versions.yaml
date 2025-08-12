@@ -16,42 +16,42 @@ module-sets:
   stable-v1:
     version: v1.15.1
     modules:
-      - github.com/humans-group/otel
-      - github.com/humans-group/otel/bridge/opentracing
-      - github.com/humans-group/otel/bridge/opentracing/test
-      - github.com/humans-group/otel/example/fib
-      - github.com/humans-group/otel/example/jaeger
-      - github.com/humans-group/otel/example/namedtracer
-      - github.com/humans-group/otel/example/otel-collector
-      - github.com/humans-group/otel/example/passthrough
-      - github.com/humans-group/otel/example/zipkin
-      - github.com/humans-group/otel/exporters/jaeger
-      - github.com/humans-group/otel/exporters/otlp/internal/retry
-      - github.com/humans-group/otel/exporters/otlp/otlptrace
-      - github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracegrpc
-      - github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracehttp
-      - github.com/humans-group/otel/exporters/stdout/stdouttrace
-      - github.com/humans-group/otel/exporters/zipkin
-      - github.com/humans-group/otel/sdk
-      - github.com/humans-group/otel/trace
+      - github.com/humans-group/opentelemetry-go
+      - github.com/humans-group/opentelemetry-go/bridge/opentracing
+      - github.com/humans-group/opentelemetry-go/bridge/opentracing/test
+      - github.com/humans-group/opentelemetry-go/example/fib
+      - github.com/humans-group/opentelemetry-go/example/jaeger
+      - github.com/humans-group/opentelemetry-go/example/namedtracer
+      - github.com/humans-group/opentelemetry-go/example/otel-collector
+      - github.com/humans-group/opentelemetry-go/example/passthrough
+      - github.com/humans-group/opentelemetry-go/example/zipkin
+      - github.com/humans-group/opentelemetry-go/exporters/jaeger
+      - github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry
+      - github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace
+      - github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracegrpc
+      - github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracehttp
+      - github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace
+      - github.com/humans-group/opentelemetry-go/exporters/zipkin
+      - github.com/humans-group/opentelemetry-go/sdk
+      - github.com/humans-group/opentelemetry-go/trace
   experimental-metrics:
     version: v0.38.1
     modules:
-      - github.com/humans-group/otel/example/opencensus
-      - github.com/humans-group/otel/example/prometheus
-      - github.com/humans-group/otel/exporters/otlp/otlpmetric
-      - github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetricgrpc
-      - github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetrichttp
-      - github.com/humans-group/otel/exporters/prometheus
-      - github.com/humans-group/otel/exporters/stdout/stdoutmetric
-      - github.com/humans-group/otel/metric
-      - github.com/humans-group/otel/sdk/metric
-      - github.com/humans-group/otel/bridge/opencensus
-      - github.com/humans-group/otel/bridge/opencensus/test
-      - github.com/humans-group/otel/example/view
+      - github.com/humans-group/opentelemetry-go/example/opencensus
+      - github.com/humans-group/opentelemetry-go/example/prometheus
+      - github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric
+      - github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/otlpmetricgrpc
+      - github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/otlpmetrichttp
+      - github.com/humans-group/opentelemetry-go/exporters/prometheus
+      - github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric
+      - github.com/humans-group/opentelemetry-go/metric
+      - github.com/humans-group/opentelemetry-go/sdk/metric
+      - github.com/humans-group/opentelemetry-go/bridge/opencensus
+      - github.com/humans-group/opentelemetry-go/bridge/opencensus/test
+      - github.com/humans-group/opentelemetry-go/example/view
   experimental-schema:
     version: v0.0.4
     modules:
-      - github.com/humans-group/otel/schema
+      - github.com/humans-group/opentelemetry-go/schema
 excluded-modules:
-  - github.com/humans-group/otel/internal/tools
+  - github.com/humans-group/opentelemetry-go/internal/tools

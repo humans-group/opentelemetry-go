@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package opentracing // import "github.com/humans-group/otel/bridge/opentracing"
+package opentracing // import "github.com/humans-group/opentelemetry-go/bridge/opentracing"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/bridge/opentracing/migration"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/bridge/opentracing/migration"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // WrapperTracerProvider is an OpenTelemetry TracerProvider that wraps an

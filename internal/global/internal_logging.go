@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "github.com/humans-group/otel/internal/global"
+package global // import "github.com/humans-group/opentelemetry-go/internal/global"
 
 import (
 	"log"

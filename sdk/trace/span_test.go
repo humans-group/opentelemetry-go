@@ -21,8 +21,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
 )
 
 func TestSetStatus(t *testing.T) {

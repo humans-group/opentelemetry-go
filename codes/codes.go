@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package codes // import "github.com/humans-group/otel/codes"
+package codes // import "github.com/humans-group/opentelemetry-go/codes"
 
 import (
 	"encoding/json"

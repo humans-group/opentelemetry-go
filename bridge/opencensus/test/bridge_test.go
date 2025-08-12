@@ -20,13 +20,13 @@ import (
 
 	octrace "go.opencensus.io/trace"
 
-	"github.com/humans-group/otel/attribute"
-	ocbridge "github.com/humans-group/otel/bridge/opencensus"
-	"github.com/humans-group/otel/bridge/opencensus/internal"
-	"github.com/humans-group/otel/codes"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
-	"github.com/humans-group/otel/sdk/trace/tracetest"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	ocbridge "github.com/humans-group/opentelemetry-go/bridge/opencensus"
+	"github.com/humans-group/opentelemetry-go/bridge/opencensus/internal"
+	"github.com/humans-group/opentelemetry-go/codes"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 func TestMixedAPIs(t *testing.T) {

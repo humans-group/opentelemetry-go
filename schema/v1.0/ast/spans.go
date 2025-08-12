@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package ast // import "github.com/humans-group/otel/schema/v1.0/ast"
+package ast // import "github.com/humans-group/opentelemetry-go/schema/v1.0/ast"
 
-import "github.com/humans-group/otel/schema/v1.0/types"
+import "github.com/humans-group/opentelemetry-go/schema/v1.0/types"
 
 // Spans corresponds to a section representing a list of changes that happened
 // to spans schema in a particular version.

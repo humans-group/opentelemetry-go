@@ -1,18 +1,18 @@
-module github.com/humans-group/otel/example/zipkin
+module github.com/humans-group/opentelemetry-go/example/zipkin
 
 go 1.19
 
 replace (
-	github.com/humans-group/otel => ../..
-	github.com/humans-group/otel/exporters/zipkin => ../../exporters/zipkin
-	github.com/humans-group/otel/sdk => ../../sdk
+	github.com/humans-group/opentelemetry-go => ../..
+	github.com/humans-group/opentelemetry-go/exporters/zipkin => ../../exporters/zipkin
+	github.com/humans-group/opentelemetry-go/sdk => ../../sdk
 )
 
 require (
-	github.com/humans-group/otel v1.15.1
-	github.com/humans-group/otel/exporters/zipkin v1.15.1
-	github.com/humans-group/otel/sdk v1.15.1
-	github.com/humans-group/otel/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.1
+	github.com/humans-group/opentelemetry-go/exporters/zipkin v1.15.1
+	github.com/humans-group/opentelemetry-go/sdk v1.15.1
+	github.com/humans-group/opentelemetry-go/trace v1.15.1
 )
 
 require (
@@ -22,4 +22,4 @@ require (
 	golang.org/x/sys v0.7.0 // indirect
 )
 
-replace github.com/humans-group/otel/trace => ../../trace
+replace github.com/humans-group/opentelemetry-go/trace => ../../trace

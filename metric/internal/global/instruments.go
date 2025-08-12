@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "github.com/humans-group/otel/metric/internal/global"
+package global // import "github.com/humans-group/opentelemetry-go/metric/internal/global"
 
 import (
 	"context"
 	"sync/atomic"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
 )
 
 // unwrapper unwraps to return the underlying instrument implementation.

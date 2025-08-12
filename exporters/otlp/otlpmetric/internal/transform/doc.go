@@ -14,4 +14,4 @@
 
 // Package transform provides transformation functionality from the
 // sdk/metric/metricdata data-types into OTLP data-types.
-package transform // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/transform"
+package transform // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/transform"

@@ -18,10 +18,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- The `github.com/humans-group/otel/metric/embedded` package. (#3916)
-- The `Version` function to `github.com/humans-group/otel/sdk` to return the SDK version. (#3949)
-- Add a `WithNamespace` option to `github.com/humans-group/otel/exporters/prometheus` to allow users to prefix metrics with a namespace. (#3970)
-- The following configuration types were added to `github.com/humans-group/otel/metric/instrument` to be used in the configuration of measurement methods. (#3971)
+- The `github.com/humans-group/opentelemetry-go/metric/embedded` package. (#3916)
+- The `Version` function to `github.com/humans-group/opentelemetry-go/sdk` to return the SDK version. (#3949)
+- Add a `WithNamespace` option to `github.com/humans-group/opentelemetry-go/exporters/prometheus` to allow users to prefix metrics with a namespace. (#3970)
+- The following configuration types were added to `github.com/humans-group/opentelemetry-go/metric/instrument` to be used in the configuration of measurement methods. (#3971)
   - The `AddConfig` used to hold configuration for addition measurements
     - `NewAddConfig` used to create a new `AddConfig`
     - `AddOption` used to configure an `AddConfig`
@@ -31,21 +31,21 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   - The `ObserveConfig` used to hold configuration for observed measurements
     - `NewObserveConfig` used to create a new `ObserveConfig`
     - `ObserveOption` used to configure an `ObserveConfig`
-- `WithAttributeSet` and `WithAttributes` are added to `github.com/humans-group/otel/metric/instrument`.
+- `WithAttributeSet` and `WithAttributes` are added to `github.com/humans-group/opentelemetry-go/metric/instrument`.
   They return an option used during a measurement that defines the attribute Set associated with the measurement. (#3971)
-- The `Version` function to `github.com/humans-group/otel/exporters/otlp/otlpmetric` to return the OTLP metrics client version. (#3956)
-- The `Version` function to `github.com/humans-group/otel/exporters/otlp/otlptrace` to return the OTLP trace client version. (#3956)
+- The `Version` function to `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric` to return the OTLP metrics client version. (#3956)
+- The `Version` function to `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace` to return the OTLP trace client version. (#3956)
 
 ### Changed
 
-- The `Extrema` in `github.com/humans-group/otel/sdk/metric/metricdata` is redefined with a generic argument of `[N int64 | float64]`. (#3870)
-- Update all exported interfaces from `github.com/humans-group/otel/metric` to embed their corresponding interface from `github.com/humans-group/otel/metric/embedded`.
+- The `Extrema` in `github.com/humans-group/opentelemetry-go/sdk/metric/metricdata` is redefined with a generic argument of `[N int64 | float64]`. (#3870)
+- Update all exported interfaces from `github.com/humans-group/opentelemetry-go/metric` to embed their corresponding interface from `github.com/humans-group/opentelemetry-go/metric/embedded`.
   This adds an implementation requirement to set the interface default behavior for unimplemented methods. (#3916)
-- Move No-Op implementation from `github.com/humans-group/otel/metric` into its own package `github.com/humans-group/otel/metric/noop`. (#3941)
+- Move No-Op implementation from `github.com/humans-group/opentelemetry-go/metric` into its own package `github.com/humans-group/opentelemetry-go/metric/noop`. (#3941)
   - `metric.NewNoopMeterProvider` is replaced with `noop.NewMeterProvider`
-- Add all the methods from `"github.com/humans-group/otel/trace".SpanContext` to `bridgeSpanContext` by embedding `otel.SpanContext` in `bridgeSpanContext`. (#3966)
-- Wrap `UploadMetrics` error in `github.com/humans-group/otel/exporters/otlp/otlpmetric/` to improve error message when encountering generic grpc errors. (#3974)
-- The measurement methods for all instruments in `github.com/humans-group/otel/metric/instrument` accept an option instead of the variadic `"github.com/humans-group/otel/attribute".KeyValue`. (#3971)
+- Add all the methods from `"github.com/humans-group/opentelemetry-go/trace".SpanContext` to `bridgeSpanContext` by embedding `otel.SpanContext` in `bridgeSpanContext`. (#3966)
+- Wrap `UploadMetrics` error in `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/` to improve error message when encountering generic grpc errors. (#3974)
+- The measurement methods for all instruments in `github.com/humans-group/opentelemetry-go/metric/instrument` accept an option instead of the variadic `"github.com/humans-group/opentelemetry-go/attribute".KeyValue`. (#3971)
   - The `Int64Counter.Add` method now accepts `...AddOption`
   - The `Float64Counter.Add` method now accepts `...AddOption`
   - The `Int64UpDownCounter.Add` method now accepts `...AddOption`
@@ -54,23 +54,23 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   - The `Float64Histogram.Record` method now accepts `...RecordOption`
   - The `Int64Observer.Observe` method now accepts `...ObserveOption`
   - The `Float64Observer.Observe` method now accepts `...ObserveOption`
-- The `Observer` methods in `github.com/humans-group/otel/metric` accept an option instead of the variadic `"github.com/humans-group/otel/attribute".KeyValue`. (#3971)
+- The `Observer` methods in `github.com/humans-group/opentelemetry-go/metric` accept an option instead of the variadic `"github.com/humans-group/opentelemetry-go/attribute".KeyValue`. (#3971)
   - The `Observer.ObserveInt64` method now accepts `...ObserveOption`
   - The `Observer.ObserveFloat64` method now accepts `...ObserveOption`
-- Move global metric back to `github.com/humans-group/otel/metric/global` from `github.com/humans-group/otel`. (#3986)
+- Move global metric back to `github.com/humans-group/opentelemetry-go/metric/global` from `github.com/humans-group/opentelemetry-go`. (#3986)
 
 ### Fixed
 
 - `TracerProvider` allows calling `Tracer()` while it's shutting down.
   It used to deadlock. (#3924)
-- Use the SDK version for the Telemetry SDK resource detector in `github.com/humans-group/otel/sdk/resource`. (#3949)
-- Fix a data race in `SpanProcessor` returned by `NewSimpleSpanProcessor` in `github.com/humans-group/otel/sdk/trace`. (#3951)
+- Use the SDK version for the Telemetry SDK resource detector in `github.com/humans-group/opentelemetry-go/sdk/resource`. (#3949)
+- Fix a data race in `SpanProcessor` returned by `NewSimpleSpanProcessor` in `github.com/humans-group/opentelemetry-go/sdk/trace`. (#3951)
 - Automatically figure out the default aggregation with `aggregation.Default`. (#3967)
 
 ### Deprecated
 
-- The `github.com/humans-group/otel/metric/instrument` package is deprecated.
-  Use the equivalent types added to `github.com/humans-group/otel/metric` instead. (#4018)
+- The `github.com/humans-group/opentelemetry-go/metric/instrument` package is deprecated.
+  Use the equivalent types added to `github.com/humans-group/opentelemetry-go/metric` instead. (#4018)
 
 ## [1.15.0-rc.2/0.38.0-rc.2] 2023-03-23
 
@@ -80,25 +80,25 @@ See our [versioning policy](VERSIONING.md) for more information about these stab
 
 ### Added
 
-- The `WithHostID` option to `github.com/humans-group/otel/sdk/resource`. (#3812)
-- The `WithoutTimestamps` option to `github.com/humans-group/otel/exporters/stdout/stdoutmetric` to sets all timestamps to zero. (#3828)
-- The new `Exemplar` type is added to `github.com/humans-group/otel/sdk/metric/metricdata`.
+- The `WithHostID` option to `github.com/humans-group/opentelemetry-go/sdk/resource`. (#3812)
+- The `WithoutTimestamps` option to `github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric` to sets all timestamps to zero. (#3828)
+- The new `Exemplar` type is added to `github.com/humans-group/opentelemetry-go/sdk/metric/metricdata`.
   Both the `DataPoint` and `HistogramDataPoint` types from that package have a new field of `Exemplars` containing the sampled exemplars for their timeseries. (#3849)
-- Configuration for each metric instrument in `github.com/humans-group/otel/sdk/metric/instrument`. (#3895)
+- Configuration for each metric instrument in `github.com/humans-group/opentelemetry-go/sdk/metric/instrument`. (#3895)
 - The internal logging introduces a warning level verbosity equal to `V(1)`. (#3900)
 - Added a log message warning about usage of `SimpleSpanProcessor` in production environments. (#3854)
 
 ### Changed
 
-- Optimize memory allocation when creation a new `Set` using `NewSet` or `NewSetWithFiltered` in `github.com/humans-group/otel/attribute`. (#3832)
-- Optimize memory allocation when creation new metric instruments in `github.com/humans-group/otel/sdk/metric`. (#3832)
+- Optimize memory allocation when creation a new `Set` using `NewSet` or `NewSetWithFiltered` in `github.com/humans-group/opentelemetry-go/attribute`. (#3832)
+- Optimize memory allocation when creation new metric instruments in `github.com/humans-group/opentelemetry-go/sdk/metric`. (#3832)
 - Avoid creating new objects on all calls to `WithDeferredSetup` and `SkipContextSetup` in OpenTracing bridge. (#3833)
-- The `New` and `Detect` functions from `github.com/humans-group/otel/sdk/resource` return errors that wrap underlying errors instead of just containing the underlying error strings. (#3844)
-- Both the `Histogram` and `HistogramDataPoint` are redefined with a generic argument of `[N int64 | float64]` in `github.com/humans-group/otel/sdk/metric/metricdata`. (#3849)
-- The metric `Export` interface from `github.com/humans-group/otel/sdk/metric` accepts a `*ResourceMetrics` instead of `ResourceMetrics`. (#3853)
-- Rename `Asynchronous` to `Observable` in `github.com/humans-group/otel/metric/instrument`. (#3892)
-- Rename `Int64ObserverOption` to `Int64ObservableOption` in `github.com/humans-group/otel/metric/instrument`. (#3895)
-- Rename `Float64ObserverOption` to `Float64ObservableOption` in `github.com/humans-group/otel/metric/instrument`. (#3895)
+- The `New` and `Detect` functions from `github.com/humans-group/opentelemetry-go/sdk/resource` return errors that wrap underlying errors instead of just containing the underlying error strings. (#3844)
+- Both the `Histogram` and `HistogramDataPoint` are redefined with a generic argument of `[N int64 | float64]` in `github.com/humans-group/opentelemetry-go/sdk/metric/metricdata`. (#3849)
+- The metric `Export` interface from `github.com/humans-group/opentelemetry-go/sdk/metric` accepts a `*ResourceMetrics` instead of `ResourceMetrics`. (#3853)
+- Rename `Asynchronous` to `Observable` in `github.com/humans-group/opentelemetry-go/metric/instrument`. (#3892)
+- Rename `Int64ObserverOption` to `Int64ObservableOption` in `github.com/humans-group/opentelemetry-go/metric/instrument`. (#3895)
+- Rename `Float64ObserverOption` to `Float64ObservableOption` in `github.com/humans-group/opentelemetry-go/metric/instrument`. (#3895)
 - The internal logging changes the verbosity level of info to `V(4)`, the verbosity level of debug to `V(8)`. (#3900)
 
 ### Fixed
@@ -107,13 +107,13 @@ See our [versioning policy](VERSIONING.md) for more information about these stab
 
 ### Removed
 
-- The deprecated `github.com/humans-group/otel/metric/global` package is removed. (#3829)
-- The unneeded `Synchronous` interface in `github.com/humans-group/otel/metric/instrument` was removed. (#3892)
-- The `Float64ObserverConfig` and `NewFloat64ObserverConfig` in `github.com/humans-group/otel/sdk/metric/instrument`.
+- The deprecated `github.com/humans-group/opentelemetry-go/metric/global` package is removed. (#3829)
+- The unneeded `Synchronous` interface in `github.com/humans-group/opentelemetry-go/metric/instrument` was removed. (#3892)
+- The `Float64ObserverConfig` and `NewFloat64ObserverConfig` in `github.com/humans-group/opentelemetry-go/sdk/metric/instrument`.
   Use the added `float64` instrument configuration instead. (#3895)
-- The `Int64ObserverConfig` and `NewInt64ObserverConfig` in `github.com/humans-group/otel/sdk/metric/instrument`.
+- The `Int64ObserverConfig` and `NewInt64ObserverConfig` in `github.com/humans-group/opentelemetry-go/sdk/metric/instrument`.
   Use the added `int64` instrument configuration instead. (#3895)
-- The `NewNoopMeter` function in `github.com/humans-group/otel/metric`, use `NewMeterProvider().Meter("")` instead. (#3893)
+- The `NewNoopMeter` function in `github.com/humans-group/opentelemetry-go/metric`, use `NewMeterProvider().Meter("")` instead. (#3893)
 
 ## [1.15.0-rc.1/0.38.0-rc.1] 2023-03-01
 
@@ -125,7 +125,7 @@ This release drops the compatibility guarantee of [Go 1.18].
 
 ### Added
 
-- Support global `MeterProvider` in `github.com/humans-group/otel`. (#3818)
+- Support global `MeterProvider` in `github.com/humans-group/opentelemetry-go`. (#3818)
   - Use `Meter` for a `metric.Meter` from the global `metric.MeterProvider`.
   - Use `GetMeterProivder` for a global `metric.MeterProvider`.
   - Use `SetMeterProivder` to set the global `metric.MeterProvider`.
@@ -138,16 +138,16 @@ This release drops the compatibility guarantee of [Go 1.18].
 ### Fixed
 
 - Handle empty environment variable as it they were not set. (#3764)
-- Clarify the `httpconv` and `netconv` packages in `github.com/humans-group/otel/semconv/*` provide tracing semantic conventions. (#3823)
+- Clarify the `httpconv` and `netconv` packages in `github.com/humans-group/opentelemetry-go/semconv/*` provide tracing semantic conventions. (#3823)
 
 ### Deprecated
 
-- The `github.com/humans-group/otel/metric/global` package is deprecated.
-  Use `github.com/humans-group/otel` instead. (#3818)
+- The `github.com/humans-group/opentelemetry-go/metric/global` package is deprecated.
+  Use `github.com/humans-group/opentelemetry-go` instead. (#3818)
 
 ### Removed
 
-- The deprecated `github.com/humans-group/otel/metric/unit` package is removed. (#3814)
+- The deprecated `github.com/humans-group/opentelemetry-go/metric/unit` package is removed. (#3814)
 
 ## [1.14.0/0.37.0/0.0.4] 2023-02-27
 
@@ -156,11 +156,11 @@ The next release will require at least [Go 1.19].
 
 ### Added
 
-- The `event` type semantic conventions are added to `github.com/humans-group/otel/semconv/v1.17.0`. (#3697)
+- The `event` type semantic conventions are added to `github.com/humans-group/opentelemetry-go/semconv/v1.17.0`. (#3697)
 - Support [Go 1.20]. (#3693)
-- The `github.com/humans-group/otel/semconv/v1.18.0` package.
+- The `github.com/humans-group/opentelemetry-go/semconv/v1.18.0` package.
   The package contains semantic conventions from the `v1.18.0` version of the OpenTelemetry specification. (#3719)
-  - The following `const` renames from `github.com/humans-group/otel/semconv/v1.17.0` are included:
+  - The following `const` renames from `github.com/humans-group/opentelemetry-go/semconv/v1.17.0` are included:
     - `OtelScopeNameKey` -> `OTelScopeNameKey`
     - `OtelScopeVersionKey` -> `OTelScopeVersionKey`
     - `OtelLibraryNameKey` -> `OTelLibraryNameKey`
@@ -169,40 +169,40 @@ The next release will require at least [Go 1.19].
     - `OtelStatusDescriptionKey` -> `OTelStatusDescriptionKey`
     - `OtelStatusCodeOk` -> `OTelStatusCodeOk`
     - `OtelStatusCodeError` -> `OTelStatusCodeError`
-  - The following `func` renames from `github.com/humans-group/otel/semconv/v1.17.0` are included:
+  - The following `func` renames from `github.com/humans-group/opentelemetry-go/semconv/v1.17.0` are included:
     - `OtelScopeName` -> `OTelScopeName`
     - `OtelScopeVersion` -> `OTelScopeVersion`
     - `OtelLibraryName` -> `OTelLibraryName`
     - `OtelLibraryVersion` -> `OTelLibraryVersion`
     - `OtelStatusDescription` -> `OTelStatusDescription`
-- A `IsSampled` method is added to the `SpanContext` implementation in `github.com/humans-group/otel/bridge/opentracing` to expose the span sampled state.
+- A `IsSampled` method is added to the `SpanContext` implementation in `github.com/humans-group/opentelemetry-go/bridge/opentracing` to expose the span sampled state.
   See the [README](./bridge/opentracing/README.md) for more information. (#3570)
-- The `WithInstrumentationAttributes` option to `github.com/humans-group/otel/metric`. (#3738)
-- The `WithInstrumentationAttributes` option to `github.com/humans-group/otel/trace`. (#3739)
-- The following environment variables are supported by the periodic `Reader` in `github.com/humans-group/otel/sdk/metric`. (#3763)
+- The `WithInstrumentationAttributes` option to `github.com/humans-group/opentelemetry-go/metric`. (#3738)
+- The `WithInstrumentationAttributes` option to `github.com/humans-group/opentelemetry-go/trace`. (#3739)
+- The following environment variables are supported by the periodic `Reader` in `github.com/humans-group/opentelemetry-go/sdk/metric`. (#3763)
   - `OTEL_METRIC_EXPORT_INTERVAL` sets the time between collections and exports.
   - `OTEL_METRIC_EXPORT_TIMEOUT` sets the timeout an export is attempted.
 
 ### Changed
 
-- Fall-back to `TextMapCarrier` when it's not `HttpHeader`s in `github.com/humans-group/otel/bridge/opentracing`. (#3679)
-- The `Collect` method of the `"github.com/humans-group/otel/sdk/metric".Reader` interface is updated to accept the `metricdata.ResourceMetrics` value the collection will be made into.
+- Fall-back to `TextMapCarrier` when it's not `HttpHeader`s in `github.com/humans-group/opentelemetry-go/bridge/opentracing`. (#3679)
+- The `Collect` method of the `"github.com/humans-group/opentelemetry-go/sdk/metric".Reader` interface is updated to accept the `metricdata.ResourceMetrics` value the collection will be made into.
   This change is made to enable memory reuse by SDK users. (#3732)
-- The `WithUnit` option in `github.com/humans-group/otel/sdk/metric/instrument` is updated to accept a `string` for the unit value. (#3776)
+- The `WithUnit` option in `github.com/humans-group/opentelemetry-go/sdk/metric/instrument` is updated to accept a `string` for the unit value. (#3776)
 
 ### Fixed
 
-- Ensure `github.com/humans-group/otel` does not use generics. (#3723, #3725)
+- Ensure `github.com/humans-group/opentelemetry-go` does not use generics. (#3723, #3725)
 - Multi-reader `MeterProvider`s now export metrics for all readers, instead of just the first reader. (#3720, #3724)
-- Remove use of deprecated `"math/rand".Seed` in `github.com/humans-group/otel/example/prometheus`. (#3733)
-- Do not silently drop unknown schema data with `Parse` in  `github.com/humans-group/otel/schema/v1.1`. (#3743)
+- Remove use of deprecated `"math/rand".Seed` in `github.com/humans-group/opentelemetry-go/example/prometheus`. (#3733)
+- Do not silently drop unknown schema data with `Parse` in  `github.com/humans-group/opentelemetry-go/schema/v1.1`. (#3743)
 - Data race issue in OTLP exporter retry mechanism. (#3755, #3756)
-- Wrapping empty errors when exporting in `github.com/humans-group/otel/sdk/metric`. (#3698, #3772)
-- Incorrect "all" and "resource" definition for schema files in `github.com/humans-group/otel/schema/v1.1`. (#3777)
+- Wrapping empty errors when exporting in `github.com/humans-group/opentelemetry-go/sdk/metric`. (#3698, #3772)
+- Incorrect "all" and "resource" definition for schema files in `github.com/humans-group/opentelemetry-go/schema/v1.1`. (#3777)
 
 ### Deprecated
 
-- The `github.com/humans-group/otel/metric/unit` package is deprecated.
+- The `github.com/humans-group/opentelemetry-go/metric/unit` package is deprecated.
   Use the equivalent unit string instead. (#3776)
   - Use `"1"` instead of `unit.Dimensionless`
   - Use `"By"` instead of `unit.Bytes`
@@ -212,57 +212,57 @@ The next release will require at least [Go 1.19].
 
 ### Added
 
-- Attribute `KeyValue` creations functions to `github.com/humans-group/otel/semconv/v1.17.0` for all non-enum semantic conventions.
+- Attribute `KeyValue` creations functions to `github.com/humans-group/opentelemetry-go/semconv/v1.17.0` for all non-enum semantic conventions.
   These functions ensure semantic convention type correctness. (#3675)
 
 ### Fixed
 
 - Removed the `http.target` attribute from being added by `ServerRequest` in the following packages. (#3687)
-  - `github.com/humans-group/otel/semconv/v1.13.0/httpconv`
-  - `github.com/humans-group/otel/semconv/v1.14.0/httpconv`
-  - `github.com/humans-group/otel/semconv/v1.15.0/httpconv`
-  - `github.com/humans-group/otel/semconv/v1.16.0/httpconv`
-  - `github.com/humans-group/otel/semconv/v1.17.0/httpconv`
+  - `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`
+  - `github.com/humans-group/opentelemetry-go/semconv/v1.14.0/httpconv`
+  - `github.com/humans-group/opentelemetry-go/semconv/v1.15.0/httpconv`
+  - `github.com/humans-group/opentelemetry-go/semconv/v1.16.0/httpconv`
+  - `github.com/humans-group/opentelemetry-go/semconv/v1.17.0/httpconv`
 
 ### Removed
 
-- The deprecated `github.com/humans-group/otel/metric/instrument/asyncfloat64` package is removed. (#3631)
-- The deprecated `github.com/humans-group/otel/metric/instrument/asyncint64` package is removed. (#3631)
-- The deprecated `github.com/humans-group/otel/metric/instrument/syncfloat64` package is removed. (#3631)
-- The deprecated `github.com/humans-group/otel/metric/instrument/syncint64` package is removed. (#3631)
+- The deprecated `github.com/humans-group/opentelemetry-go/metric/instrument/asyncfloat64` package is removed. (#3631)
+- The deprecated `github.com/humans-group/opentelemetry-go/metric/instrument/asyncint64` package is removed. (#3631)
+- The deprecated `github.com/humans-group/opentelemetry-go/metric/instrument/syncfloat64` package is removed. (#3631)
+- The deprecated `github.com/humans-group/opentelemetry-go/metric/instrument/syncint64` package is removed. (#3631)
 
 ## [1.12.0/0.35.0] 2023-01-28
 
 ### Added
 
-- The `WithInt64Callback` option to `github.com/humans-group/otel/metric/instrument`.
+- The `WithInt64Callback` option to `github.com/humans-group/opentelemetry-go/metric/instrument`.
   This options is used to configure `int64` Observer callbacks during their creation. (#3507)
-- The `WithFloat64Callback` option to `github.com/humans-group/otel/metric/instrument`.
+- The `WithFloat64Callback` option to `github.com/humans-group/opentelemetry-go/metric/instrument`.
   This options is used to configure `float64` Observer callbacks during their creation. (#3507)
-- The `Producer` interface and `Reader.RegisterProducer(Producer)` to `github.com/humans-group/otel/sdk/metric`.
+- The `Producer` interface and `Reader.RegisterProducer(Producer)` to `github.com/humans-group/opentelemetry-go/sdk/metric`.
   These additions are used to enable external metric Producers. (#3524)
-- The `Callback` function type to `github.com/humans-group/otel/metric`.
+- The `Callback` function type to `github.com/humans-group/opentelemetry-go/metric`.
   This new named function type is registered with a `Meter`. (#3564)
-- The `github.com/humans-group/otel/semconv/v1.13.0` package.
+- The `github.com/humans-group/opentelemetry-go/semconv/v1.13.0` package.
   The package contains semantic conventions from the `v1.13.0` version of the OpenTelemetry specification. (#3499)
-  - The `EndUserAttributesFromHTTPRequest` function in `github.com/humans-group/otel/semconv/v1.12.0` is merged into `ClientRequest` and `ServerRequest` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `HTTPAttributesFromHTTPStatusCode` function in `github.com/humans-group/otel/semconv/v1.12.0` is merged into `ClientResponse` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `HTTPClientAttributesFromHTTPRequest` function in `github.com/humans-group/otel/semconv/v1.12.0` is replaced by `ClientRequest` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `HTTPServerAttributesFromHTTPRequest` function in `github.com/humans-group/otel/semconv/v1.12.0` is replaced by `ServerRequest` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `HTTPServerMetricAttributesFromHTTPRequest` function in `github.com/humans-group/otel/semconv/v1.12.0` is replaced by `ServerRequest` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `NetAttributesFromHTTPRequest` function in `github.com/humans-group/otel/semconv/v1.12.0` is split into `Transport` in `github.com/humans-group/otel/semconv/v1.13.0/netconv` and `ClientRequest` or `ServerRequest` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `SpanStatusFromHTTPStatusCode` function in `github.com/humans-group/otel/semconv/v1.12.0` is replaced by `ClientStatus` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `SpanStatusFromHTTPStatusCodeAndSpanKind` function in `github.com/humans-group/otel/semconv/v1.12.0` is split into `ClientStatus` and `ServerStatus` in `github.com/humans-group/otel/semconv/v1.13.0/httpconv`.
-  - The `Client` function is included in `github.com/humans-group/otel/semconv/v1.13.0/netconv` to generate attributes for a `net.Conn`.
-  - The `Server` function is included in `github.com/humans-group/otel/semconv/v1.13.0/netconv` to generate attributes for a `net.Listener`.
-- The `github.com/humans-group/otel/semconv/v1.14.0` package.
+  - The `EndUserAttributesFromHTTPRequest` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is merged into `ClientRequest` and `ServerRequest` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `HTTPAttributesFromHTTPStatusCode` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is merged into `ClientResponse` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `HTTPClientAttributesFromHTTPRequest` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is replaced by `ClientRequest` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `HTTPServerAttributesFromHTTPRequest` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is replaced by `ServerRequest` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `HTTPServerMetricAttributesFromHTTPRequest` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is replaced by `ServerRequest` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `NetAttributesFromHTTPRequest` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is split into `Transport` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/netconv` and `ClientRequest` or `ServerRequest` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `SpanStatusFromHTTPStatusCode` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is replaced by `ClientStatus` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `SpanStatusFromHTTPStatusCodeAndSpanKind` function in `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` is split into `ClientStatus` and `ServerStatus` in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/httpconv`.
+  - The `Client` function is included in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/netconv` to generate attributes for a `net.Conn`.
+  - The `Server` function is included in `github.com/humans-group/opentelemetry-go/semconv/v1.13.0/netconv` to generate attributes for a `net.Listener`.
+- The `github.com/humans-group/opentelemetry-go/semconv/v1.14.0` package.
   The package contains semantic conventions from the `v1.14.0` version of the OpenTelemetry specification. (#3566)
-- The `github.com/humans-group/otel/semconv/v1.15.0` package.
+- The `github.com/humans-group/opentelemetry-go/semconv/v1.15.0` package.
   The package contains semantic conventions from the `v1.15.0` version of the OpenTelemetry specification. (#3578)
-- The `github.com/humans-group/otel/semconv/v1.16.0` package.
+- The `github.com/humans-group/opentelemetry-go/semconv/v1.16.0` package.
   The package contains semantic conventions from the `v1.16.0` version of the OpenTelemetry specification. (#3579)
-- Metric instruments to `github.com/humans-group/otel/metric/instrument`.
-  These instruments are use as replacements of the deprecated `github.com/humans-group/otel/metric/instrument/{asyncfloat64,asyncint64,syncfloat64,syncint64}` packages.(#3575, #3586)
+- Metric instruments to `github.com/humans-group/opentelemetry-go/metric/instrument`.
+  These instruments are use as replacements of the deprecated `github.com/humans-group/opentelemetry-go/metric/instrument/{asyncfloat64,asyncint64,syncfloat64,syncint64}` packages.(#3575, #3586)
   - `Float64ObservableCounter` replaces the `asyncfloat64.Counter`
   - `Float64ObservableUpDownCounter` replaces the `asyncfloat64.UpDownCounter`
   - `Float64ObservableGauge` replaces the `asyncfloat64.Gauge`
@@ -275,91 +275,91 @@ The next release will require at least [Go 1.19].
   - `Int64Counter` replaces the `syncint64.Counter`
   - `Int64UpDownCounter` replaces the `syncint64.UpDownCounter`
   - `Int64Histogram` replaces the `syncint64.Histogram`
-- `NewTracerProvider` to `github.com/humans-group/otel/bridge/opentracing`.
+- `NewTracerProvider` to `github.com/humans-group/opentelemetry-go/bridge/opentracing`.
   This is used to create `WrapperTracer` instances from a `TracerProvider`. (#3116)
-- The `Extrema` type to `github.com/humans-group/otel/sdk/metric/metricdata`.
+- The `Extrema` type to `github.com/humans-group/opentelemetry-go/sdk/metric/metricdata`.
   This type is used to represent min/max values and still be able to distinguish unset and zero values. (#3487)
-- The `github.com/humans-group/otel/semconv/v1.17.0` package.
+- The `github.com/humans-group/opentelemetry-go/semconv/v1.17.0` package.
   The package contains semantic conventions from the `v1.17.0` version of the OpenTelemetry specification. (#3599)
 
 ### Changed
 
 - Jaeger and Zipkin exporter use `github.com/go-logr/logr` as the logging interface, and add the `WithLogr` option. (#3497, #3500)
-- Instrument configuration in `github.com/humans-group/otel/metric/instrument` is split into specific options and configuration based on the instrument type. (#3507)
-  - Use the added `Int64Option` type to configure instruments from `github.com/humans-group/otel/metric/instrument/syncint64`.
-  - Use the added `Float64Option` type to configure instruments from `github.com/humans-group/otel/metric/instrument/syncfloat64`.
-  - Use the added `Int64ObserverOption` type to configure instruments from `github.com/humans-group/otel/metric/instrument/asyncint64`.
-  - Use the added `Float64ObserverOption` type to configure instruments from `github.com/humans-group/otel/metric/instrument/asyncfloat64`.
-- Return a `Registration` from the `RegisterCallback` method of a `Meter` in the `github.com/humans-group/otel/metric` package.
+- Instrument configuration in `github.com/humans-group/opentelemetry-go/metric/instrument` is split into specific options and configuration based on the instrument type. (#3507)
+  - Use the added `Int64Option` type to configure instruments from `github.com/humans-group/opentelemetry-go/metric/instrument/syncint64`.
+  - Use the added `Float64Option` type to configure instruments from `github.com/humans-group/opentelemetry-go/metric/instrument/syncfloat64`.
+  - Use the added `Int64ObserverOption` type to configure instruments from `github.com/humans-group/opentelemetry-go/metric/instrument/asyncint64`.
+  - Use the added `Float64ObserverOption` type to configure instruments from `github.com/humans-group/opentelemetry-go/metric/instrument/asyncfloat64`.
+- Return a `Registration` from the `RegisterCallback` method of a `Meter` in the `github.com/humans-group/opentelemetry-go/metric` package.
   This `Registration` can be used to unregister callbacks. (#3522)
 - Global error handler uses an atomic value instead of a mutex. (#3543)
-- Add `NewMetricProducer` to `github.com/humans-group/otel/bridge/opencensus`, which can be used to pass OpenCensus metrics to an OpenTelemetry Reader. (#3541)
+- Add `NewMetricProducer` to `github.com/humans-group/opentelemetry-go/bridge/opencensus`, which can be used to pass OpenCensus metrics to an OpenTelemetry Reader. (#3541)
 - Global logger uses an atomic value instead of a mutex. (#3545)
-- The `Shutdown` method of the `"github.com/humans-group/otel/sdk/trace".TracerProvider` releases all computational resources when called the first time. (#3551)
-- The `Sampler` returned from `TraceIDRatioBased` `github.com/humans-group/otel/sdk/trace` now uses the rightmost bits for sampling decisions.
+- The `Shutdown` method of the `"github.com/humans-group/opentelemetry-go/sdk/trace".TracerProvider` releases all computational resources when called the first time. (#3551)
+- The `Sampler` returned from `TraceIDRatioBased` `github.com/humans-group/opentelemetry-go/sdk/trace` now uses the rightmost bits for sampling decisions.
   This fixes random sampling when using ID generators like `xray.IDGenerator` and increasing parity with other language implementations. (#3557)
-- Errors from `github.com/humans-group/otel/exporters/otlp/otlptrace` exporters are wrapped in errors identifying their signal name.
+- Errors from `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace` exporters are wrapped in errors identifying their signal name.
   Existing users of the exporters attempting to identify specific errors will need to use `errors.Unwrap()` to get the underlying error. (#3516)
-- Exporters from `github.com/humans-group/otel/exporters/otlp` will print the final retryable error message when attempts to retry time out. (#3514)
-- The instrument kind names in `github.com/humans-group/otel/sdk/metric` are updated to match the API. (#3562)
+- Exporters from `github.com/humans-group/opentelemetry-go/exporters/otlp` will print the final retryable error message when attempts to retry time out. (#3514)
+- The instrument kind names in `github.com/humans-group/opentelemetry-go/sdk/metric` are updated to match the API. (#3562)
   - `InstrumentKindSyncCounter` is renamed to `InstrumentKindCounter`
   - `InstrumentKindSyncUpDownCounter` is renamed to `InstrumentKindUpDownCounter`
   - `InstrumentKindSyncHistogram` is renamed to `InstrumentKindHistogram`
   - `InstrumentKindAsyncCounter` is renamed to `InstrumentKindObservableCounter`
   - `InstrumentKindAsyncUpDownCounter` is renamed to `InstrumentKindObservableUpDownCounter`
   - `InstrumentKindAsyncGauge` is renamed to `InstrumentKindObservableGauge`
-- The `RegisterCallback` method of the `Meter` in `github.com/humans-group/otel/metric` changed.
+- The `RegisterCallback` method of the `Meter` in `github.com/humans-group/opentelemetry-go/metric` changed.
   - The named `Callback` replaces the inline function parameter. (#3564)
   - `Callback` is required to return an error. (#3576)
   - `Callback` accepts the added `Observer` parameter added.
     This new parameter is used by `Callback` implementations to observe values for asynchronous instruments instead of calling the `Observe` method of the instrument directly. (#3584)
   - The slice of `instrument.Asynchronous` is now passed as a variadic argument. (#3587)
-- The exporter from `github.com/humans-group/otel/exporters/zipkin` is updated to use the `v1.16.0` version of semantic conventions.
+- The exporter from `github.com/humans-group/opentelemetry-go/exporters/zipkin` is updated to use the `v1.16.0` version of semantic conventions.
   This means it no longer uses the removed `net.peer.ip` or `http.host` attributes to determine the remote endpoint.
   Instead it uses the `net.sock.peer` attributes. (#3581)
-- The `Min` and `Max` fields of the `HistogramDataPoint` in `github.com/humans-group/otel/sdk/metric/metricdata` are now defined with the added `Extrema` type instead of a `*float64`. (#3487)
+- The `Min` and `Max` fields of the `HistogramDataPoint` in `github.com/humans-group/opentelemetry-go/sdk/metric/metricdata` are now defined with the added `Extrema` type instead of a `*float64`. (#3487)
 
 ### Fixed
 
 - Asynchronous instruments that use sum aggregators and attribute filters correctly add values from equivalent attribute sets that have been filtered. (#3439, #3549)
-- The `RegisterCallback` method of the `Meter` from `github.com/humans-group/otel/sdk/metric` only registers a callback for instruments created by that meter.
+- The `RegisterCallback` method of the `Meter` from `github.com/humans-group/opentelemetry-go/sdk/metric` only registers a callback for instruments created by that meter.
   Trying to register a callback with instruments from a different meter will result in an error being returned. (#3584)
 
 ### Deprecated
 
-- The `NewMetricExporter` in `github.com/humans-group/otel/bridge/opencensus` is deprecated.
+- The `NewMetricExporter` in `github.com/humans-group/opentelemetry-go/bridge/opencensus` is deprecated.
   Use `NewMetricProducer` instead. (#3541)
-- The `github.com/humans-group/otel/metric/instrument/asyncfloat64` package is deprecated.
-  Use the instruments from `github.com/humans-group/otel/metric/instrument` instead. (#3575)
-- The `github.com/humans-group/otel/metric/instrument/asyncint64` package is deprecated.
-  Use the instruments from `github.com/humans-group/otel/metric/instrument` instead. (#3575)
-- The `github.com/humans-group/otel/metric/instrument/syncfloat64` package is deprecated.
-  Use the instruments from `github.com/humans-group/otel/metric/instrument` instead. (#3575)
-- The `github.com/humans-group/otel/metric/instrument/syncint64` package is deprecated.
-  Use the instruments from `github.com/humans-group/otel/metric/instrument` instead. (#3575)
-- The `NewWrappedTracerProvider` in `github.com/humans-group/otel/bridge/opentracing` is now deprecated.
+- The `github.com/humans-group/opentelemetry-go/metric/instrument/asyncfloat64` package is deprecated.
+  Use the instruments from `github.com/humans-group/opentelemetry-go/metric/instrument` instead. (#3575)
+- The `github.com/humans-group/opentelemetry-go/metric/instrument/asyncint64` package is deprecated.
+  Use the instruments from `github.com/humans-group/opentelemetry-go/metric/instrument` instead. (#3575)
+- The `github.com/humans-group/opentelemetry-go/metric/instrument/syncfloat64` package is deprecated.
+  Use the instruments from `github.com/humans-group/opentelemetry-go/metric/instrument` instead. (#3575)
+- The `github.com/humans-group/opentelemetry-go/metric/instrument/syncint64` package is deprecated.
+  Use the instruments from `github.com/humans-group/opentelemetry-go/metric/instrument` instead. (#3575)
+- The `NewWrappedTracerProvider` in `github.com/humans-group/opentelemetry-go/bridge/opentracing` is now deprecated.
   Use `NewTracerProvider` instead. (#3116)
 
 ### Removed
 
-- The deprecated `github.com/humans-group/otel/sdk/metric/view` package is removed. (#3520)
-- The `InstrumentProvider` from `github.com/humans-group/otel/sdk/metric/asyncint64` is removed.
-  Use the new creation methods of the `Meter` in `github.com/humans-group/otel/sdk/metric` instead. (#3530)
+- The deprecated `github.com/humans-group/opentelemetry-go/sdk/metric/view` package is removed. (#3520)
+- The `InstrumentProvider` from `github.com/humans-group/opentelemetry-go/sdk/metric/asyncint64` is removed.
+  Use the new creation methods of the `Meter` in `github.com/humans-group/opentelemetry-go/sdk/metric` instead. (#3530)
   - The `Counter` method is replaced by `Meter.Int64ObservableCounter`
   - The `UpDownCounter` method is replaced by `Meter.Int64ObservableUpDownCounter`
   - The `Gauge` method is replaced by `Meter.Int64ObservableGauge`
-- The `InstrumentProvider` from `github.com/humans-group/otel/sdk/metric/asyncfloat64` is removed.
-  Use the new creation methods of the `Meter` in `github.com/humans-group/otel/sdk/metric` instead. (#3530)
+- The `InstrumentProvider` from `github.com/humans-group/opentelemetry-go/sdk/metric/asyncfloat64` is removed.
+  Use the new creation methods of the `Meter` in `github.com/humans-group/opentelemetry-go/sdk/metric` instead. (#3530)
   - The `Counter` method is replaced by `Meter.Float64ObservableCounter`
   - The `UpDownCounter` method is replaced by `Meter.Float64ObservableUpDownCounter`
   - The `Gauge` method is replaced by `Meter.Float64ObservableGauge`
-- The `InstrumentProvider` from `github.com/humans-group/otel/sdk/metric/syncint64` is removed.
-  Use the new creation methods of the `Meter` in `github.com/humans-group/otel/sdk/metric` instead. (#3530)
+- The `InstrumentProvider` from `github.com/humans-group/opentelemetry-go/sdk/metric/syncint64` is removed.
+  Use the new creation methods of the `Meter` in `github.com/humans-group/opentelemetry-go/sdk/metric` instead. (#3530)
   - The `Counter` method is replaced by `Meter.Int64Counter`
   - The `UpDownCounter` method is replaced by `Meter.Int64UpDownCounter`
   - The `Histogram` method is replaced by `Meter.Int64Histogram`
-- The `InstrumentProvider` from `github.com/humans-group/otel/sdk/metric/syncfloat64` is removed.
-  Use the new creation methods of the `Meter` in `github.com/humans-group/otel/sdk/metric` instead. (#3530)
+- The `InstrumentProvider` from `github.com/humans-group/opentelemetry-go/sdk/metric/syncfloat64` is removed.
+  Use the new creation methods of the `Meter` in `github.com/humans-group/opentelemetry-go/sdk/metric` instead. (#3530)
   - The `Counter` method is replaced by `Meter.Float64Counter`
   - The `UpDownCounter` method is replaced by `Meter.Float64UpDownCounter`
   - The `Histogram` method is replaced by `Meter.Float64Histogram`
@@ -368,7 +368,7 @@ The next release will require at least [Go 1.19].
 
 ### Added
 
-- The `WithView` `Option` is added to the `github.com/humans-group/otel/sdk/metric` package.
+- The `WithView` `Option` is added to the `github.com/humans-group/opentelemetry-go/sdk/metric` package.
    This option is used to configure the view(s) a `MeterProvider` will use for all `Reader`s that are registered with it. (#3387)
 - Add Instrumentation Scope and Version as info metric and label in Prometheus exporter.
   This can be disabled using the `WithoutScopeInfo()` option added to that package.(#3273, #3357)
@@ -382,61 +382,61 @@ The next release will require at least [Go 1.19].
   - `OTEL_EXPORTER_OTLP_CLIENT_CERTIFICATE`
   - `OTEL_EXPORTER_OTLP_TRACES_CLIENT_CERTIFICATE`
   - `OTEL_EXPORTER_OTLP_METRICS_CLIENT_CERTIFICATE`
-- The `View` type and related `NewView` function to create a view according to the OpenTelemetry specification are added to `github.com/humans-group/otel/sdk/metric`.
-  These additions are replacements for the `View` type and `New` function from `github.com/humans-group/otel/sdk/metric/view`. (#3459)
-- The `Instrument` and `InstrumentKind` type are added to `github.com/humans-group/otel/sdk/metric`.
-  These additions are replacements for the `Instrument` and `InstrumentKind` types from `github.com/humans-group/otel/sdk/metric/view`. (#3459)
-- The `Stream` type is added to `github.com/humans-group/otel/sdk/metric` to define a metric data stream a view will produce. (#3459)
+- The `View` type and related `NewView` function to create a view according to the OpenTelemetry specification are added to `github.com/humans-group/opentelemetry-go/sdk/metric`.
+  These additions are replacements for the `View` type and `New` function from `github.com/humans-group/opentelemetry-go/sdk/metric/view`. (#3459)
+- The `Instrument` and `InstrumentKind` type are added to `github.com/humans-group/opentelemetry-go/sdk/metric`.
+  These additions are replacements for the `Instrument` and `InstrumentKind` types from `github.com/humans-group/opentelemetry-go/sdk/metric/view`. (#3459)
+- The `Stream` type is added to `github.com/humans-group/opentelemetry-go/sdk/metric` to define a metric data stream a view will produce. (#3459)
 - The `AssertHasAttributes` allows instrument authors to test that datapoints returned have appropriate attributes. (#3487)
 
 ### Changed
 
-- The `"github.com/humans-group/otel/sdk/metric".WithReader` option no longer accepts views to associate with the `Reader`.
+- The `"github.com/humans-group/opentelemetry-go/sdk/metric".WithReader` option no longer accepts views to associate with the `Reader`.
    Instead, views are now registered directly with the `MeterProvider` via the new `WithView` option.
    The views registered with the `MeterProvider` apply to all `Reader`s. (#3387)
-- The `Temporality(view.InstrumentKind) metricdata.Temporality` and `Aggregation(view.InstrumentKind) aggregation.Aggregation` methods are added to the `"github.com/humans-group/otel/sdk/metric".Exporter` interface. (#3260)
-- The `Temporality(view.InstrumentKind) metricdata.Temporality` and `Aggregation(view.InstrumentKind) aggregation.Aggregation` methods are added to the `"github.com/humans-group/otel/exporters/otlp/otlpmetric".Client` interface. (#3260)
-- The `WithTemporalitySelector` and `WithAggregationSelector` `ReaderOption`s have been changed to `ManualReaderOption`s in the `github.com/humans-group/otel/sdk/metric` package. (#3260)
-- The periodic reader in the `github.com/humans-group/otel/sdk/metric` package now uses the temporality and aggregation selectors from its configured exporter instead of accepting them as options. (#3260)
+- The `Temporality(view.InstrumentKind) metricdata.Temporality` and `Aggregation(view.InstrumentKind) aggregation.Aggregation` methods are added to the `"github.com/humans-group/opentelemetry-go/sdk/metric".Exporter` interface. (#3260)
+- The `Temporality(view.InstrumentKind) metricdata.Temporality` and `Aggregation(view.InstrumentKind) aggregation.Aggregation` methods are added to the `"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric".Client` interface. (#3260)
+- The `WithTemporalitySelector` and `WithAggregationSelector` `ReaderOption`s have been changed to `ManualReaderOption`s in the `github.com/humans-group/opentelemetry-go/sdk/metric` package. (#3260)
+- The periodic reader in the `github.com/humans-group/opentelemetry-go/sdk/metric` package now uses the temporality and aggregation selectors from its configured exporter instead of accepting them as options. (#3260)
 
 ### Fixed
 
-- The `github.com/humans-group/otel/exporters/prometheus` exporter fixes duplicated `_total` suffixes. (#3369)
+- The `github.com/humans-group/opentelemetry-go/exporters/prometheus` exporter fixes duplicated `_total` suffixes. (#3369)
 - Remove comparable requirement for `Reader`s. (#3387)
-- Cumulative metrics from the OpenCensus bridge (`github.com/humans-group/otel/bridge/opencensus`) are defined as monotonic sums, instead of non-monotonic. (#3389)
+- Cumulative metrics from the OpenCensus bridge (`github.com/humans-group/opentelemetry-go/bridge/opencensus`) are defined as monotonic sums, instead of non-monotonic. (#3389)
 - Asynchronous counters (`Counter` and `UpDownCounter`) from the metric SDK now produce delta sums when configured with delta temporality. (#3398)
-- Exported `Status` codes in the `github.com/humans-group/otel/exporters/zipkin` exporter are now exported as all upper case values. (#3340)
-- `Aggregation`s from `github.com/humans-group/otel/sdk/metric` with no data are not exported. (#3394, #3436)
+- Exported `Status` codes in the `github.com/humans-group/opentelemetry-go/exporters/zipkin` exporter are now exported as all upper case values. (#3340)
+- `Aggregation`s from `github.com/humans-group/opentelemetry-go/sdk/metric` with no data are not exported. (#3394, #3436)
 - Re-enabled Attribute Filters in the Metric SDK. (#3396)
 - Asynchronous callbacks are only called if they are registered with at least one instrument that does not use drop aggragation. (#3408)
-- Do not report empty partial-success responses in the `github.com/humans-group/otel/exporters/otlp` exporters. (#3438, #3432)
-- Handle partial success responses in `github.com/humans-group/otel/exporters/otlp/otlpmetric` exporters. (#3162, #3440)
+- Do not report empty partial-success responses in the `github.com/humans-group/opentelemetry-go/exporters/otlp` exporters. (#3438, #3432)
+- Handle partial success responses in `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric` exporters. (#3162, #3440)
 - Prevent duplicate Prometheus description, unit, and type. (#3469)
 - Prevents panic when using incorrect `attribute.Value.As[Type]Slice()`. (#3489)
 
 ### Removed
 
-- The `github.com/humans-group/otel/exporters/otlp/otlpmetric.Client` interface is removed. (#3486)
-- The `github.com/humans-group/otel/exporters/otlp/otlpmetric.New` function is removed. Use the `otlpmetric[http|grpc].New` directly. (#3486)
+- The `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric.Client` interface is removed. (#3486)
+- The `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric.New` function is removed. Use the `otlpmetric[http|grpc].New` directly. (#3486)
 
 ### Deprecated
 
-- The `github.com/humans-group/otel/sdk/metric/view` package is deprecated.
-  Use `Instrument`, `InstrumentKind`, `View`, and `NewView` in `github.com/humans-group/otel/sdk/metric` instead. (#3476)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/view` package is deprecated.
+  Use `Instrument`, `InstrumentKind`, `View`, and `NewView` in `github.com/humans-group/opentelemetry-go/sdk/metric` instead. (#3476)
 
 ## [1.11.1/0.33.0] 2022-10-19
 
 ### Added
 
-- The Prometheus exporter in `github.com/humans-group/otel/exporters/prometheus` registers with a Prometheus registerer on creation.
+- The Prometheus exporter in `github.com/humans-group/opentelemetry-go/exporters/prometheus` registers with a Prometheus registerer on creation.
    By default, it will register with the default Prometheus registerer.
    A non-default registerer can be used by passing the `WithRegisterer` option. (#3239)
-- Added the `WithAggregationSelector` option to the `github.com/humans-group/otel/exporters/prometheus` package to change the default `AggregationSelector` used. (#3341)
-- The Prometheus exporter in `github.com/humans-group/otel/exporters/prometheus` converts the `Resource` associated with metric exports into a `target_info` metric. (#3285)
+- Added the `WithAggregationSelector` option to the `github.com/humans-group/opentelemetry-go/exporters/prometheus` package to change the default `AggregationSelector` used. (#3341)
+- The Prometheus exporter in `github.com/humans-group/opentelemetry-go/exporters/prometheus` converts the `Resource` associated with metric exports into a `target_info` metric. (#3285)
 
 ### Changed
 
-- The `"github.com/humans-group/otel/exporters/prometheus".New` function is updated to return an error.
+- The `"github.com/humans-group/opentelemetry-go/exporters/prometheus".New` function is updated to return an error.
    It will return an error if the exporter fails to register with Prometheus. (#3239)
 
 ### Fixed
@@ -445,23 +445,23 @@ The next release will require at least [Go 1.19].
 - The `baggage.NewMember` function decodes the `value` parameter instead of directly using it.
    This fixes the implementation to be compliant with the W3C specification. (#3226)
 - Slice attributes of the `attribute` package are now comparable based on their value, not instance. (#3108 #3252)
-- The `Shutdown` and `ForceFlush` methods of the `"github.com/humans-group/otel/sdk/trace".TraceProvider` no longer return an error when no processor is registered. (#3268)
-- The Prometheus exporter in `github.com/humans-group/otel/exporters/prometheus` cumulatively sums histogram buckets. (#3281)
-- The sum of each histogram data point is now uniquely exported by the `github.com/humans-group/otel/exporters/otlpmetric` exporters. (#3284, #3293)
+- The `Shutdown` and `ForceFlush` methods of the `"github.com/humans-group/opentelemetry-go/sdk/trace".TraceProvider` no longer return an error when no processor is registered. (#3268)
+- The Prometheus exporter in `github.com/humans-group/opentelemetry-go/exporters/prometheus` cumulatively sums histogram buckets. (#3281)
+- The sum of each histogram data point is now uniquely exported by the `github.com/humans-group/opentelemetry-go/exporters/otlpmetric` exporters. (#3284, #3293)
 - Recorded values for asynchronous counters (`Counter` and `UpDownCounter`) are interpreted as exact, not incremental, sum values by the metric SDK. (#3350, #3278)
-- `UpDownCounters` are now correctly output as Prometheus gauges in the `github.com/humans-group/otel/exporters/prometheus` exporter. (#3358)
-- The Prometheus exporter in `github.com/humans-group/otel/exporters/prometheus` no longer describes the metrics it will send to Prometheus on startup.
+- `UpDownCounters` are now correctly output as Prometheus gauges in the `github.com/humans-group/opentelemetry-go/exporters/prometheus` exporter. (#3358)
+- The Prometheus exporter in `github.com/humans-group/opentelemetry-go/exporters/prometheus` no longer describes the metrics it will send to Prometheus on startup.
    Instead the exporter is defined as an "unchecked" collector for Prometheus.
    This fixes the `reader is not registered` warning currently emitted on startup. (#3291 #3342)
-- The `github.com/humans-group/otel/exporters/prometheus` exporter now correctly adds `_total` suffixes to counter metrics. (#3360)
-- The `github.com/humans-group/otel/exporters/prometheus` exporter now adds a unit suffix to metric names.
+- The `github.com/humans-group/opentelemetry-go/exporters/prometheus` exporter now correctly adds `_total` suffixes to counter metrics. (#3360)
+- The `github.com/humans-group/opentelemetry-go/exporters/prometheus` exporter now adds a unit suffix to metric names.
    This can be disabled using the `WithoutUnits()` option added to that package. (#3352)
 
 ## [1.11.0/0.32.3] 2022-10-12
 
 ### Added
 
-- Add default User-Agent header to OTLP exporter requests (`github.com/humans-group/otel/exporters/otlptrace/otlptracegrpc` and `github.com/humans-group/otel/exporters/otlptrace/otlptracehttp`). (#3261)
+- Add default User-Agent header to OTLP exporter requests (`github.com/humans-group/opentelemetry-go/exporters/otlptrace/otlptracegrpc` and `github.com/humans-group/opentelemetry-go/exporters/otlptrace/otlptracehttp`). (#3261)
 
 ### Changed
 
@@ -474,13 +474,13 @@ The next release will require at least [Go 1.19].
 ### Added
 
 - Added an example of using metric views to customize instruments. (#3177)
-- Add default User-Agent header to OTLP exporter requests (`github.com/humans-group/otel/exporters/otlpmetric/otlpmetricgrpc` and `github.com/humans-group/otel/exporters/otlpmetric/otlpmetrichttp`). (#3261)
+- Add default User-Agent header to OTLP exporter requests (`github.com/humans-group/opentelemetry-go/exporters/otlpmetric/otlpmetricgrpc` and `github.com/humans-group/opentelemetry-go/exporters/otlpmetric/otlpmetrichttp`). (#3261)
 
 ### Changed
 
-- Flush pending measurements with the `PeriodicReader` in the `github.com/humans-group/otel/sdk/metric` when `ForceFlush` or `Shutdown` are called. (#3220)
+- Flush pending measurements with the `PeriodicReader` in the `github.com/humans-group/opentelemetry-go/sdk/metric` when `ForceFlush` or `Shutdown` are called. (#3220)
 - Update histogram default bounds to match the requirements of the latest specification. (#3222)
-- Encode the HTTP status code in the OpenTracing bridge (`github.com/humans-group/otel/bridge/opentracing`) as an integer.  (#3265)
+- Encode the HTTP status code in the OpenTracing bridge (`github.com/humans-group/opentelemetry-go/bridge/opentracing`) as an integer.  (#3265)
 
 ### Fixed
 
@@ -499,8 +499,8 @@ The next release will require at least [Go 1.19].
 
 ### Added
 
-- The metric portion of the OpenCensus bridge (`github.com/humans-group/otel/bridge/opencensus`) has been reintroduced. (#3192)
-- The OpenCensus bridge example (`github.com/humans-group/otel/example/opencensus`) has been reintroduced. (#3206)
+- The metric portion of the OpenCensus bridge (`github.com/humans-group/opentelemetry-go/bridge/opencensus`) has been reintroduced. (#3192)
+- The OpenCensus bridge example (`github.com/humans-group/opentelemetry-go/example/opencensus`) has been reintroduced. (#3206)
 
 ### Fixed
 
@@ -511,38 +511,38 @@ The next release will require at least [Go 1.19].
 
 ### Changed
 
-- The metric SDK in `github.com/humans-group/otel/sdk/metric` is completely refactored to comply with the OpenTelemetry specification.
+- The metric SDK in `github.com/humans-group/opentelemetry-go/sdk/metric` is completely refactored to comply with the OpenTelemetry specification.
   Please see the package documentation for how the new SDK is initialized and configured. (#3175)
 - Update the minimum supported go version to go1.18. Removes support for go1.17 (#3179)
 
 ### Removed
 
-- The metric portion of the OpenCensus bridge (`github.com/humans-group/otel/bridge/opencensus`) has been removed.
+- The metric portion of the OpenCensus bridge (`github.com/humans-group/opentelemetry-go/bridge/opencensus`) has been removed.
   A new bridge compliant with the revised metric SDK will be added back in a future release. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/aggregator/aggregatortest` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/aggregator/histogram` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/aggregator/lastvalue` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/aggregator/sum` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/aggregator` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/controller/basic` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/controller/controllertest` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/controller/time` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/export/aggregation` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/export` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/metrictest` package is removed.
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/aggregator/aggregatortest` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/aggregator/histogram` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/aggregator/lastvalue` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/aggregator/sum` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/aggregator` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/controller/basic` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/controller/controllertest` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/controller/time` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/export/aggregation` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/export` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/metrictest` package is removed.
   A replacement package that supports the new metric SDK will be added back in a future release. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/number` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/processor/basic` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/processor/processortest` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/processor/reducer` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/registry` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/sdkapi` package is removed, see the new metric SDK. (#3175)
-- The `github.com/humans-group/otel/sdk/metric/selector/simple` package is removed, see the new metric SDK. (#3175)
-- The `"github.com/humans-group/otel/sdk/metric".ErrUninitializedInstrument` variable was removed. (#3175)
-- The `"github.com/humans-group/otel/sdk/metric".ErrBadInstrument` variable was removed. (#3175)
-- The `"github.com/humans-group/otel/sdk/metric".Accumulator` type was removed, see the `MeterProvider`in the new metric SDK. (#3175)
-- The `"github.com/humans-group/otel/sdk/metric".NewAccumulator` function was removed, see `NewMeterProvider`in the new metric SDK. (#3175)
-- The deprecated `"github.com/humans-group/otel/sdk/metric".AtomicFieldOffsets` function was removed. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/number` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/processor/basic` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/processor/processortest` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/processor/reducer` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/registry` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/sdkapi` package is removed, see the new metric SDK. (#3175)
+- The `github.com/humans-group/opentelemetry-go/sdk/metric/selector/simple` package is removed, see the new metric SDK. (#3175)
+- The `"github.com/humans-group/opentelemetry-go/sdk/metric".ErrUninitializedInstrument` variable was removed. (#3175)
+- The `"github.com/humans-group/opentelemetry-go/sdk/metric".ErrBadInstrument` variable was removed. (#3175)
+- The `"github.com/humans-group/opentelemetry-go/sdk/metric".Accumulator` type was removed, see the `MeterProvider`in the new metric SDK. (#3175)
+- The `"github.com/humans-group/opentelemetry-go/sdk/metric".NewAccumulator` function was removed, see `NewMeterProvider`in the new metric SDK. (#3175)
+- The deprecated `"github.com/humans-group/opentelemetry-go/sdk/metric".AtomicFieldOffsets` function was removed. (#3175)
 
 ## [1.10.0] - 2022-09-09
 
@@ -555,7 +555,7 @@ The next release will require at least [Go 1.19].
 
 ### Changed
 
-- Fix misidentification of OpenTelemetry `SpanKind` in OpenTracing bridge (`github.com/humans-group/otel/bridge/opentracing`).  (#3096)
+- Fix misidentification of OpenTelemetry `SpanKind` in OpenTracing bridge (`github.com/humans-group/opentelemetry-go/bridge/opentracing`).  (#3096)
 - Attempting to start a span with a nil `context` will no longer cause a panic. (#3110)
 - All exporters will be shutdown even if one reports an error (#3091)
 - Ensure valid UTF-8 when truncating over-length attribute values. (#3156)
@@ -564,28 +564,28 @@ The next release will require at least [Go 1.19].
 
 ### Added
 
-- Add support for Schema Files format 1.1.x (metric "split" transform) with the new `github.com/humans-group/otel/schema/v1.1` package. (#2999)
-- Add the `github.com/humans-group/otel/semconv/v1.11.0` package.
+- Add support for Schema Files format 1.1.x (metric "split" transform) with the new `github.com/humans-group/opentelemetry-go/schema/v1.1` package. (#2999)
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.11.0` package.
   The package contains semantic conventions from the `v1.11.0` version of the OpenTelemetry specification. (#3009)
-- Add the `github.com/humans-group/otel/semconv/v1.12.0` package.
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` package.
   The package contains semantic conventions from the `v1.12.0` version of the OpenTelemetry specification. (#3010)
-- Add the `http.method` attribute to HTTP server metric from all `github.com/humans-group/otel/semconv/*` packages. (#3018)
+- Add the `http.method` attribute to HTTP server metric from all `github.com/humans-group/opentelemetry-go/semconv/*` packages. (#3018)
 
 ### Fixed
 
-- Invalid warning for context setup being deferred in `github.com/humans-group/otel/bridge/opentracing` package. (#3029)
+- Invalid warning for context setup being deferred in `github.com/humans-group/opentelemetry-go/bridge/opentracing` package. (#3029)
 
 ## [1.8.0/0.31.0] - 2022-07-08
 
 ### Added
 
 - Add support for `opentracing.TextMap` format in the `Inject` and `Extract` methods
-of the `"github.com/humans-group/otel/bridge/opentracing".BridgeTracer` type. (#2911)
+of the `"github.com/humans-group/opentelemetry-go/bridge/opentracing".BridgeTracer` type. (#2911)
 
 ### Changed
 
 - The `crosslink` make target has been updated to use the `go.opentelemetry.io/build-tools/crosslink` package. (#2886)
-- In the `github.com/humans-group/otel/sdk/instrumentation` package rename `Library` to `Scope` and alias `Library` as `Scope` (#2976)
+- In the `github.com/humans-group/opentelemetry-go/sdk/instrumentation` package rename `Library` to `Scope` and alias `Library` as `Scope` (#2976)
 - Move metric no-op implementation form `nonrecording` to `metric` package. (#2866)
 
 ### Removed
@@ -594,67 +594,67 @@ of the `"github.com/humans-group/otel/bridge/opentracing".BridgeTracer` type. (#
 
 ### Deprecated
 
-- The `Library` struct in the `github.com/humans-group/otel/sdk/instrumentation` package is deprecated.
+- The `Library` struct in the `github.com/humans-group/opentelemetry-go/sdk/instrumentation` package is deprecated.
   Use the equivalent `Scope` struct instead. (#2977)
-- The `ReadOnlySpan.InstrumentationLibrary` method from the `github.com/humans-group/otel/sdk/trace` package is deprecated.
+- The `ReadOnlySpan.InstrumentationLibrary` method from the `github.com/humans-group/opentelemetry-go/sdk/trace` package is deprecated.
   Use the equivalent `ReadOnlySpan.InstrumentationScope` method instead. (#2977)
 
 ## [1.7.0/0.30.0] - 2022-04-28
 
 ### Added
 
-- Add the `github.com/humans-group/otel/semconv/v1.8.0` package.
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.8.0` package.
   The package contains semantic conventions from the `v1.8.0` version of the OpenTelemetry specification. (#2763)
-- Add the `github.com/humans-group/otel/semconv/v1.9.0` package.
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.9.0` package.
   The package contains semantic conventions from the `v1.9.0` version of the OpenTelemetry specification. (#2792)
-- Add the `github.com/humans-group/otel/semconv/v1.10.0` package.
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.10.0` package.
   The package contains semantic conventions from the `v1.10.0` version of the OpenTelemetry specification. (#2842)
 - Added an in-memory exporter to metrictest to aid testing with a full SDK. (#2776)
 
 ### Fixed
 
 - Globally delegated instruments are unwrapped before delegating asynchronous callbacks. (#2784)
-- Remove import of `testing` package in non-tests builds of the `github.com/humans-group/otel` package. (#2786)
+- Remove import of `testing` package in non-tests builds of the `github.com/humans-group/opentelemetry-go` package. (#2786)
 
 ### Changed
 
-- The `WithLabelEncoder` option from the `github.com/humans-group/otel/exporters/stdout/stdoutmetric` package is renamed to `WithAttributeEncoder`. (#2790)
-- The `LabelFilterSelector` interface from `github.com/humans-group/otel/sdk/metric/processor/reducer` is renamed to `AttributeFilterSelector`.
+- The `WithLabelEncoder` option from the `github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric` package is renamed to `WithAttributeEncoder`. (#2790)
+- The `LabelFilterSelector` interface from `github.com/humans-group/opentelemetry-go/sdk/metric/processor/reducer` is renamed to `AttributeFilterSelector`.
   The method included in the renamed interface also changed from `LabelFilterFor` to `AttributeFilterFor`. (#2790)
-- The `Metadata.Labels` method from the `github.com/humans-group/otel/sdk/metric/export` package is renamed to `Metadata.Attributes`.
+- The `Metadata.Labels` method from the `github.com/humans-group/opentelemetry-go/sdk/metric/export` package is renamed to `Metadata.Attributes`.
   Consequentially, the `Record` type from the same package also has had the embedded method renamed. (#2790)
 
 ### Deprecated
 
-- The `Iterator.Label` method in the `github.com/humans-group/otel/attribute` package is deprecated.
+- The `Iterator.Label` method in the `github.com/humans-group/opentelemetry-go/attribute` package is deprecated.
   Use the equivalent `Iterator.Attribute` method instead. (#2790)
-- The `Iterator.IndexedLabel` method in the `github.com/humans-group/otel/attribute` package is deprecated.
+- The `Iterator.IndexedLabel` method in the `github.com/humans-group/opentelemetry-go/attribute` package is deprecated.
   Use the equivalent `Iterator.IndexedAttribute` method instead. (#2790)
-- The `MergeIterator.Label` method in the `github.com/humans-group/otel/attribute` package is deprecated.
+- The `MergeIterator.Label` method in the `github.com/humans-group/opentelemetry-go/attribute` package is deprecated.
   Use the equivalent `MergeIterator.Attribute` method instead. (#2790)
 
 ### Removed
 
-- Removed the `Batch` type from the `github.com/humans-group/otel/sdk/metric/metrictest` package. (#2864)
-- Removed the `Measurement` type from the `github.com/humans-group/otel/sdk/metric/metrictest` package. (#2864)
+- Removed the `Batch` type from the `github.com/humans-group/opentelemetry-go/sdk/metric/metrictest` package. (#2864)
+- Removed the `Measurement` type from the `github.com/humans-group/opentelemetry-go/sdk/metric/metrictest` package. (#2864)
 
 ## [0.29.0] - 2022-04-11
 
 ### Added
 
 - The metrics global package was added back into several test files. (#2764)
-- The `Meter` function is added back to the `github.com/humans-group/otel/metric/global` package.
+- The `Meter` function is added back to the `github.com/humans-group/opentelemetry-go/metric/global` package.
   This function is a convenience function equivalent to calling `global.MeterProvider().Meter(...)`. (#2750)
 
 ### Removed
 
-- Removed module the `github.com/humans-group/otel/sdk/export/metric`.
-  Use the `github.com/humans-group/otel/sdk/metric` module instead. (#2720)
+- Removed module the `github.com/humans-group/opentelemetry-go/sdk/export/metric`.
+  Use the `github.com/humans-group/opentelemetry-go/sdk/metric` module instead. (#2720)
 
 ### Changed
 
 - Don't panic anymore when setting a global MeterProvider to itself. (#2749)
-- Upgrade `go.opentelemetry.io/proto/otlp` in `github.com/humans-group/otel/exporters/otlp/otlpmetric` from `v0.12.1` to `v0.15.0`.
+- Upgrade `go.opentelemetry.io/proto/otlp` in `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric` from `v0.12.1` to `v0.15.0`.
   This replaces the use of the now deprecated `InstrumentationLibrary` and `InstrumentationLibraryMetrics` types and fields in the proto library with the equivalent `InstrumentationScope` and `ScopeMetrics`. (#2748)
 
 ## [1.6.3] - 2022-04-07
@@ -668,14 +668,14 @@ of the `"github.com/humans-group/otel/bridge/opentracing".BridgeTracer` type. (#
 ### Changed
 
 - Don't panic anymore when setting a global TracerProvider or TextMapPropagator to itself. (#2749)
-- Upgrade `go.opentelemetry.io/proto/otlp` in `github.com/humans-group/otel/exporters/otlp/otlptrace` from `v0.12.1` to `v0.15.0`.
+- Upgrade `go.opentelemetry.io/proto/otlp` in `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace` from `v0.12.1` to `v0.15.0`.
   This replaces the use of the now deprecated `InstrumentationLibrary` and `InstrumentationLibrarySpans` types and fields in the proto library with the equivalent `InstrumentationScope` and `ScopeSpans`. (#2748)
 
 ## [1.6.1] - 2022-03-28
 
 ### Fixed
 
-- The `github.com/humans-group/otel/schema/*` packages now use the correct schema URL for their `SchemaURL` constant.
+- The `github.com/humans-group/opentelemetry-go/schema/*` packages now use the correct schema URL for their `SchemaURL` constant.
   Instead of using `"https://opentelemetry.io/schemas/v<version>"` they now use the correct URL without a `v` prefix, `"https://opentelemetry.io/schemas/<version>"`. (#2743, #2744)
 
 ### Security
@@ -688,7 +688,7 @@ of the `"github.com/humans-group/otel/bridge/opentracing".BridgeTracer` type. (#
 ### ⚠️ Notice ⚠️
 
 This update is a breaking change of the unstable Metrics API.
-Code instrumented with the `github.com/humans-group/otel/metric` will need to be modified.
+Code instrumented with the `github.com/humans-group/opentelemetry-go/metric` will need to be modified.
 
 ### Added
 
@@ -732,9 +732,9 @@ Code instrumented with the `github.com/humans-group/otel/metric` will need to be
 - Rename the `gc` runtime name to `go` (#2560)
 - Add resource container ID detection. (#2418)
 - Add span attribute value length limit.
-  The new `AttributeValueLengthLimit` field is added to the `"github.com/humans-group/otel/sdk/trace".SpanLimits` type to configure this limit for a `TracerProvider`.
+  The new `AttributeValueLengthLimit` field is added to the `"github.com/humans-group/opentelemetry-go/sdk/trace".SpanLimits` type to configure this limit for a `TracerProvider`.
   The default limit for this resource is "unlimited". (#2637)
-- Add the `WithRawSpanLimits` option to `github.com/humans-group/otel/sdk/trace`.
+- Add the `WithRawSpanLimits` option to `github.com/humans-group/opentelemetry-go/sdk/trace`.
   This option replaces the `WithSpanLimits` option.
   Zero or negative values will not be changed to the default value like `WithSpanLimits` does.
   Setting a limit to zero will effectively disable the related resource it limits and setting to a negative value will mean that resource is unlimited.
@@ -757,7 +757,7 @@ Code instrumented with the `github.com/humans-group/otel/metric` will need to be
 
 ### Deprecated
 
-- Deprecated `"github.com/humans-group/otel/sdk/trace".WithSpanLimits`.
+- Deprecated `"github.com/humans-group/opentelemetry-go/sdk/trace".WithSpanLimits`.
   Use `WithRawSpanLimits` instead.
   That option allows setting unlimited and zero limits, this option does not.
   This option will be kept until the next major version incremented release. (#2637)
@@ -788,9 +788,9 @@ Code instrumented with the `github.com/humans-group/otel/metric` will need to be
 
 ### Deprecated
 
-- Deprecate module the `github.com/humans-group/otel/sdk/export/metric`.
-  Use the `github.com/humans-group/otel/sdk/metric` module instead. (#2382)
-- Deprecate `"github.com/humans-group/otel/sdk/metric".AtomicFieldOffsets`. (#2445)
+- Deprecate module the `github.com/humans-group/opentelemetry-go/sdk/export/metric`.
+  Use the `github.com/humans-group/opentelemetry-go/sdk/metric` module instead. (#2382)
+- Deprecate `"github.com/humans-group/opentelemetry-go/sdk/metric".AtomicFieldOffsets`. (#2445)
 
 ### Fixed
 
@@ -800,7 +800,7 @@ Code instrumented with the `github.com/humans-group/otel/metric` will need to be
 - Specify explicit buckets in Prometheus example, fixing issue where example only has `+inf` bucket. (#2419, #2493)
 - W3C baggage will now decode urlescaped values. (#2529)
 - Baggage members are now only validated once, when calling `NewMember` and not also when adding it to the baggage itself. (#2522)
-- The order attributes are dropped from spans in the `github.com/humans-group/otel/sdk/trace` package when capacity is reached is fixed to be in compliance with the OpenTelemetry specification.
+- The order attributes are dropped from spans in the `github.com/humans-group/opentelemetry-go/sdk/trace` package when capacity is reached is fixed to be in compliance with the OpenTelemetry specification.
   Instead of dropping the least-recently-used attribute, the last added attribute is dropped.
   This drop order still only applies to attributes with unique keys not already contained in the span.
   If an attribute is added with a key already contained in the span, that attribute is updated to the new value being added. (#2576)
@@ -823,29 +823,29 @@ We have updated the project minimum supported Go version to 1.16
 - Added an internal Logger.
   This can be used by the SDK and API to provide users with feedback of the internal state.
   To enable verbose logs configure the logger which will print V(1) logs. For debugging information configure to print V(5) logs. (#2343)
-- Add the `WithRetry` `Option` and the `RetryConfig` type to the `github.com/humans-group/otel/exporter/otel/otlpmetric/otlpmetrichttp` package to specify retry behavior consistently. (#2425)
+- Add the `WithRetry` `Option` and the `RetryConfig` type to the `github.com/humans-group/opentelemetry-go/exporter/otel/otlpmetric/otlpmetrichttp` package to specify retry behavior consistently. (#2425)
 - Add `SpanStatusFromHTTPStatusCodeAndSpanKind` to all `semconv` packages to return a span status code similar to `SpanStatusFromHTTPStatusCode`, but exclude `4XX` HTTP errors as span errors if the span is of server kind. (#2296)
 
 ### Changed
 
-- The `"github.com/humans-group/otel/exporter/otel/otlptrace/otlptracegrpc".Client` now uses the underlying gRPC `ClientConn` to handle name resolution, TCP connection establishment (with retries and backoff) and TLS handshakes, and handling errors on established connections by re-resolving the name and reconnecting. (#2329)
-- The `"github.com/humans-group/otel/exporter/otel/otlpmetric/otlpmetricgrpc".Client` now uses the underlying gRPC `ClientConn` to handle name resolution, TCP connection establishment (with retries and backoff) and TLS handshakes, and handling errors on established connections by re-resolving the name and reconnecting. (#2425)
-- The `"github.com/humans-group/otel/exporter/otel/otlpmetric/otlpmetricgrpc".RetrySettings` type is renamed to `RetryConfig`. (#2425)
-- The `github.com/humans-group/otel/exporter/otel/*` gRPC exporters now default to using the host's root CA set if none are provided by the user and `WithInsecure` is not specified. (#2432)
+- The `"github.com/humans-group/opentelemetry-go/exporter/otel/otlptrace/otlptracegrpc".Client` now uses the underlying gRPC `ClientConn` to handle name resolution, TCP connection establishment (with retries and backoff) and TLS handshakes, and handling errors on established connections by re-resolving the name and reconnecting. (#2329)
+- The `"github.com/humans-group/opentelemetry-go/exporter/otel/otlpmetric/otlpmetricgrpc".Client` now uses the underlying gRPC `ClientConn` to handle name resolution, TCP connection establishment (with retries and backoff) and TLS handshakes, and handling errors on established connections by re-resolving the name and reconnecting. (#2425)
+- The `"github.com/humans-group/opentelemetry-go/exporter/otel/otlpmetric/otlpmetricgrpc".RetrySettings` type is renamed to `RetryConfig`. (#2425)
+- The `github.com/humans-group/opentelemetry-go/exporter/otel/*` gRPC exporters now default to using the host's root CA set if none are provided by the user and `WithInsecure` is not specified. (#2432)
 - Change `resource.Default` to be evaluated the first time it is called, rather than on import. This allows the caller the option to update `OTEL_RESOURCE_ATTRIBUTES` first, such as with `os.Setenv`. (#2371)
 
 ### Fixed
 
-- The `github.com/humans-group/otel/exporter/otel/*` exporters are updated to handle per-signal and universal endpoints according to the OpenTelemetry specification.
+- The `github.com/humans-group/opentelemetry-go/exporter/otel/*` exporters are updated to handle per-signal and universal endpoints according to the OpenTelemetry specification.
   Any per-signal endpoint set via an `OTEL_EXPORTER_OTLP_<signal>_ENDPOINT` environment variable is now used without modification of the path.
   When `OTEL_EXPORTER_OTLP_ENDPOINT` is set, if it contains a path, that path is used as a base path which per-signal paths are appended to. (#2433)
 - Basic metric controller updated to use sync.Map to avoid blocking calls (#2381)
-- The `github.com/humans-group/otel/exporter/jaeger` correctly sets the `otel.status_code` value to be a string of `ERROR` or `OK` instead of an integer code. (#2439, #2440)
+- The `github.com/humans-group/opentelemetry-go/exporter/jaeger` correctly sets the `otel.status_code` value to be a string of `ERROR` or `OK` instead of an integer code. (#2439, #2440)
 
 ### Deprecated
 
-- Deprecated the `"github.com/humans-group/otel/exporter/otel/otlpmetric/otlpmetrichttp".WithMaxAttempts` `Option`, use the new `WithRetry` `Option` instead. (#2425)
-- Deprecated the `"github.com/humans-group/otel/exporter/otel/otlpmetric/otlpmetrichttp".WithBackoff` `Option`, use the new `WithRetry` `Option` instead. (#2425)
+- Deprecated the `"github.com/humans-group/opentelemetry-go/exporter/otel/otlpmetric/otlpmetrichttp".WithMaxAttempts` `Option`, use the new `WithRetry` `Option` instead. (#2425)
+- Deprecated the `"github.com/humans-group/opentelemetry-go/exporter/otel/otlpmetric/otlpmetrichttp".WithBackoff` `Option`, use the new `WithRetry` `Option` instead. (#2425)
 
 ### Removed
 
@@ -868,20 +868,20 @@ We have updated the project minimum supported Go version to 1.16
 
 ### Added
 
-- Add the `"github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetricgrpc".WithGRPCConn` option so the exporter can reuse an existing gRPC connection. (#2002)
+- Add the `"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/otlpmetricgrpc".WithGRPCConn` option so the exporter can reuse an existing gRPC connection. (#2002)
 - Added a new `schema` module to help parse Schema Files in OTEP 0152 format. (#2267)
-- Added a new `MapCarrier` to the `github.com/humans-group/otel/propagation` package to hold propagated cross-cutting concerns as a `map[string]string` held in memory. (#2334)
+- Added a new `MapCarrier` to the `github.com/humans-group/opentelemetry-go/propagation` package to hold propagated cross-cutting concerns as a `map[string]string` held in memory. (#2334)
 
 ## [1.1.0] - 2021-10-27
 
 ### Added
 
-- Add the `"github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracegrpc".WithGRPCConn` option so the exporter can reuse an existing gRPC connection. (#2002)
-- Add the `github.com/humans-group/otel/semconv/v1.7.0` package.
+- Add the `"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracegrpc".WithGRPCConn` option so the exporter can reuse an existing gRPC connection. (#2002)
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.7.0` package.
   The package contains semantic conventions from the `v1.7.0` version of the OpenTelemetry specification. (#2320)
-- Add the `github.com/humans-group/otel/semconv/v1.6.1` package.
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.6.1` package.
   The package contains semantic conventions from the `v1.6.1` version of the OpenTelemetry specification. (#2321)
-- Add the `github.com/humans-group/otel/semconv/v1.5.0` package.
+- Add the `github.com/humans-group/opentelemetry-go/semconv/v1.5.0` package.
   The package contains semantic conventions from the `v1.5.0` version of the OpenTelemetry specification. (#2322)
   - When upgrading from the `semconv/v1.4.0` package note the following name changes:
     - `K8SReplicasetUIDKey` -> `K8SReplicaSetUIDKey`
@@ -897,8 +897,8 @@ We have updated the project minimum supported Go version to 1.16
 
 ### Fixed
 
-- The `"github.com/humans-group/otel/semconv/v1.4.0".HTTPServerAttributesFromHTTPRequest` now correctly only sets the HTTP client IP attribute even if the connection was routed with proxies and there are multiple addresses in the `X-Forwarded-For` header. (#2282, #2284)
-- The `"github.com/humans-group/otel/semconv/v1.4.0".NetAttributesFromHTTPRequest` function correctly handles IPv6 addresses as IP addresses and sets the correct net peer IP instead of the net peer hostname attribute. (#2283, #2285)
+- The `"github.com/humans-group/opentelemetry-go/semconv/v1.4.0".HTTPServerAttributesFromHTTPRequest` now correctly only sets the HTTP client IP attribute even if the connection was routed with proxies and there are multiple addresses in the `X-Forwarded-For` header. (#2282, #2284)
+- The `"github.com/humans-group/opentelemetry-go/semconv/v1.4.0".NetAttributesFromHTTPRequest` function correctly handles IPv6 addresses as IP addresses and sets the correct net peer IP instead of the net peer hostname attribute. (#2283, #2285)
 - The simple span processor shutdown method deterministically returns the exporter error status if it simultaneously finishes when the deadline is reached. (#2290, #2289)
 
 ## [1.0.1] - 2021-10-01
@@ -913,8 +913,8 @@ We have updated the project minimum supported Go version to 1.16
 
 - NoopMeterProvider is now private and NewNoopMeterProvider must be used to obtain a noopMeterProvider. (#2237)
 - The Metric SDK `Export()` function takes a new two-level reader interface for iterating over results one instrumentation library at a time. (#2197)
-  - The former `"github.com/humans-group/otel/sdk/export/metric".CheckpointSet` is renamed `Reader`.
-  - The new interface is named `"github.com/humans-group/otel/sdk/export/metric".InstrumentationLibraryReader`.
+  - The former `"github.com/humans-group/opentelemetry-go/sdk/export/metric".CheckpointSet` is renamed `Reader`.
+  - The new interface is named `"github.com/humans-group/opentelemetry-go/sdk/export/metric".InstrumentationLibraryReader`.
 
 ## [1.0.0] - 2021-09-20
 
@@ -931,10 +931,10 @@ This release includes an API and SDK for the tracing signal that will comply wit
 
 ### Removed
 
-- Removed the `"github.com/humans-group/otel/exporters/zipkin".WithSDKOptions` function. (#2248)
-- Removed the deprecated package `github.com/humans-group/otel/oteltest`. (#2234)
-- Removed the deprecated package `github.com/humans-group/otel/bridge/opencensus/utils`. (#2233)
-- Removed deprecated functions, types, and methods from `github.com/humans-group/otel/attribute` package.
+- Removed the `"github.com/humans-group/opentelemetry-go/exporters/zipkin".WithSDKOptions` function. (#2248)
+- Removed the deprecated package `github.com/humans-group/opentelemetry-go/oteltest`. (#2234)
+- Removed the deprecated package `github.com/humans-group/opentelemetry-go/bridge/opencensus/utils`. (#2233)
+- Removed deprecated functions, types, and methods from `github.com/humans-group/opentelemetry-go/attribute` package.
   Use the typed functions and methods added to the package instead. (#2235)
   - The `Key.Array` method is removed.
   - The `Array` function is removed.
@@ -946,11 +946,11 @@ This release includes an API and SDK for the tracing signal that will comply wit
 
 ### Added
 
-- Added `ErrorHandlerFunc` to use a function as an `"github.com/humans-group/otel".ErrorHandler`. (#2149)
-- Added `"github.com/humans-group/otel/trace".WithStackTrace` option to add a stack trace when using `span.RecordError` or when panic is handled in `span.End`. (#2163)
-- Added typed slice attribute types and functionality to the `github.com/humans-group/otel/attribute` package to replace the existing array type and functions. (#2162)
+- Added `ErrorHandlerFunc` to use a function as an `"github.com/humans-group/opentelemetry-go".ErrorHandler`. (#2149)
+- Added `"github.com/humans-group/opentelemetry-go/trace".WithStackTrace` option to add a stack trace when using `span.RecordError` or when panic is handled in `span.End`. (#2163)
+- Added typed slice attribute types and functionality to the `github.com/humans-group/opentelemetry-go/attribute` package to replace the existing array type and functions. (#2162)
   - `BoolSlice`, `IntSlice`, `Int64Slice`, `Float64Slice`, and `StringSlice` replace the use of the `Array` function in the package.
-- Added the `github.com/humans-group/otel/example/fib` example package.
+- Added the `github.com/humans-group/opentelemetry-go/example/fib` example package.
   Included is an example application that computes Fibonacci numbers. (#2203)
 
 ### Changed
@@ -962,33 +962,33 @@ This release includes an API and SDK for the tracing signal that will comply wit
   - UpDownSumObserver becomes UpDownCounterObserver
   The API exported from this project is still considered experimental. (#2202)
 - Metric SDK/API implementation type `InstrumentKind` moves into `sdkapi` sub-package. (#2091)
-- The Metrics SDK export record no longer contains a Resource pointer, the SDK `"github.com/humans-group/otel/sdk/trace/export/metric".Exporter.Export()` function for push-based exporters now takes a single Resource argument, pull-based exporters use `"github.com/humans-group/otel/sdk/metric/controller/basic".Controller.Resource()`. (#2120)
-- The JSON output of the `github.com/humans-group/otel/exporters/stdout/stdouttrace` is harmonized now such that the output is "plain" JSON objects after each other of the form `{ ... } { ... } { ... }`. Earlier the JSON objects describing a span were wrapped in a slice for each `Exporter.ExportSpans` call, like `[ { ... } ][ { ... } { ... } ]`. Outputting JSON object directly after each other is consistent with JSON loggers, and a bit easier to parse and read. (#2196)
-- Update the `NewTracerConfig`, `NewSpanStartConfig`, `NewSpanEndConfig`, and `NewEventConfig` function in the `github.com/humans-group/otel/trace` package to return their respective configurations as structs instead of pointers to the struct. (#2212)
+- The Metrics SDK export record no longer contains a Resource pointer, the SDK `"github.com/humans-group/opentelemetry-go/sdk/trace/export/metric".Exporter.Export()` function for push-based exporters now takes a single Resource argument, pull-based exporters use `"github.com/humans-group/opentelemetry-go/sdk/metric/controller/basic".Controller.Resource()`. (#2120)
+- The JSON output of the `github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace` is harmonized now such that the output is "plain" JSON objects after each other of the form `{ ... } { ... } { ... }`. Earlier the JSON objects describing a span were wrapped in a slice for each `Exporter.ExportSpans` call, like `[ { ... } ][ { ... } { ... } ]`. Outputting JSON object directly after each other is consistent with JSON loggers, and a bit easier to parse and read. (#2196)
+- Update the `NewTracerConfig`, `NewSpanStartConfig`, `NewSpanEndConfig`, and `NewEventConfig` function in the `github.com/humans-group/opentelemetry-go/trace` package to return their respective configurations as structs instead of pointers to the struct. (#2212)
 
 ### Deprecated
 
-- The `github.com/humans-group/otel/bridge/opencensus/utils` package is deprecated.
-  All functionality from this package now exists in the `github.com/humans-group/otel/bridge/opencensus` package.
+- The `github.com/humans-group/opentelemetry-go/bridge/opencensus/utils` package is deprecated.
+  All functionality from this package now exists in the `github.com/humans-group/opentelemetry-go/bridge/opencensus` package.
   The functions from that package should be used instead. (#2166)
-- The `"github.com/humans-group/otel/attribute".Array` function and the related `ARRAY` value type is deprecated.
+- The `"github.com/humans-group/opentelemetry-go/attribute".Array` function and the related `ARRAY` value type is deprecated.
   Use the typed `*Slice` functions and types added to the package instead. (#2162)
-- The `"github.com/humans-group/otel/attribute".Any` function is deprecated.
+- The `"github.com/humans-group/opentelemetry-go/attribute".Any` function is deprecated.
   Use the typed functions instead. (#2181)
-- The `github.com/humans-group/otel/oteltest` package is deprecated.
-  The `"github.com/humans-group/otel/sdk/trace/tracetest".SpanRecorder` can be registered with the default SDK (`github.com/humans-group/otel/sdk/trace`) as a `SpanProcessor` and used as a replacement for this deprecated package. (#2188)
+- The `github.com/humans-group/opentelemetry-go/oteltest` package is deprecated.
+  The `"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest".SpanRecorder` can be registered with the default SDK (`github.com/humans-group/opentelemetry-go/sdk/trace`) as a `SpanProcessor` and used as a replacement for this deprecated package. (#2188)
 
 ### Removed
 
-- Removed metrics test package `github.com/humans-group/otel/sdk/export/metric/metrictest`. (#2105)
+- Removed metrics test package `github.com/humans-group/opentelemetry-go/sdk/export/metric/metrictest`. (#2105)
 
 ### Fixed
 
 - The `fromEnv` detector no longer throws an error when `OTEL_RESOURCE_ATTRIBUTES` environment variable is not set or empty. (#2138)
-- Setting the global `ErrorHandler` with `"github.com/humans-group/otel".SetErrorHandler` multiple times is now supported. (#2160, #2140)
-- The `"github.com/humans-group/otel/attribute".Any` function now supports `int32` values. (#2169)
-- Multiple calls to `"github.com/humans-group/otel/sdk/metric/controller/basic".WithResource()` are handled correctly, and when no resources are provided `"github.com/humans-group/otel/sdk/resource".Default()` is used. (#2120)
-- The `WithoutTimestamps` option for the `github.com/humans-group/otel/exporters/stdout/stdouttrace` exporter causes the exporter to correctly omit timestamps. (#2195)
+- Setting the global `ErrorHandler` with `"github.com/humans-group/opentelemetry-go".SetErrorHandler` multiple times is now supported. (#2160, #2140)
+- The `"github.com/humans-group/opentelemetry-go/attribute".Any` function now supports `int32` values. (#2169)
+- Multiple calls to `"github.com/humans-group/opentelemetry-go/sdk/metric/controller/basic".WithResource()` are handled correctly, and when no resources are provided `"github.com/humans-group/opentelemetry-go/sdk/resource".Default()` is used. (#2120)
+- The `WithoutTimestamps` option for the `github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace` exporter causes the exporter to correctly omit timestamps. (#2195)
 - Fixed typos in resources.go. (#2201)
 
 ## [1.0.0-RC2] - 2021-07-26
@@ -997,34 +997,34 @@ This release includes an API and SDK for the tracing signal that will comply wit
 
 - Added `WithOSDescription` resource configuration option to set OS (Operating System) description resource attribute (`os.description`). (#1840)
 - Added `WithOS` resource configuration option to set all OS (Operating System) resource attributes at once. (#1840)
-- Added the `WithRetry` option to the `github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracehttp` package.
+- Added the `WithRetry` option to the `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracehttp` package.
   This option is a replacement for the removed `WithMaxAttempts` and `WithBackoff` options. (#2095)
 - Added API `LinkFromContext` to return Link which encapsulates SpanContext from provided context and also encapsulates attributes. (#2115)
 - Added a new `Link` type under the SDK `otel/sdk/trace` package that counts the number of attributes that were dropped for surpassing the `AttributePerLinkCountLimit` configured in the Span's `SpanLimits`.
   This new type replaces the equal-named API `Link` type found in the `otel/trace` package for most usages within the SDK.
   For example, instances of this type are now returned by the `Links()` function of `ReadOnlySpan`s provided in places like the `OnEnd` function of `SpanProcessor` implementations. (#2118)
-- Added the `SpanRecorder` type to the `github.com/humans-group/otel/skd/trace/tracetest` package.
+- Added the `SpanRecorder` type to the `github.com/humans-group/opentelemetry-go/skd/trace/tracetest` package.
   This type can be used with the default SDK as a `SpanProcessor` during testing. (#2132)
 
 ### Changed
 
-- The `SpanModels` function is now exported from the `github.com/humans-group/otel/exporters/zipkin` package to convert OpenTelemetry spans into Zipkin model spans. (#2027)
-- Rename the `"github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracegrpc".RetrySettings` to `RetryConfig`. (#2095)
+- The `SpanModels` function is now exported from the `github.com/humans-group/opentelemetry-go/exporters/zipkin` package to convert OpenTelemetry spans into Zipkin model spans. (#2027)
+- Rename the `"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracegrpc".RetrySettings` to `RetryConfig`. (#2095)
 
 ### Deprecated
 
-- The `TextMapCarrier` and `TextMapPropagator` from the `github.com/humans-group/otel/oteltest` package and their associated creation functions (`TextMapCarrier`, `NewTextMapPropagator`) are deprecated. (#2114)
-- The `Harness` type from the `github.com/humans-group/otel/oteltest` package and its associated creation function, `NewHarness` are deprecated and will be removed in the next release. (#2123)
-- The `TraceStateFromKeyValues` function from the `github.com/humans-group/otel/oteltest` package is deprecated.
+- The `TextMapCarrier` and `TextMapPropagator` from the `github.com/humans-group/opentelemetry-go/oteltest` package and their associated creation functions (`TextMapCarrier`, `NewTextMapPropagator`) are deprecated. (#2114)
+- The `Harness` type from the `github.com/humans-group/opentelemetry-go/oteltest` package and its associated creation function, `NewHarness` are deprecated and will be removed in the next release. (#2123)
+- The `TraceStateFromKeyValues` function from the `github.com/humans-group/opentelemetry-go/oteltest` package is deprecated.
   Use the `trace.ParseTraceState` function instead. (#2122)
 
 ### Removed
 
-- Removed the deprecated package `github.com/humans-group/otel/exporters/trace/jaeger`. (#2020)
-- Removed the deprecated package `github.com/humans-group/otel/exporters/trace/zipkin`. (#2020)
-- Removed the `"github.com/humans-group/otel/sdk/resource".WithBuiltinDetectors` function.
+- Removed the deprecated package `github.com/humans-group/opentelemetry-go/exporters/trace/jaeger`. (#2020)
+- Removed the deprecated package `github.com/humans-group/opentelemetry-go/exporters/trace/zipkin`. (#2020)
+- Removed the `"github.com/humans-group/opentelemetry-go/sdk/resource".WithBuiltinDetectors` function.
   The explicit `With*` options for every built-in detector should be used instead. (#2026 #2097)
-- Removed the `WithMaxAttempts` and `WithBackoff` options from the `github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracehttp` package.
+- Removed the `WithMaxAttempts` and `WithBackoff` options from the `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracehttp` package.
   The retry logic of the package has been updated to match the `otlptracegrpc` package and accordingly a `WithRetry` option is added that should be used instead. (#2095)
 - Removed `DroppedAttributeCount` field from `otel/trace.Link` struct. (#2118)
 
@@ -1033,9 +1033,9 @@ This release includes an API and SDK for the tracing signal that will comply wit
 - When using WithNewRoot, don't use the parent context for making sampling decisions. (#2032)
 - `oteltest.Tracer` now creates a valid `SpanContext` when using `WithNewRoot`. (#2073)
 - OS type detector now sets the correct `dragonflybsd` value for DragonFly BSD. (#2092)
-- The OTel span status is correctly transformed into the OTLP status in the `github.com/humans-group/otel/exporters/otlp/otlptrace` package.
+- The OTel span status is correctly transformed into the OTLP status in the `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace` package.
   This fix will by default set the status to `Unset` if it is not explicitly set to `Ok` or `Error`. (#2099 #2102)
-- The `Inject` method for the `"github.com/humans-group/otel/propagation".TraceContext` type no longer injects empty `tracestate` values. (#2108)
+- The `Inject` method for the `"github.com/humans-group/opentelemetry-go/propagation".TraceContext` type no longer injects empty `tracestate` values. (#2108)
 - Use `6831` as default Jaeger agent port instead of `6832`. (#2131)
 
 ## [Experimental Metrics v0.22.0] - 2021-07-19
@@ -1046,7 +1046,7 @@ This release includes an API and SDK for the tracing signal that will comply wit
 
 ### Removed
 
-- Removed the deprecated package `github.com/humans-group/otel/exporters/metric/prometheus`. (#2020)
+- Removed the deprecated package `github.com/humans-group/opentelemetry-go/exporters/metric/prometheus`. (#2020)
 
 ## [1.0.0-RC1] / 0.21.0 - 2021-06-18
 
@@ -1067,108 +1067,108 @@ with major version 0.
       | 10 | Out of Range |
       | 14 | Unavailable |
       | 15 | Data Loss |
-- Added `Status` type to the `github.com/humans-group/otel/sdk/trace` package to represent the status of a span. (#1874)
-- Added `SpanStub` type and its associated functions to the `github.com/humans-group/otel/sdk/trace/tracetest` package.
-  This type can be used as a testing replacement for the `SpanSnapshot` that was removed from the `github.com/humans-group/otel/sdk/trace` package. (#1873)
+- Added `Status` type to the `github.com/humans-group/opentelemetry-go/sdk/trace` package to represent the status of a span. (#1874)
+- Added `SpanStub` type and its associated functions to the `github.com/humans-group/opentelemetry-go/sdk/trace/tracetest` package.
+  This type can be used as a testing replacement for the `SpanSnapshot` that was removed from the `github.com/humans-group/opentelemetry-go/sdk/trace` package. (#1873)
 - Adds support for scheme in `OTEL_EXPORTER_OTLP_ENDPOINT` according to the spec. (#1886)
 - Adds `trace.WithSchemaURL` option for configuring the tracer with a Schema URL. (#1889)
 - Added an example of using OpenTelemetry Go as a trace context forwarder. (#1912)
-- `ParseTraceState` is added to the `github.com/humans-group/otel/trace` package.
+- `ParseTraceState` is added to the `github.com/humans-group/opentelemetry-go/trace` package.
   It can be used to decode a `TraceState` from a `tracestate` header string value. (#1937)
-- Added `Len` method to the `TraceState` type in the `github.com/humans-group/otel/trace` package.
+- Added `Len` method to the `TraceState` type in the `github.com/humans-group/opentelemetry-go/trace` package.
   This method returns the number of list-members the `TraceState` holds. (#1937)
-- Creates package `github.com/humans-group/otel/exporters/otlp/otlptrace` that defines a trace exporter that uses a `otlptrace.Client` to send data.
-  Creates package `github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracegrpc` implementing a gRPC `otlptrace.Client` and offers convenience functions, `NewExportPipeline` and `InstallNewPipeline`, to setup and install a `otlptrace.Exporter` in tracing .(#1922)
-- Added `Baggage`, `Member`, and `Property` types to the `github.com/humans-group/otel/baggage` package along with their related functions. (#1967)
-- Added `ContextWithBaggage`, `ContextWithoutBaggage`, and `FromContext` functions to the `github.com/humans-group/otel/baggage` package.
+- Creates package `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace` that defines a trace exporter that uses a `otlptrace.Client` to send data.
+  Creates package `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracegrpc` implementing a gRPC `otlptrace.Client` and offers convenience functions, `NewExportPipeline` and `InstallNewPipeline`, to setup and install a `otlptrace.Exporter` in tracing .(#1922)
+- Added `Baggage`, `Member`, and `Property` types to the `github.com/humans-group/opentelemetry-go/baggage` package along with their related functions. (#1967)
+- Added `ContextWithBaggage`, `ContextWithoutBaggage`, and `FromContext` functions to the `github.com/humans-group/opentelemetry-go/baggage` package.
   These functions replace the `Set`, `Value`, `ContextWithValue`, `ContextWithoutValue`, and `ContextWithEmpty` functions from that package and directly work with the new `Baggage` type. (#1967)
 - The `OTEL_SERVICE_NAME` environment variable is the preferred source for `service.name`, used by the environment resource detector if a service name is present both there and in `OTEL_RESOURCE_ATTRIBUTES`. (#1969)
-- Creates package `github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracehttp` implementing an HTTP `otlptrace.Client` and offers convenience functions, `NewExportPipeline` and `InstallNewPipeline`, to setup and install a `otlptrace.Exporter` in tracing. (#1963)
-- Changes `github.com/humans-group/otel/sdk/resource.NewWithAttributes` to require a schema URL. The old function is still available as `resource.NewSchemaless`. This is a breaking change. (#1938)
+- Creates package `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracehttp` implementing an HTTP `otlptrace.Client` and offers convenience functions, `NewExportPipeline` and `InstallNewPipeline`, to setup and install a `otlptrace.Exporter` in tracing. (#1963)
+- Changes `github.com/humans-group/opentelemetry-go/sdk/resource.NewWithAttributes` to require a schema URL. The old function is still available as `resource.NewSchemaless`. This is a breaking change. (#1938)
 - Several builtin resource detectors now correctly populate the schema URL. (#1938)
-- Creates package `github.com/humans-group/otel/exporters/otlp/otlpmetric` that defines a metrics exporter that uses a `otlpmetric.Client` to send data.
-- Creates package `github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetricgrpc` implementing a gRPC `otlpmetric.Client` and offers convenience functions, `New` and `NewUnstarted`, to create an `otlpmetric.Exporter`.(#1991)
-- Added `github.com/humans-group/otel/exporters/stdout/stdouttrace` exporter. (#2005)
-- Added `github.com/humans-group/otel/exporters/stdout/stdoutmetric` exporter. (#2005)
-- Added a `TracerProvider()` method to the `"github.com/humans-group/otel/trace".Span` interface. This can be used to obtain a `TracerProvider` from a given span that utilizes the same trace processing pipeline.  (#2009)
+- Creates package `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric` that defines a metrics exporter that uses a `otlpmetric.Client` to send data.
+- Creates package `github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/otlpmetricgrpc` implementing a gRPC `otlpmetric.Client` and offers convenience functions, `New` and `NewUnstarted`, to create an `otlpmetric.Exporter`.(#1991)
+- Added `github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace` exporter. (#2005)
+- Added `github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric` exporter. (#2005)
+- Added a `TracerProvider()` method to the `"github.com/humans-group/opentelemetry-go/trace".Span` interface. This can be used to obtain a `TracerProvider` from a given span that utilizes the same trace processing pipeline.  (#2009)
 
 ### Changed
 
-- Make `NewSplitDriver` from `github.com/humans-group/otel/exporters/otlp` take variadic arguments instead of a `SplitConfig` item.
+- Make `NewSplitDriver` from `github.com/humans-group/opentelemetry-go/exporters/otlp` take variadic arguments instead of a `SplitConfig` item.
   `NewSplitDriver` now automatically implements an internal `noopDriver` for `SplitConfig` fields that are not initialized. (#1798)
 - `resource.New()` now creates a Resource without builtin detectors. Previous behavior is now achieved by using `WithBuiltinDetectors` Option. (#1810)
-- Move the `Event` type from the `github.com/humans-group/otel` package to the `github.com/humans-group/otel/sdk/trace` package. (#1846)
+- Move the `Event` type from the `github.com/humans-group/opentelemetry-go` package to the `github.com/humans-group/opentelemetry-go/sdk/trace` package. (#1846)
 - CI builds validate against last two versions of Go, dropping 1.14 and adding 1.16. (#1865)
 - BatchSpanProcessor now report export failures when calling `ForceFlush()` method. (#1860)
 - `Set.Encoded(Encoder)` no longer caches the result of an encoding. (#1855)
 - Renamed `CloudZoneKey` to `CloudAvailabilityZoneKey` in Resource semantic conventions according to spec. (#1871)
-- The `StatusCode` and `StatusMessage` methods of the `ReadOnlySpan` interface and the `Span` produced by the `github.com/humans-group/otel/sdk/trace` package have been replaced with a single `Status` method.
+- The `StatusCode` and `StatusMessage` methods of the `ReadOnlySpan` interface and the `Span` produced by the `github.com/humans-group/opentelemetry-go/sdk/trace` package have been replaced with a single `Status` method.
   This method returns the status of a span using the new `Status` type. (#1874)
 - Updated `ExportSpans` method of the`SpanExporter` interface type to accept `ReadOnlySpan`s instead of the removed `SpanSnapshot`.
   This brings the export interface into compliance with the specification in that it now accepts an explicitly immutable type instead of just an implied one. (#1873)
 - Unembed `SpanContext` in `Link`. (#1877)
 - Generate Semantic conventions from the specification YAML. (#1891)
-- Spans created by the global `Tracer` obtained from `github.com/humans-group/otel`, prior to a functioning `TracerProvider` being set, now propagate the span context from their parent if one exists. (#1901)
-- The `"github.com/humans-group/otel".Tracer` function now accepts tracer options. (#1902)
-- Move the `github.com/humans-group/otel/unit` package to `github.com/humans-group/otel/metric/unit`. (#1903)
-- Changed `github.com/humans-group/otel/trace.TracerConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config.) (#1921)
-- Changed `github.com/humans-group/otel/trace.SpanConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config). (#1921)
+- Spans created by the global `Tracer` obtained from `github.com/humans-group/opentelemetry-go`, prior to a functioning `TracerProvider` being set, now propagate the span context from their parent if one exists. (#1901)
+- The `"github.com/humans-group/opentelemetry-go".Tracer` function now accepts tracer options. (#1902)
+- Move the `github.com/humans-group/opentelemetry-go/unit` package to `github.com/humans-group/opentelemetry-go/metric/unit`. (#1903)
+- Changed `github.com/humans-group/opentelemetry-go/trace.TracerConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config.) (#1921)
+- Changed `github.com/humans-group/opentelemetry-go/trace.SpanConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config). (#1921)
 - Changed `span.End()` now only accepts Options that are allowed at `End()`. (#1921)
-- Changed `github.com/humans-group/otel/metric.InstrumentConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config). (#1921)
-- Changed `github.com/humans-group/otel/metric.MeterConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config). (#1921)
+- Changed `github.com/humans-group/opentelemetry-go/metric.InstrumentConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config). (#1921)
+- Changed `github.com/humans-group/opentelemetry-go/metric.MeterConfig` to conform to the [Contributing guidelines](CONTRIBUTING.md#config). (#1921)
 - Refactored option types according to the contribution style guide. (#1882)
-- Move the `github.com/humans-group/otel/trace.TraceStateFromKeyValues` function to the `github.com/humans-group/otel/oteltest` package.
+- Move the `github.com/humans-group/opentelemetry-go/trace.TraceStateFromKeyValues` function to the `github.com/humans-group/opentelemetry-go/oteltest` package.
   This function is preserved for testing purposes where it may be useful to create a `TraceState` from `attribute.KeyValue`s, but it is not intended for production use.
   The new `ParseTraceState` function should be used to create a `TraceState`. (#1931)
-- Updated `MarshalJSON` method of the `github.com/humans-group/otel/trace.TraceState` type to marshal the type into the string representation of the `TraceState`. (#1931)
-- The `TraceState.Delete` method from the `github.com/humans-group/otel/trace` package no longer returns an error in addition to a `TraceState`. (#1931)
-- Updated `Get` method of the `TraceState` type from the `github.com/humans-group/otel/trace` package to accept a `string` instead of an `attribute.Key` type. (#1931)
-- Updated `Insert` method of the `TraceState` type from the `github.com/humans-group/otel/trace` package to accept a pair of `string`s instead of an `attribute.KeyValue` type. (#1931)
-- Updated `Delete` method of the `TraceState` type from the `github.com/humans-group/otel/trace` package to accept a `string` instead of an `attribute.Key` type. (#1931)
-- Renamed `NewExporter` to `New` in the `github.com/humans-group/otel/exporters/stdout` package. (#1985)
-- Renamed `NewExporter` to `New` in the `github.com/humans-group/otel/exporters/metric/prometheus` package. (#1985)
-- Renamed `NewExporter` to `New` in the `github.com/humans-group/otel/exporters/trace/jaeger` package. (#1985)
-- Renamed `NewExporter` to `New` in the `github.com/humans-group/otel/exporters/trace/zipkin` package. (#1985)
-- Renamed `NewExporter` to `New` in the `github.com/humans-group/otel/exporters/otlp` package. (#1985)
-- Renamed `NewUnstartedExporter` to `NewUnstarted` in the `github.com/humans-group/otel/exporters/otlp` package. (#1985)
-- The `github.com/humans-group/otel/semconv` package has been moved to `github.com/humans-group/otel/semconv/v1.4.0` to allow for multiple [telemetry schema](https://github.com/open-telemetry/oteps/blob/main/text/0152-telemetry-schemas.md) versions to be used concurrently. (#1987)
-- Metrics test helpers in `github.com/humans-group/otel/oteltest` have been moved to `github.com/humans-group/otel/metric/metrictest`. (#1988)
+- Updated `MarshalJSON` method of the `github.com/humans-group/opentelemetry-go/trace.TraceState` type to marshal the type into the string representation of the `TraceState`. (#1931)
+- The `TraceState.Delete` method from the `github.com/humans-group/opentelemetry-go/trace` package no longer returns an error in addition to a `TraceState`. (#1931)
+- Updated `Get` method of the `TraceState` type from the `github.com/humans-group/opentelemetry-go/trace` package to accept a `string` instead of an `attribute.Key` type. (#1931)
+- Updated `Insert` method of the `TraceState` type from the `github.com/humans-group/opentelemetry-go/trace` package to accept a pair of `string`s instead of an `attribute.KeyValue` type. (#1931)
+- Updated `Delete` method of the `TraceState` type from the `github.com/humans-group/opentelemetry-go/trace` package to accept a `string` instead of an `attribute.Key` type. (#1931)
+- Renamed `NewExporter` to `New` in the `github.com/humans-group/opentelemetry-go/exporters/stdout` package. (#1985)
+- Renamed `NewExporter` to `New` in the `github.com/humans-group/opentelemetry-go/exporters/metric/prometheus` package. (#1985)
+- Renamed `NewExporter` to `New` in the `github.com/humans-group/opentelemetry-go/exporters/trace/jaeger` package. (#1985)
+- Renamed `NewExporter` to `New` in the `github.com/humans-group/opentelemetry-go/exporters/trace/zipkin` package. (#1985)
+- Renamed `NewExporter` to `New` in the `github.com/humans-group/opentelemetry-go/exporters/otlp` package. (#1985)
+- Renamed `NewUnstartedExporter` to `NewUnstarted` in the `github.com/humans-group/opentelemetry-go/exporters/otlp` package. (#1985)
+- The `github.com/humans-group/opentelemetry-go/semconv` package has been moved to `github.com/humans-group/opentelemetry-go/semconv/v1.4.0` to allow for multiple [telemetry schema](https://github.com/open-telemetry/oteps/blob/main/text/0152-telemetry-schemas.md) versions to be used concurrently. (#1987)
+- Metrics test helpers in `github.com/humans-group/opentelemetry-go/oteltest` have been moved to `github.com/humans-group/opentelemetry-go/metric/metrictest`. (#1988)
 
 ### Deprecated
 
-- The `github.com/humans-group/otel/exporters/metric/prometheus` is deprecated, use `github.com/humans-group/otel/exporters/prometheus` instead. (#1993)
-- The `github.com/humans-group/otel/exporters/trace/jaeger` is deprecated, use `github.com/humans-group/otel/exporters/jaeger` instead. (#1993)
-- The `github.com/humans-group/otel/exporters/trace/zipkin` is deprecated, use `github.com/humans-group/otel/exporters/zipkin` instead. (#1993)
+- The `github.com/humans-group/opentelemetry-go/exporters/metric/prometheus` is deprecated, use `github.com/humans-group/opentelemetry-go/exporters/prometheus` instead. (#1993)
+- The `github.com/humans-group/opentelemetry-go/exporters/trace/jaeger` is deprecated, use `github.com/humans-group/opentelemetry-go/exporters/jaeger` instead. (#1993)
+- The `github.com/humans-group/opentelemetry-go/exporters/trace/zipkin` is deprecated, use `github.com/humans-group/opentelemetry-go/exporters/zipkin` instead. (#1993)
 
 ### Removed
 
 - Removed `resource.WithoutBuiltin()`. Use `resource.New()`. (#1810)
 - Unexported types `resource.FromEnv`, `resource.Host`, and `resource.TelemetrySDK`, Use the corresponding `With*()` to use individually. (#1810)
-- Removed the `Tracer` and `IsRecording` method from the `ReadOnlySpan` in the `github.com/humans-group/otel/sdk/trace`.
+- Removed the `Tracer` and `IsRecording` method from the `ReadOnlySpan` in the `github.com/humans-group/opentelemetry-go/sdk/trace`.
   The `Tracer` method is not a required to be included in this interface and given the mutable nature of the tracer that is associated with a span, this method is not appropriate.
   The `IsRecording` method returns if the span is recording or not.
   A read-only span value does not need to know if updates to it will be recorded or not.
   By definition, it cannot be updated so there is no point in communicating if an update is recorded. (#1873)
-- Removed the `SpanSnapshot` type from the `github.com/humans-group/otel/sdk/trace` package.
+- Removed the `SpanSnapshot` type from the `github.com/humans-group/opentelemetry-go/sdk/trace` package.
   The use of this type has been replaced with the use of the explicitly immutable `ReadOnlySpan` type.
-  When a concrete representation of a read-only span is needed for testing, the newly added `SpanStub` in the `github.com/humans-group/otel/sdk/trace/tracetest` package should be used. (#1873)
-- Removed the `Tracer` method from the `Span` interface in the `github.com/humans-group/otel/trace` package.
+  When a concrete representation of a read-only span is needed for testing, the newly added `SpanStub` in the `github.com/humans-group/opentelemetry-go/sdk/trace/tracetest` package should be used. (#1873)
+- Removed the `Tracer` method from the `Span` interface in the `github.com/humans-group/opentelemetry-go/trace` package.
   Using the same tracer that created a span introduces the error where an instrumentation library's `Tracer` is used by other code instead of their own.
-  The `"github.com/humans-group/otel".Tracer` function or a `TracerProvider` should be used to acquire a library specific `Tracer` instead. (#1900)
+  The `"github.com/humans-group/opentelemetry-go".Tracer` function or a `TracerProvider` should be used to acquire a library specific `Tracer` instead. (#1900)
   - The `TracerProvider()` method on the `Span` interface may also be used to obtain a `TracerProvider` using the same trace processing pipeline. (#2009)
 - The `http.url` attribute generated by `HTTPClientAttributesFromHTTPRequest` will no longer include username or password information. (#1919)
-- Removed `IsEmpty` method of the `TraceState` type in the `github.com/humans-group/otel/trace` package in favor of using the added `TraceState.Len` method. (#1931)
-- Removed `Set`, `Value`, `ContextWithValue`, `ContextWithoutValue`, and `ContextWithEmpty` functions in the `github.com/humans-group/otel/baggage` package.
+- Removed `IsEmpty` method of the `TraceState` type in the `github.com/humans-group/opentelemetry-go/trace` package in favor of using the added `TraceState.Len` method. (#1931)
+- Removed `Set`, `Value`, `ContextWithValue`, `ContextWithoutValue`, and `ContextWithEmpty` functions in the `github.com/humans-group/opentelemetry-go/baggage` package.
   Handling of baggage is now done using the added `Baggage` type and related context functions (`ContextWithBaggage`, `ContextWithoutBaggage`, and `FromContext`) in that package. (#1967)
 - The `InstallNewPipeline` and `NewExportPipeline` creation functions in all the exporters (prometheus, otlp, stdout, jaeger, and zipkin) have been removed.
   These functions were deemed premature attempts to provide convenience that did not achieve this aim. (#1985)
-- The `github.com/humans-group/otel/exporters/otlp` exporter has been removed.  Use `github.com/humans-group/otel/exporters/otlp/otlptrace` instead. (#1990)
-- The `github.com/humans-group/otel/exporters/stdout` exporter has been removed.  Use `github.com/humans-group/otel/exporters/stdout/stdouttrace` or `github.com/humans-group/otel/exporters/stdout/stdoutmetric` instead. (#2005)
+- The `github.com/humans-group/opentelemetry-go/exporters/otlp` exporter has been removed.  Use `github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace` instead. (#1990)
+- The `github.com/humans-group/opentelemetry-go/exporters/stdout` exporter has been removed.  Use `github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace` or `github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric` instead. (#2005)
 
 ### Fixed
 
-- Only report errors from the `"github.com/humans-group/otel/sdk/resource".Environment` function when they are not `nil`. (#1850, #1851)
-- The `Shutdown` method of the simple `SpanProcessor` in the `github.com/humans-group/otel/sdk/trace` package now honors the context deadline or cancellation. (#1616, #1856)
+- Only report errors from the `"github.com/humans-group/opentelemetry-go/sdk/resource".Environment` function when they are not `nil`. (#1850, #1851)
+- The `Shutdown` method of the simple `SpanProcessor` in the `github.com/humans-group/opentelemetry-go/sdk/trace` package now honors the context deadline or cancellation. (#1616, #1856)
 - BatchSpanProcessor now drops span batches that failed to be exported. (#1860)
 - Use `http://localhost:14268/api/traces` as default Jaeger collector endpoint instead of `http://localhost:14250`. (#1898)
 - Allow trailing and leading whitespace in the parsing of a `tracestate` header. (#1931)
@@ -1187,7 +1187,7 @@ with major version 0.
   These environment variables can be used to override Jaeger agent hostname and port (#1752)
 - Option `ExportTimeout` was added to batch span processor. (#1755)
 - `trace.TraceFlags` is now a defined type over `byte` and `WithSampled(bool) TraceFlags` and `IsSampled() bool` methods have been added to it. (#1770)
-- The `Event` and `Link` struct types from the `github.com/humans-group/otel` package now include a `DroppedAttributeCount` field to record the number of attributes that were not recorded due to configured limits being reached. (#1771)
+- The `Event` and `Link` struct types from the `github.com/humans-group/opentelemetry-go` package now include a `DroppedAttributeCount` field to record the number of attributes that were not recorded due to configured limits being reached. (#1771)
 - The Jaeger exporter now reports dropped attributes for a Span event in the exported log. (#1771)
 - Adds test to check BatchSpanProcessor ignores `OnEnd` and `ForceFlush` post `Shutdown`. (#1772)
 - Extract resource attributes from the `OTEL_RESOURCE_ATTRIBUTES` environment variable and merge them with the `resource.Default` resource as well as resources provided to the `TracerProvider` and metric `Controller`. (#1785)
@@ -1223,7 +1223,7 @@ with major version 0.
 
 ### Fixed
 
-- The `Span.IsRecording` implementation from `github.com/humans-group/otel/sdk/trace` always returns false when not being sampled. (#1750)
+- The `Span.IsRecording` implementation from `github.com/humans-group/opentelemetry-go/sdk/trace` always returns false when not being sampled. (#1750)
 - The Jaeger exporter now correctly sets tags for the Span status code and message.
   This means it uses the correct tag keys (`"otel.status_code"`, `"otel.status_description"`) and does not set the status message as a tag unless it is set on the span. (#1761)
 - The Jaeger exporter now correctly records Span event's names using the `"event"` key for a tag.
@@ -1242,20 +1242,20 @@ with major version 0.
 - Migrate from using `github.com/gogo/protobuf` to `google.golang.org/protobuf` to match `go.opentelemetry.io/proto/otlp`. (#1713)
 - The storage of a local or remote Span in a `context.Context` using its SpanContext is unified to store just the current Span.
   The Span's SpanContext can now self-identify as being remote or not.
-  This means that `"github.com/humans-group/otel/trace".ContextWithRemoteSpanContext` will now overwrite any existing current Span, not just existing remote Spans, and make it the current Span in a `context.Context`. (#1731)
+  This means that `"github.com/humans-group/opentelemetry-go/trace".ContextWithRemoteSpanContext` will now overwrite any existing current Span, not just existing remote Spans, and make it the current Span in a `context.Context`. (#1731)
 - Improve OTLP/gRPC exporter connection errors. (#1737)
-- Information about a parent span context in a `"github.com/humans-group/otel/export/trace".SpanSnapshot` is unified in a new `Parent` field.
+- Information about a parent span context in a `"github.com/humans-group/opentelemetry-go/export/trace".SpanSnapshot` is unified in a new `Parent` field.
   The existing `ParentSpanID` and `HasRemoteParent` fields are removed in favor of this. (#1748)
-- The `ParentContext` field of the `"github.com/humans-group/otel/sdk/trace".SamplingParameters` is updated to hold a `context.Context` containing the parent span.
+- The `ParentContext` field of the `"github.com/humans-group/opentelemetry-go/sdk/trace".SamplingParameters` is updated to hold a `context.Context` containing the parent span.
   This changes it to make `SamplingParameters` conform with the OpenTelemetry specification. (#1749)
 - Updated Jaeger Environment Variables: `JAEGER_ENDPOINT`, `JAEGER_USER`, `JAEGER_PASSWORD`
   to `OTEL_EXPORTER_JAEGER_ENDPOINT`, `OTEL_EXPORTER_JAEGER_USER`, `OTEL_EXPORTER_JAEGER_PASSWORD` in compliance with OTel specification. (#1752)
 - Modify `BatchSpanProcessor.ForceFlush` to abort after timeout/cancellation. (#1757)
-- The `DroppedAttributeCount` field of the `Span` in the `github.com/humans-group/otel` package now only represents the number of attributes dropped for the span itself.
+- The `DroppedAttributeCount` field of the `Span` in the `github.com/humans-group/opentelemetry-go` package now only represents the number of attributes dropped for the span itself.
   It no longer is a conglomerate of itself, events, and link attributes that have been dropped. (#1771)
 - Make `ExportSpans` in Jaeger Exporter honor context deadline. (#1773)
 - Modify Zipkin Exporter default service name, use default resource's serviceName instead of empty. (#1777)
-- The `github.com/humans-group/otel/sdk/export/trace` package is merged into the `github.com/humans-group/otel/sdk/trace` package. (#1778)
+- The `github.com/humans-group/opentelemetry-go/sdk/export/trace` package is merged into the `github.com/humans-group/opentelemetry-go/sdk/trace` package. (#1778)
 - The prometheus.InstallNewPipeline example is moved from comment to example test (#1796)
 - The convenience functions for the stdout exporter have been updated to return the `TracerProvider` implementation and enable the shutdown of the exporter. (#1800)
 - Replace the flush function returned from the Jaeger exporter's convenience creation functions (`InstallNewPipeline` and `NewExportPipeline`) with the `TracerProvider` implementation they create.
@@ -1270,15 +1270,15 @@ with major version 0.
 
 - Removed Jaeger Environment variables: `JAEGER_SERVICE_NAME`, `JAEGER_DISABLED`, `JAEGER_TAGS`
   These environment variables will no longer be used to override values of the Jaeger exporter (#1752)
-- No longer set the links for a `Span` in `github.com/humans-group/otel/sdk/trace` that is configured to be a new root.
+- No longer set the links for a `Span` in `github.com/humans-group/opentelemetry-go/sdk/trace` that is configured to be a new root.
   This is unspecified behavior that the OpenTelemetry community plans to standardize in the future.
   To prevent backwards incompatible changes when it is specified, these links are removed. (#1726)
 - Setting error status while recording error with Span from oteltest package. (#1729)
 - The concept of a remote and local Span stored in a context is unified to just the current Span.
-  Because of this `"github.com/humans-group/otel/trace".RemoteSpanContextFromContext` is removed as it is no longer needed.
-  Instead, `"github.com/humans-group/otel/trace".SpanContextFromContex` can be used to return the current Span.
+  Because of this `"github.com/humans-group/opentelemetry-go/trace".RemoteSpanContextFromContext` is removed as it is no longer needed.
+  Instead, `"github.com/humans-group/opentelemetry-go/trace".SpanContextFromContex` can be used to return the current Span.
   If needed, that Span's `SpanContext.IsRemote()` can then be used to determine if it is remote or not. (#1731)
-- The `HasRemoteParent` field of the `"github.com/humans-group/otel/sdk/trace".SamplingParameters` is removed.
+- The `HasRemoteParent` field of the `"github.com/humans-group/opentelemetry-go/sdk/trace".SamplingParameters` is removed.
   This field is redundant to the information returned from the `Remote` method of the `SpanContext` held in the `ParentContext` field. (#1749)
 - The `trace.FlagsDebug` and `trace.FlagsDeferred` constants have been removed and will be localized to the B3 propagator. (#1770)
 - Remove `Process` configuration, `WithProcessFromEnv` and `ProcessFromEnv`, and type from the Jaeger exporter package.
@@ -1304,26 +1304,26 @@ with major version 0.
 ### Added
 
 - Added `Marshaler` config option to `otlphttp` to enable otlp over json or protobufs. (#1586)
-- A `ForceFlush` method to the `"github.com/humans-group/otel/sdk/trace".TracerProvider` to flush all registered `SpanProcessor`s. (#1608)
+- A `ForceFlush` method to the `"github.com/humans-group/opentelemetry-go/sdk/trace".TracerProvider` to flush all registered `SpanProcessor`s. (#1608)
 - Added `WithSampler` and `WithSpanLimits` to tracer provider. (#1633, #1702)
-- `"github.com/humans-group/otel/trace".SpanContext` now has a `remote` property, and `IsRemote()` predicate, that is true when the `SpanContext` has been extracted from remote context data. (#1701)
-- A `Valid` method to the `"github.com/humans-group/otel/attribute".KeyValue` type. (#1703)
+- `"github.com/humans-group/opentelemetry-go/trace".SpanContext` now has a `remote` property, and `IsRemote()` predicate, that is true when the `SpanContext` has been extracted from remote context data. (#1701)
+- A `Valid` method to the `"github.com/humans-group/opentelemetry-go/attribute".KeyValue` type. (#1703)
 
 ### Changed
 
 - `trace.SpanContext` is now immutable and has no exported fields. (#1573)
   - `trace.NewSpanContext()` can be used in conjunction with the `trace.SpanContextConfig` struct to initialize a new `SpanContext` where all values are known.
-- Update the `ForceFlush` method signature to the `"github.com/humans-group/otel/sdk/trace".SpanProcessor` to accept a `context.Context` and return an error. (#1608)
-- Update the `Shutdown` method to the `"github.com/humans-group/otel/sdk/trace".TracerProvider` return an error on shutdown failure. (#1608)
+- Update the `ForceFlush` method signature to the `"github.com/humans-group/opentelemetry-go/sdk/trace".SpanProcessor` to accept a `context.Context` and return an error. (#1608)
+- Update the `Shutdown` method to the `"github.com/humans-group/opentelemetry-go/sdk/trace".TracerProvider` return an error on shutdown failure. (#1608)
 - The SimpleSpanProcessor will now shut down the enclosed `SpanExporter` and gracefully ignore subsequent calls to `OnEnd` after `Shutdown` is called. (#1612)
 - `"go.opentelemetry.io/sdk/metric/controller.basic".WithPusher` is replaced with `WithExporter` to provide consistent naming across project. (#1656)
 - Added non-empty string check for trace `Attribute` keys. (#1659)
 - Add `description` to SpanStatus only when `StatusCode` is set to error. (#1662)
 - Jaeger exporter falls back to `resource.Default`'s `service.name` if the exported Span does not have one. (#1673)
 - Jaeger exporter populates Jaeger's Span Process from Resource. (#1673)
-- Renamed the `LabelSet` method of `"github.com/humans-group/otel/sdk/resource".Resource` to `Set`. (#1692)
-- Changed `WithSDK` to `WithSDKOptions` to accept variadic arguments of `TracerProviderOption` type in `github.com/humans-group/otel/exporters/trace/jaeger` package. (#1693)
-- Changed `WithSDK` to `WithSDKOptions` to accept variadic arguments of `TracerProviderOption` type in `github.com/humans-group/otel/exporters/trace/zipkin` package. (#1693)
+- Renamed the `LabelSet` method of `"github.com/humans-group/opentelemetry-go/sdk/resource".Resource` to `Set`. (#1692)
+- Changed `WithSDK` to `WithSDKOptions` to accept variadic arguments of `TracerProviderOption` type in `github.com/humans-group/opentelemetry-go/exporters/trace/jaeger` package. (#1693)
+- Changed `WithSDK` to `WithSDKOptions` to accept variadic arguments of `TracerProviderOption` type in `github.com/humans-group/opentelemetry-go/exporters/trace/zipkin` package. (#1693)
 
 ### Removed
 
@@ -1334,7 +1334,7 @@ with major version 0.
 - Removed `WithRecord()` from `trace.SpanOption` when creating a span. (#1660)
 - Removed setting status to `Error` while recording an error as a span event in `RecordError`. (#1663)
 - Removed `jaeger.WithProcess` configuration option. (#1673)
-- Removed `ApplyConfig` method from `"github.com/humans-group/otel/sdk/trace".TracerProvider` and the now unneeded `Config` struct. (#1693)
+- Removed `ApplyConfig` method from `"github.com/humans-group/opentelemetry-go/sdk/trace".TracerProvider` and the now unneeded `Config` struct. (#1693)
 
 ### Fixed
 
@@ -1352,7 +1352,7 @@ with major version 0.
 - Added `resource.Default()` for use with meter and tracer providers. (#1507)
 - `AttributePerEventCountLimit` and `AttributePerLinkCountLimit` for `SpanLimits`. (#1535)
 - Added `Keys()` method to `propagation.TextMapCarrier` and `propagation.HeaderCarrier` to adapt `http.Header` to this interface. (#1544)
-- Added `code` attributes to `github.com/humans-group/otel/semconv` package. (#1558)
+- Added `code` attributes to `github.com/humans-group/opentelemetry-go/semconv` package. (#1558)
 - Compatibility testing suite in the CI system for the following systems. (#1567)
    | OS      | Go Version | Architecture |
    | ------- | ---------- | ------------ |
@@ -1406,7 +1406,7 @@ with major version 0.
 
 - The sequential timing check of timestamps in the stdout exporter are now setup explicitly to be sequential (#1571). (#1572)
 - Windows build of Jaeger tests now compiles with OS specific functions (#1576). (#1577)
-- The sequential timing check of timestamps of github.com/humans-group/otel/sdk/metric/aggregator/lastvalue are now setup explicitly to be sequential (#1578). (#1579)
+- The sequential timing check of timestamps of github.com/humans-group/opentelemetry-go/sdk/metric/aggregator/lastvalue are now setup explicitly to be sequential (#1578). (#1579)
 - Validate tracestate header keys with vendors according to the W3C TraceContext specification (#1475). (#1581)
 - The OTLP exporter includes related labels for translations of a GaugeArray (#1563). (#1570)
 
@@ -1423,7 +1423,7 @@ with major version 0.
 ## Fixed
 
 - Fixed otlpgrpc reconnection issue.
-- The example code in the README.md of `github.com/humans-group/otel/exporters/otlp` is moved to a compiled example test and used the new `WithAddress` instead of `WithEndpoint`. (#1513)
+- The example code in the README.md of `github.com/humans-group/opentelemetry-go/exporters/otlp` is moved to a compiled example test and used the new `WithAddress` instead of `WithEndpoint`. (#1513)
 - The otel-collector example now uses the default OTLP receiver port of the collector.
 
 ## [0.16.0] - 2021-01-13
@@ -1479,12 +1479,12 @@ with major version 0.
 
 ### Added
 
-- The `WithIDGenerator` `TracerProviderOption` is added to the `github.com/humans-group/otel/trace` package to configure an `IDGenerator` for the `TracerProvider`. (#1363)
+- The `WithIDGenerator` `TracerProviderOption` is added to the `github.com/humans-group/opentelemetry-go/trace` package to configure an `IDGenerator` for the `TracerProvider`. (#1363)
 
 ### Changed
 
 - The Zipkin exporter now uses the Span status code to determine. (#1328)
-- `NewExporter` and `Start` functions in `github.com/humans-group/otel/exporters/otlp` now receive `context.Context` as a first parameter. (#1357)
+- `NewExporter` and `Start` functions in `github.com/humans-group/opentelemetry-go/exporters/otlp` now receive `context.Context` as a first parameter. (#1357)
 - Move the OpenCensus example into `example` directory. (#1359)
 - Moved the SDK's `internal.IDGenerator` interface in to the `sdk/trace` package to enable support for externally-defined ID generators. (#1363)
 - Bump `github.com/google/go-cmp` from 0.5.3 to 0.5.4 (#1374)
@@ -1498,38 +1498,38 @@ with major version 0.
 
 ### Added
 
-- An `EventOption` and the related `NewEventConfig` function are added to the `github.com/humans-group/otel` package to configure Span events. (#1254)
-- A `TextMapPropagator` and associated `TextMapCarrier` are added to the `github.com/humans-group/otel/oteltest` package to test `TextMap` type propagators and their use. (#1259)
+- An `EventOption` and the related `NewEventConfig` function are added to the `github.com/humans-group/opentelemetry-go` package to configure Span events. (#1254)
+- A `TextMapPropagator` and associated `TextMapCarrier` are added to the `github.com/humans-group/opentelemetry-go/oteltest` package to test `TextMap` type propagators and their use. (#1259)
 - `SpanContextFromContext` returns `SpanContext` from context. (#1255)
 - `TraceState` has been added to `SpanContext`. (#1340)
-- `DeploymentEnvironmentKey` added to `github.com/humans-group/otel/semconv` package. (#1323)
+- `DeploymentEnvironmentKey` added to `github.com/humans-group/opentelemetry-go/semconv` package. (#1323)
 - Add an OpenCensus to OpenTelemetry tracing bridge. (#1305)
 - Add a parent context argument to `SpanProcessor.OnStart` to follow the specification. (#1333)
 - Add missing tests for `sdk/trace/attributes_map.go`. (#1337)
 
 ### Changed
 
-- Move the `github.com/humans-group/otel/api/trace` package into `github.com/humans-group/otel/trace` with the following changes. (#1229) (#1307)
+- Move the `github.com/humans-group/opentelemetry-go/api/trace` package into `github.com/humans-group/opentelemetry-go/trace` with the following changes. (#1229) (#1307)
   - `ID` has been renamed to `TraceID`.
   - `IDFromHex` has been renamed to `TraceIDFromHex`.
   - `EmptySpanContext` is removed.
-- Move the `github.com/humans-group/otel/api/trace/tracetest` package into `github.com/humans-group/otel/oteltest`. (#1229)
+- Move the `github.com/humans-group/opentelemetry-go/api/trace/tracetest` package into `github.com/humans-group/opentelemetry-go/oteltest`. (#1229)
 - OTLP Exporter updates:
   - supports OTLP v0.6.0 (#1230, #1354)
   - supports configurable aggregation temporality (default: Cumulative, optional: Stateless). (#1296)
 - The Sampler is now called on local child spans. (#1233)
-- The `Kind` type from the `github.com/humans-group/otel/api/metric` package was renamed to `InstrumentKind` to more specifically describe what it is and avoid semantic ambiguity. (#1240)
-- The `MetricKind` method of the `Descriptor` type in the `github.com/humans-group/otel/api/metric` package was renamed to `Descriptor.InstrumentKind`.
+- The `Kind` type from the `github.com/humans-group/opentelemetry-go/api/metric` package was renamed to `InstrumentKind` to more specifically describe what it is and avoid semantic ambiguity. (#1240)
+- The `MetricKind` method of the `Descriptor` type in the `github.com/humans-group/opentelemetry-go/api/metric` package was renamed to `Descriptor.InstrumentKind`.
    This matches the returned type and fixes misuse of the term metric. (#1240)
-- Move test harness from the `github.com/humans-group/otel/api/apitest` package into `github.com/humans-group/otel/oteltest`. (#1241)
-- Move the `github.com/humans-group/otel/api/metric/metrictest` package into `github.com/humans-group/oteltest` as part of #964. (#1252)
-- Move the `github.com/humans-group/otel/api/metric` package into `github.com/humans-group/otel/metric` as part of #1303. (#1321)
-- Move the `github.com/humans-group/otel/api/metric/registry` package into `github.com/humans-group/otel/metric/registry` as a part of #1303. (#1316)
-- Move the `Number` type (together with related functions) from `github.com/humans-group/otel/api/metric` package into `github.com/humans-group/otel/metric/number` as a part of #1303. (#1316)
-- The function signature of the Span `AddEvent` method in `github.com/humans-group/otel` is updated to no longer take an unused context and instead take a required name and a variable number of `EventOption`s. (#1254)
-- The function signature of the Span `RecordError` method in `github.com/humans-group/otel` is updated to no longer take an unused context and instead take a required error value and a variable number of `EventOption`s. (#1254)
-- Move the `github.com/humans-group/otel/api/global` package to `github.com/humans-group/otel`. (#1262) (#1330)
-- Move the `Version` function from `github.com/humans-group/otel/sdk` to `github.com/humans-group/otel`. (#1330)
+- Move test harness from the `github.com/humans-group/opentelemetry-go/api/apitest` package into `github.com/humans-group/opentelemetry-go/oteltest`. (#1241)
+- Move the `github.com/humans-group/opentelemetry-go/api/metric/metrictest` package into `github.com/humans-group/opentelemetry-gotest` as part of #964. (#1252)
+- Move the `github.com/humans-group/opentelemetry-go/api/metric` package into `github.com/humans-group/opentelemetry-go/metric` as part of #1303. (#1321)
+- Move the `github.com/humans-group/opentelemetry-go/api/metric/registry` package into `github.com/humans-group/opentelemetry-go/metric/registry` as a part of #1303. (#1316)
+- Move the `Number` type (together with related functions) from `github.com/humans-group/opentelemetry-go/api/metric` package into `github.com/humans-group/opentelemetry-go/metric/number` as a part of #1303. (#1316)
+- The function signature of the Span `AddEvent` method in `github.com/humans-group/opentelemetry-go` is updated to no longer take an unused context and instead take a required name and a variable number of `EventOption`s. (#1254)
+- The function signature of the Span `RecordError` method in `github.com/humans-group/opentelemetry-go` is updated to no longer take an unused context and instead take a required error value and a variable number of `EventOption`s. (#1254)
+- Move the `github.com/humans-group/opentelemetry-go/api/global` package to `github.com/humans-group/opentelemetry-go`. (#1262) (#1330)
+- Move the `Version` function from `github.com/humans-group/opentelemetry-go/sdk` to `github.com/humans-group/opentelemetry-go`. (#1330)
 - Rename correlation context header from `"otcorrelations"` to `"baggage"` to match the OpenTelemetry specification. (#1267)
 - Fix `Code.UnmarshalJSON` to work with valid JSON only. (#1276)
 - The `resource.New()` method changes signature to support builtin attributes and functional options, including `telemetry.sdk.*` and
@@ -1541,18 +1541,18 @@ with major version 0.
 
 ### Removed
 
-- The `ErrInvalidHexID`, `ErrInvalidTraceIDLength`, `ErrInvalidSpanIDLength`, `ErrInvalidSpanIDLength`, or `ErrNilSpanID` from the `github.com/humans-group/otel` package are unexported now. (#1243)
-- The `AddEventWithTimestamp` method on the `Span` interface in `github.com/humans-group/otel` is removed due to its redundancy.
+- The `ErrInvalidHexID`, `ErrInvalidTraceIDLength`, `ErrInvalidSpanIDLength`, `ErrInvalidSpanIDLength`, or `ErrNilSpanID` from the `github.com/humans-group/opentelemetry-go` package are unexported now. (#1243)
+- The `AddEventWithTimestamp` method on the `Span` interface in `github.com/humans-group/opentelemetry-go` is removed due to its redundancy.
    It is replaced by using the `AddEvent` method with a `WithTimestamp` option. (#1254)
-- The `MockSpan` and `MockTracer` types are removed from `github.com/humans-group/otel/oteltest`.
+- The `MockSpan` and `MockTracer` types are removed from `github.com/humans-group/opentelemetry-go/oteltest`.
    `Tracer` and `Span` from the same module should be used in their place instead. (#1306)
-- `WorkerCount` option is removed from `github.com/humans-group/otel/exporters/otlp`. (#1350)
+- `WorkerCount` option is removed from `github.com/humans-group/opentelemetry-go/exporters/otlp`. (#1350)
 - Remove the following labels types: INT32, UINT32, UINT64 and FLOAT32. (#1314)
 
 ### Fixed
 
-- Rename `MergeItererator` to `MergeIterator` in the `github.com/humans-group/otel/label` package. (#1244)
-- The `github.com/humans-group/otel/api/global` packages global TextMapPropagator now delegates functionality to a globally set delegate for all previously returned propagators. (#1258)
+- Rename `MergeItererator` to `MergeIterator` in the `github.com/humans-group/opentelemetry-go/label` package. (#1244)
+- The `github.com/humans-group/opentelemetry-go/api/global` packages global TextMapPropagator now delegates functionality to a globally set delegate for all previously returned propagators. (#1258)
 - Fix condition in `label.Any`. (#1299)
 - Fix global `TracerProvider` to pass options to its configured provider. (#1329)
 - Fix missing handler for `ExactKind` aggregator in OTLP metrics transformer (#1309)
@@ -1562,32 +1562,32 @@ with major version 0.
 ### Added
 
 - OTLP Metric exporter supports Histogram aggregation. (#1209)
-- The `Code` struct from the `github.com/humans-group/otel/codes` package now supports JSON marshaling and unmarshaling as well as implements the `Stringer` interface. (#1214)
+- The `Code` struct from the `github.com/humans-group/opentelemetry-go/codes` package now supports JSON marshaling and unmarshaling as well as implements the `Stringer` interface. (#1214)
 - A Baggage API to implement the OpenTelemetry specification. (#1217)
 - Add Shutdown method to sdk/trace/provider, shutdown processors in the order they were registered. (#1227)
 
 ### Changed
 
 - Set default propagator to no-op propagator. (#1184)
-- The `HTTPSupplier`, `HTTPExtractor`, `HTTPInjector`, and `HTTPPropagator` from the `github.com/humans-group/otel/api/propagation` package were replaced with unified `TextMapCarrier` and `TextMapPropagator` in the `github.com/humans-group/otel/propagation` package. (#1212) (#1325)
-- The `New` function from the `github.com/humans-group/otel/api/propagation` package was replaced with `NewCompositeTextMapPropagator` in the `github.com/humans-group/otel` package. (#1212)
-- The status codes of the `github.com/humans-group/otel/codes` package have been updated to match the latest OpenTelemetry specification.
+- The `HTTPSupplier`, `HTTPExtractor`, `HTTPInjector`, and `HTTPPropagator` from the `github.com/humans-group/opentelemetry-go/api/propagation` package were replaced with unified `TextMapCarrier` and `TextMapPropagator` in the `github.com/humans-group/opentelemetry-go/propagation` package. (#1212) (#1325)
+- The `New` function from the `github.com/humans-group/opentelemetry-go/api/propagation` package was replaced with `NewCompositeTextMapPropagator` in the `github.com/humans-group/opentelemetry-go` package. (#1212)
+- The status codes of the `github.com/humans-group/opentelemetry-go/codes` package have been updated to match the latest OpenTelemetry specification.
    They now are `Unset`, `Error`, and `Ok`.
    They no longer track the gRPC codes. (#1214)
-- The `StatusCode` field of the `SpanData` struct in the `github.com/humans-group/otel/sdk/export/trace` package now uses the codes package from this package instead of the gRPC project. (#1214)
-- Move the `github.com/humans-group/otel/api/baggage` package into `github.com/humans-group/otel/baggage`. (#1217) (#1325)
+- The `StatusCode` field of the `SpanData` struct in the `github.com/humans-group/opentelemetry-go/sdk/export/trace` package now uses the codes package from this package instead of the gRPC project. (#1214)
+- Move the `github.com/humans-group/opentelemetry-go/api/baggage` package into `github.com/humans-group/opentelemetry-go/baggage`. (#1217) (#1325)
 - A `Shutdown` method of `SpanProcessor` and all its implementations receives a context and returns an error. (#1264)
 
 ### Fixed
 
-- Copies of data from arrays and slices passed to `github.com/humans-group/otel/label.ArrayValue()` are now used in the returned `Value` instead of using the mutable data itself. (#1226)
+- Copies of data from arrays and slices passed to `github.com/humans-group/opentelemetry-go/label.ArrayValue()` are now used in the returned `Value` instead of using the mutable data itself. (#1226)
 
 ### Removed
 
-- The `ExtractHTTP` and `InjectHTTP` functions from the `github.com/humans-group/otel/api/propagation` package were removed. (#1212)
-- The `Propagators` interface from the `github.com/humans-group/otel/api/propagation` package was removed to conform to the OpenTelemetry specification.
+- The `ExtractHTTP` and `InjectHTTP` functions from the `github.com/humans-group/opentelemetry-go/api/propagation` package were removed. (#1212)
+- The `Propagators` interface from the `github.com/humans-group/opentelemetry-go/api/propagation` package was removed to conform to the OpenTelemetry specification.
    The explicit `TextMapPropagator` type can be used in its place as this is the `Propagator` type the specification defines. (#1212)
-- The `SetAttribute` method of the `Span` from the `github.com/humans-group/otel/api/trace` package was removed given its redundancy with the `SetAttributes` method. (#1216)
+- The `SetAttribute` method of the `Span` from the `github.com/humans-group/opentelemetry-go/api/trace` package was removed given its redundancy with the `SetAttributes` method. (#1216)
 - The internal implementation of Baggage storage is removed in favor of using the new Baggage API functionality. (#1217)
 - Remove duplicate hostname key `HostHostNameKey` in Resource semantic conventions. (#1219)
 - Nested array/slice support has been removed. (#1226)
@@ -1596,8 +1596,8 @@ with major version 0.
 
 ### Added
 
-- A `SpanConfigure` function in `github.com/humans-group/otel/api/trace` to create a new `SpanConfig` from `SpanOption`s. (#1108)
-- In the `github.com/humans-group/otel/api/trace` package, `NewTracerConfig` was added to construct new `TracerConfig`s.
+- A `SpanConfigure` function in `github.com/humans-group/opentelemetry-go/api/trace` to create a new `SpanConfig` from `SpanOption`s. (#1108)
+- In the `github.com/humans-group/opentelemetry-go/api/trace` package, `NewTracerConfig` was added to construct new `TracerConfig`s.
    This addition was made to conform with our project option conventions. (#1155)
 - Instrumentation library information was added to the Zipkin exporter. (#1119)
 - The `SpanProcessor` interface now has a `ForceFlush()` method. (#1166)
@@ -1608,20 +1608,20 @@ with major version 0.
 - Add reconnecting udp connection type to Jaeger exporter.
    This change adds a new optional implementation of the udp conn interface used to detect changes to an agent's host dns record.
    It then adopts the new destination address to ensure the exporter doesn't get stuck. This change was ported from jaegertracing/jaeger-client-go#520. (#1063)
-- Replace `StartOption` and `EndOption` in `github.com/humans-group/otel/api/trace` with `SpanOption`.
+- Replace `StartOption` and `EndOption` in `github.com/humans-group/opentelemetry-go/api/trace` with `SpanOption`.
    This change is matched by replacing the `StartConfig` and `EndConfig` with a unified `SpanConfig`. (#1108)
-- Replace the `LinkedTo` span option in `github.com/humans-group/otel/api/trace` with `WithLinks`.
+- Replace the `LinkedTo` span option in `github.com/humans-group/opentelemetry-go/api/trace` with `WithLinks`.
    This is be more consistent with our other option patterns, i.e. passing the item to be configured directly instead of its component parts, and provides a cleaner function signature. (#1108)
-- The `github.com/humans-group/otel/api/trace` `TracerOption` was changed to an interface to conform to project option conventions. (#1109)
-- Move the `B3` and `TraceContext` from within the `github.com/humans-group/otel/api/trace` package to their own `github.com/humans-group/otel/propagators` package.
-    This removal of the propagators is reflective of the OpenTelemetry specification for these propagators as well as cleans up the `github.com/humans-group/otel/api/trace` API. (#1118)
+- The `github.com/humans-group/opentelemetry-go/api/trace` `TracerOption` was changed to an interface to conform to project option conventions. (#1109)
+- Move the `B3` and `TraceContext` from within the `github.com/humans-group/opentelemetry-go/api/trace` package to their own `github.com/humans-group/opentelemetry-go/propagators` package.
+    This removal of the propagators is reflective of the OpenTelemetry specification for these propagators as well as cleans up the `github.com/humans-group/opentelemetry-go/api/trace` API. (#1118)
 - Rename Jaeger tags used for instrumentation library information to reflect changes in OpenTelemetry specification. (#1119)
 - Rename `ProbabilitySampler` to `TraceIDRatioBased` and change semantics to ignore parent span sampling status. (#1115)
 - Move `tools` package under `internal`. (#1141)
-- Move `github.com/humans-group/otel/api/correlation` package to `github.com/humans-group/otel/api/baggage`. (#1142)
+- Move `github.com/humans-group/opentelemetry-go/api/correlation` package to `github.com/humans-group/opentelemetry-go/api/baggage`. (#1142)
    The `correlation.CorrelationContext` propagator has been renamed `baggage.Baggage`.  Other exported functions and types are unchanged.
 - Rename `ParentOrElse` sampler to `ParentBased` and allow setting samplers depending on parent span. (#1153)
-- In the `github.com/humans-group/otel/api/trace` package, `SpanConfigure` was renamed to `NewSpanConfig`. (#1155)
+- In the `github.com/humans-group/opentelemetry-go/api/trace` package, `SpanConfigure` was renamed to `NewSpanConfig`. (#1155)
 - Change `dependabot.yml` to add a `Skip Changelog` label to dependabot-sourced PRs. (#1161)
 - The [configuration style guide](https://github.com/open-telemetry/opentelemetry-go/blob/master/CONTRIBUTING.md#config) has been updated to
    recommend the use of `newConfig()` instead of `configure()`. (#1163)
@@ -1629,28 +1629,28 @@ with major version 0.
 - Ensure exported interface types include parameter names and update the
    Style Guide to reflect this styling rule. (#1172)
 - Don't consider unset environment variable for resource detection to be an error. (#1170)
-- Rename `github.com/humans-group/otel/api/metric.ConfigureInstrument` to `NewInstrumentConfig` and
-  `github.com/humans-group/otel/api/metric.ConfigureMeter` to `NewMeterConfig`.
+- Rename `github.com/humans-group/opentelemetry-go/api/metric.ConfigureInstrument` to `NewInstrumentConfig` and
+  `github.com/humans-group/opentelemetry-go/api/metric.ConfigureMeter` to `NewMeterConfig`.
 - ValueObserver instruments use LastValue aggregator by default. (#1165)
 - OTLP Metric exporter supports LastValue aggregation. (#1165)
-- Move the `github.com/humans-group/otel/api/unit` package to `github.com/humans-group/otel/unit`. (#1185)
-- Rename `Provider` to `MeterProvider` in the `github.com/humans-group/otel/api/metric` package. (#1190)
-- Rename `NoopProvider` to `NoopMeterProvider` in the `github.com/humans-group/otel/api/metric` package. (#1190)
-- Rename `NewProvider` to `NewMeterProvider` in the `github.com/humans-group/otel/api/metric/metrictest` package. (#1190)
-- Rename `Provider` to `MeterProvider` in the `github.com/humans-group/otel/api/metric/registry` package. (#1190)
-- Rename `NewProvider` to `NewMeterProvider` in the `github.com/humans-group/otel/api/metri/registryc` package. (#1190)
-- Rename `Provider` to `TracerProvider` in the `github.com/humans-group/otel/api/trace` package. (#1190)
-- Rename `NoopProvider` to `NoopTracerProvider` in the `github.com/humans-group/otel/api/trace` package. (#1190)
-- Rename `Provider` to `TracerProvider` in the `github.com/humans-group/otel/api/trace/tracetest` package. (#1190)
-- Rename `NewProvider` to `NewTracerProvider` in the `github.com/humans-group/otel/api/trace/tracetest` package. (#1190)
-- Rename `WrapperProvider` to `WrapperTracerProvider` in the `github.com/humans-group/otel/bridge/opentracing` package. (#1190)
-- Rename `NewWrapperProvider` to `NewWrapperTracerProvider` in the `github.com/humans-group/otel/bridge/opentracing` package. (#1190)
-- Rename `Provider` method of the pull controller to `MeterProvider` in the `github.com/humans-group/otel/sdk/metric/controller/pull` package. (#1190)
-- Rename `Provider` method of the push controller to `MeterProvider` in the `github.com/humans-group/otel/sdk/metric/controller/push` package. (#1190)
-- Rename `ProviderOptions` to `TracerProviderConfig` in the `github.com/humans-group/otel/sdk/trace` package. (#1190)
-- Rename `ProviderOption` to `TracerProviderOption` in the `github.com/humans-group/otel/sdk/trace` package. (#1190)
-- Rename `Provider` to `TracerProvider` in the `github.com/humans-group/otel/sdk/trace` package. (#1190)
-- Rename `NewProvider` to `NewTracerProvider` in the `github.com/humans-group/otel/sdk/trace` package. (#1190)
+- Move the `github.com/humans-group/opentelemetry-go/api/unit` package to `github.com/humans-group/opentelemetry-go/unit`. (#1185)
+- Rename `Provider` to `MeterProvider` in the `github.com/humans-group/opentelemetry-go/api/metric` package. (#1190)
+- Rename `NoopProvider` to `NoopMeterProvider` in the `github.com/humans-group/opentelemetry-go/api/metric` package. (#1190)
+- Rename `NewProvider` to `NewMeterProvider` in the `github.com/humans-group/opentelemetry-go/api/metric/metrictest` package. (#1190)
+- Rename `Provider` to `MeterProvider` in the `github.com/humans-group/opentelemetry-go/api/metric/registry` package. (#1190)
+- Rename `NewProvider` to `NewMeterProvider` in the `github.com/humans-group/opentelemetry-go/api/metri/registryc` package. (#1190)
+- Rename `Provider` to `TracerProvider` in the `github.com/humans-group/opentelemetry-go/api/trace` package. (#1190)
+- Rename `NoopProvider` to `NoopTracerProvider` in the `github.com/humans-group/opentelemetry-go/api/trace` package. (#1190)
+- Rename `Provider` to `TracerProvider` in the `github.com/humans-group/opentelemetry-go/api/trace/tracetest` package. (#1190)
+- Rename `NewProvider` to `NewTracerProvider` in the `github.com/humans-group/opentelemetry-go/api/trace/tracetest` package. (#1190)
+- Rename `WrapperProvider` to `WrapperTracerProvider` in the `github.com/humans-group/opentelemetry-go/bridge/opentracing` package. (#1190)
+- Rename `NewWrapperProvider` to `NewWrapperTracerProvider` in the `github.com/humans-group/opentelemetry-go/bridge/opentracing` package. (#1190)
+- Rename `Provider` method of the pull controller to `MeterProvider` in the `github.com/humans-group/opentelemetry-go/sdk/metric/controller/pull` package. (#1190)
+- Rename `Provider` method of the push controller to `MeterProvider` in the `github.com/humans-group/opentelemetry-go/sdk/metric/controller/push` package. (#1190)
+- Rename `ProviderOptions` to `TracerProviderConfig` in the `github.com/humans-group/opentelemetry-go/sdk/trace` package. (#1190)
+- Rename `ProviderOption` to `TracerProviderOption` in the `github.com/humans-group/opentelemetry-go/sdk/trace` package. (#1190)
+- Rename `Provider` to `TracerProvider` in the `github.com/humans-group/opentelemetry-go/sdk/trace` package. (#1190)
+- Rename `NewProvider` to `NewTracerProvider` in the `github.com/humans-group/opentelemetry-go/sdk/trace` package. (#1190)
 - Renamed `SamplingDecision` values to comply with OpenTelemetry specification change. (#1192)
 - Renamed Zipkin attribute names from `ot.status_code & ot.status_description` to `otel.status_code & otel.status_description`. (#1201)
 - The default SDK now invokes registered `SpanProcessor`s in the order they were registered with the `TracerProvider`. (#1195)
@@ -1658,9 +1658,9 @@ with major version 0.
 
 ### Removed
 
-- Remove the B3 propagator from `github.com/humans-group/otel/propagators`. It is now located in the
+- Remove the B3 propagator from `github.com/humans-group/opentelemetry-go/propagators`. It is now located in the
    `go.opentelemetry.io/contrib/propagators/` module. (#1191)
-- Remove the semantic convention for HTTP status text, `HTTPStatusTextKey` from package `github.com/humans-group/otel/semconv`. (#1194)
+- Remove the semantic convention for HTTP status text, `HTTPStatusTextKey` from package `github.com/humans-group/opentelemetry-go/semconv`. (#1194)
 
 ### Fixed
 
@@ -1677,7 +1677,7 @@ with major version 0.
 - Support for filtering metric label sets. (#1047)
 - A dimensionality-reducing metric Processor. (#1057)
 - Integration tests for more OTel Collector Attribute types. (#1062)
-- A new `WithSpanProcessor` `ProviderOption` is added to the `github.com/humans-group/otel/sdk/trace` package to create a `Provider` and automatically register the `SpanProcessor`. (#1078)
+- A new `WithSpanProcessor` `ProviderOption` is added to the `github.com/humans-group/opentelemetry-go/sdk/trace` package to create a `Provider` and automatically register the `SpanProcessor`. (#1078)
 
 ### Changed
 
@@ -1686,22 +1686,22 @@ with major version 0.
 - Rename `api/testharness` to `api/apitest`. (#1049)
 - Rename `api/trace/testtrace` to `api/trace/tracetest`. (#1049)
 - Change Metric Processor to merge multiple observations. (#1024)
-- The `github.com/humans-group/otel/bridge/opentracing` bridge package has been made into its own module.
+- The `github.com/humans-group/opentelemetry-go/bridge/opentracing` bridge package has been made into its own module.
    This removes the package dependencies of this bridge from the rest of the OpenTelemetry based project. (#1038)
-- Renamed `github.com/humans-group/otel/api/standard` package to `github.com/humans-group/otel/semconv` to avoid the ambiguous and generic name `standard` and better describe the package as containing OpenTelemetry semantic conventions. (#1016)
+- Renamed `github.com/humans-group/opentelemetry-go/api/standard` package to `github.com/humans-group/opentelemetry-go/semconv` to avoid the ambiguous and generic name `standard` and better describe the package as containing OpenTelemetry semantic conventions. (#1016)
 - The environment variable used for resource detection has been changed from `OTEL_RESOURCE_LABELS` to `OTEL_RESOURCE_ATTRIBUTES` (#1042)
 - Replace `WithSyncer` with `WithBatcher` in examples. (#1044)
-- Replace the `google.golang.org/grpc/codes` dependency in the API with an equivalent `github.com/humans-group/otel/codes` package. (#1046)
-- Merge the `github.com/humans-group/otel/api/label` and `github.com/humans-group/otel/api/kv` into the new `github.com/humans-group/otel/label` package. (#1060)
+- Replace the `google.golang.org/grpc/codes` dependency in the API with an equivalent `github.com/humans-group/opentelemetry-go/codes` package. (#1046)
+- Merge the `github.com/humans-group/opentelemetry-go/api/label` and `github.com/humans-group/opentelemetry-go/api/kv` into the new `github.com/humans-group/opentelemetry-go/label` package. (#1060)
 - Unify Callback Function Naming.
    Rename `*Callback` with `*Func`. (#1061)
 - CI builds validate against last two versions of Go, dropping 1.13 and adding 1.15. (#1064)
-- The `github.com/humans-group/otel/sdk/export/trace` interfaces `SpanSyncer` and `SpanBatcher` have been replaced with a specification compliant `Exporter` interface.
+- The `github.com/humans-group/opentelemetry-go/sdk/export/trace` interfaces `SpanSyncer` and `SpanBatcher` have been replaced with a specification compliant `Exporter` interface.
    This interface still supports the export of `SpanData`, but only as a slice.
    Implementation are also required now to return any error from `ExportSpans` if one occurs as well as implement a `Shutdown` method for exporter clean-up. (#1078)
-- The `github.com/humans-group/otel/sdk/trace` `NewBatchSpanProcessor` function no longer returns an error.
+- The `github.com/humans-group/opentelemetry-go/sdk/trace` `NewBatchSpanProcessor` function no longer returns an error.
    If a `nil` exporter is passed as an argument to this function, instead of it returning an error, it now returns a `BatchSpanProcessor` that handles the export of `SpanData` by not taking any action. (#1078)
-- The `github.com/humans-group/otel/sdk/trace` `NewProvider` function to create a `Provider` no longer returns an error, instead only a `*Provider`.
+- The `github.com/humans-group/opentelemetry-go/sdk/trace` `NewProvider` function to create a `Provider` no longer returns an error, instead only a `*Provider`.
    This change is related to `NewBatchSpanProcessor` not returning an error which was the only error this function would return. (#1078)
 
 ### Removed
@@ -1723,7 +1723,7 @@ with major version 0.
 - The `semconv.HTTPServerMetricAttributesFromHTTPRequest()` function no longer generates the high-cardinality `http.request.content.length` label. (#1031)
 - Correct instrumentation version tag in Jaeger exporter. (#1037)
 - The SDK span will now set an error event if the `End` method is called during a panic (i.e. it was deferred). (#1043)
-- Move internally generated protobuf code from the `github.com/humans-group/otel` to the OTLP exporter to reduce dependency overhead. (#1050)
+- Move internally generated protobuf code from the `github.com/humans-group/opentelemetry-go` to the OTLP exporter to reduce dependency overhead. (#1050)
 - The `otel-collector` example referenced outdated collector processors. (#1006)
 
 ## [0.10.0] - 2020-07-29
@@ -1741,10 +1741,10 @@ This release migrates the default OpenTelemetry SDK into its own Go module, deco
 
 - Replace the `RegisterGlobal` `Option` in the Jaeger exporter with an `InstallNewPipeline` constructor function.
    This matches the other exporter constructor patterns and will register a new exporter after building it with default configuration. (#944)
-- The trace (`github.com/humans-group/otel/exporters/trace/stdout`) and metric (`github.com/humans-group/otel/exporters/metric/stdout`) `stdout` exporters are now merged into a single exporter at `github.com/humans-group/otel/exporters/stdout`.
-   This new exporter was made into its own Go module to follow the pattern of all exporters and decouple it from the `github.com/humans-group/otel` module. (#956, #963)
-- Move the `github.com/humans-group/otel/exporters/test` test package to `github.com/humans-group/otel/sdk/export/metric/metrictest`. (#962)
-- The `github.com/humans-group/otel/api/kv/value` package was merged into the parent `github.com/humans-group/otel/api/kv` package. (#968)
+- The trace (`github.com/humans-group/opentelemetry-go/exporters/trace/stdout`) and metric (`github.com/humans-group/opentelemetry-go/exporters/metric/stdout`) `stdout` exporters are now merged into a single exporter at `github.com/humans-group/opentelemetry-go/exporters/stdout`.
+   This new exporter was made into its own Go module to follow the pattern of all exporters and decouple it from the `github.com/humans-group/opentelemetry-go` module. (#956, #963)
+- Move the `github.com/humans-group/opentelemetry-go/exporters/test` test package to `github.com/humans-group/opentelemetry-go/sdk/export/metric/metrictest`. (#962)
+- The `github.com/humans-group/opentelemetry-go/api/kv/value` package was merged into the parent `github.com/humans-group/opentelemetry-go/api/kv` package. (#968)
   - `value.Bool` was replaced with `kv.BoolValue`.
   - `value.Int64` was replaced with `kv.Int64Value`.
   - `value.Uint64` was replaced with `kv.Uint64Value`.
@@ -1756,15 +1756,15 @@ This release migrates the default OpenTelemetry SDK into its own Go module, deco
   - `value.Int` was replaced with `kv.IntValue`.
   - `value.Uint` was replaced with `kv.UintValue`.
   - `value.Array` was replaced with `kv.ArrayValue`.
-- Rename `Infer` to `Any` in the `github.com/humans-group/otel/api/kv` package. (#972)
+- Rename `Infer` to `Any` in the `github.com/humans-group/opentelemetry-go/api/kv` package. (#972)
 - Change `othttp` to use the `httpsnoop` package to wrap the `ResponseWriter` so that optional interfaces (`http.Hijacker`, `http.Flusher`, etc.) that are implemented by the original `ResponseWriter`are also implemented by the wrapped `ResponseWriter`. (#979)
-- Rename `github.com/humans-group/otel/sdk/metric/aggregator/test` package to `github.com/humans-group/otel/sdk/metric/aggregator/aggregatortest`. (#980)
-- Make the SDK into its own Go module called `github.com/humans-group/otel/sdk`. (#985)
+- Rename `github.com/humans-group/opentelemetry-go/sdk/metric/aggregator/test` package to `github.com/humans-group/opentelemetry-go/sdk/metric/aggregator/aggregatortest`. (#980)
+- Make the SDK into its own Go module called `github.com/humans-group/opentelemetry-go/sdk`. (#985)
 - Changed the default trace `Sampler` from `AlwaysOn` to `ParentOrElse(AlwaysOn)`. (#989)
 
 ### Removed
 
-- The `IndexedAttribute` function from the `github.com/humans-group/otel/api/label` package was removed in favor of `IndexedLabel` which it was synonymous with. (#970)
+- The `IndexedAttribute` function from the `github.com/humans-group/opentelemetry-go/api/label` package was removed in favor of `IndexedLabel` which it was synonymous with. (#970)
 
 ### Fixed
 
@@ -1772,9 +1772,9 @@ This release migrates the default OpenTelemetry SDK into its own Go module, deco
 - Bump github.com/google/go-cmp from 0.5.0 to 0.5.1. (#957)
 - Use `global.Handle` for span export errors in the OTLP exporter. (#946)
 - Correct Go language formatting in the README documentation. (#961)
-- Remove default SDK dependencies from the `github.com/humans-group/otel/api` package. (#977)
-- Remove default SDK dependencies from the `github.com/humans-group/otel/instrumentation` package. (#983)
-- Move documented examples for `github.com/humans-group/otel/instrumentation/grpctrace` interceptors into Go example tests. (#984)
+- Remove default SDK dependencies from the `github.com/humans-group/opentelemetry-go/api` package. (#977)
+- Remove default SDK dependencies from the `github.com/humans-group/opentelemetry-go/instrumentation` package. (#983)
+- Move documented examples for `github.com/humans-group/opentelemetry-go/instrumentation/grpctrace` interceptors into Go example tests. (#984)
 
 ## [0.9.0] - 2020-07-20
 
@@ -1784,7 +1784,7 @@ This release migrates the default OpenTelemetry SDK into its own Go module, deco
 - A Detector to automatically detect resources from an environment variable. (#939)
 - Github action to generate protobuf Go bindings locally in `internal/opentelemetry-proto-gen`. (#938)
 - OTLP .proto files from `open-telemetry/opentelemetry-proto` imported as a git submodule under `internal/opentelemetry-proto`.
-   References to `github.com/open-telemetry/opentelemetry-proto` changed to `github.com/humans-group/otel/internal/opentelemetry-proto-gen`. (#942)
+   References to `github.com/open-telemetry/opentelemetry-proto` changed to `github.com/humans-group/opentelemetry-go/internal/opentelemetry-proto-gen`. (#942)
 
 ### Changed
 
@@ -1882,8 +1882,8 @@ This release implements the v0.5.0 version of the OpenTelemetry specification.
 - New example that uses OTLP and the collector. (#790)
 - Handle errors in the span `SetName` during span initialization. (#791)
 - Default service config to enable retries for retry-able failed requests in the OTLP exporter and an option to override this default. (#777)
-- New `github.com/humans-group/otel/api/oterror` package to uniformly support error handling and definitions for the project. (#778)
-- New `global` default implementation of the `github.com/humans-group/otel/api/oterror.Handler` interface to be used to handle errors prior to an user defined `Handler`.
+- New `github.com/humans-group/opentelemetry-go/api/oterror` package to uniformly support error handling and definitions for the project. (#778)
+- New `global` default implementation of the `github.com/humans-group/opentelemetry-go/api/oterror.Handler` interface to be used to handle errors prior to an user defined `Handler`.
    There is also functionality for the user to register their `Handler` as well as a convenience function `Handle` to handle an error with this global `Handler`(#778)
 - Options to specify propagators for httptrace and grpctrace instrumentation. (#784)
 - The required `application/json` header for the Zipkin exporter is included in all exports. (#774)
@@ -2204,7 +2204,7 @@ There is still a possibility of breaking changes.
 ### Changed
 
 - Rename the `exporter` directory to `exporters`.
-   The `github.com/humans-group/otel/exporter/trace/jaeger` package was mistakenly released with a `v1.0.0` tag instead of `v0.1.0`.
+   The `github.com/humans-group/opentelemetry-go/exporter/trace/jaeger` package was mistakenly released with a `v1.0.0` tag instead of `v0.1.0`.
    This resulted in all subsequent releases not becoming the default latest.
    A consequence of this was that all `go get`s pulled in the incompatible `v0.1.0` release of that package when pulling in more recent packages from other otel packages.
    Renaming the `exporter` directory to `exporters` fixes this issue by renaming the package and therefore clearing any existing dependency tags.

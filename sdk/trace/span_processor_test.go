@@ -18,9 +18,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/humans-group/otel/attribute"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 type testSpanProcessor struct {

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/sdk/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/sdk/metric"
 
 import (
 	"sync/atomic"
@@ -23,11 +23,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/sdk/metric/aggregation"
-	"github.com/humans-group/otel/sdk/metric/internal"
-	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/internal"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
 )
 
 var defaultView = NewView(Instrument{Name: "*"}, Stream{})

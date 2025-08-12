@@ -1,12 +1,12 @@
-module github.com/humans-group/otel/example/passthrough
+module github.com/humans-group/opentelemetry-go/example/passthrough
 
 go 1.19
 
 require (
-	github.com/humans-group/otel v1.15.1
-	github.com/humans-group/otel/exporters/stdout/stdouttrace v1.15.1
-	github.com/humans-group/otel/sdk v1.15.1
-	github.com/humans-group/otel/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.1
+	github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace v1.15.1
+	github.com/humans-group/opentelemetry-go/sdk v1.15.1
+	github.com/humans-group/opentelemetry-go/trace v1.15.1
 )
 
 require (
@@ -16,9 +16,9 @@ require (
 )
 
 replace (
-	github.com/humans-group/otel => ../..
-	github.com/humans-group/otel/sdk => ../../sdk
-	github.com/humans-group/otel/trace => ../../trace
+	github.com/humans-group/opentelemetry-go => ../..
+	github.com/humans-group/opentelemetry-go/sdk => ../../sdk
+	github.com/humans-group/opentelemetry-go/trace => ../../trace
 )
 
-replace github.com/humans-group/otel/exporters/stdout/stdouttrace => ../../exporters/stdout/stdouttrace
+replace github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace => ../../exporters/stdout/stdouttrace

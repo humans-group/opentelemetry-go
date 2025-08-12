@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package semconv // import "github.com/humans-group/otel/semconv/v1.5.0"
+package semconv // import "github.com/humans-group/opentelemetry-go/semconv/v1.5.0"
 
 import (
 	"net/http"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
-	"github.com/humans-group/otel/semconv/internal"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
+	"github.com/humans-group/opentelemetry-go/semconv/internal"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // HTTP scheme attributes.

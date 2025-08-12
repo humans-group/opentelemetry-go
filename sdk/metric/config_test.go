@@ -22,9 +22,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/sdk/metric/aggregation"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
-	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
 )
 
 type reader struct {

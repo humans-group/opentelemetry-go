@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package internal // import "github.com/humans-group/otel/sdk/metric/internal"
+package internal // import "github.com/humans-group/opentelemetry-go/sdk/metric/internal"
 
 import (
 	"testing"
@@ -20,9 +20,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
-	"github.com/humans-group/otel/sdk/metric/metricdata/metricdatatest"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata/metricdatatest"
 )
 
 func TestSum(t *testing.T) {

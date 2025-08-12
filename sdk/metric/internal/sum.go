@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package internal // import "github.com/humans-group/otel/sdk/metric/internal"
+package internal // import "github.com/humans-group/opentelemetry-go/sdk/metric/internal"
 
 import (
 	"sync"
 	"time"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 )
 
 // valueMap is the storage for sums.

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package semconv // import "github.com/humans-group/otel/semconv/v1.8.0"
+package semconv // import "github.com/humans-group/opentelemetry-go/semconv/v1.8.0"
 
 const (
 	// ExceptionEventName is the name of the Span event representing an exception.

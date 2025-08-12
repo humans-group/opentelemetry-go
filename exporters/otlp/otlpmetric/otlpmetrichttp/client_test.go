@@ -27,10 +27,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	ominternal "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal"
-	"github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/otest"
-	"github.com/humans-group/otel/sdk/metric"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	ominternal "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/otest"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 )
 
 func TestClient(t *testing.T) {

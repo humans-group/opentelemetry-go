@@ -20,14 +20,14 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/metric/global"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/metric/global"
 )
 
 func ExampleMeter_synchronous() {
 	// Create a histogram using the global MeterProvider.
-	workDuration, err := global.Meter("github.com/humans-group/otel/metric#SyncExample").Int64Histogram(
+	workDuration, err := global.Meter("github.com/humans-group/opentelemetry-go/metric#SyncExample").Int64Histogram(
 		"workDuration",
 		metric.WithUnit("ms"))
 	if err != nil {
@@ -43,7 +43,7 @@ func ExampleMeter_synchronous() {
 }
 
 func ExampleMeter_asynchronous_single() {
-	meter := global.Meter("github.com/humans-group/otel/metric#AsyncExample")
+	meter := global.Meter("github.com/humans-group/opentelemetry-go/metric#AsyncExample")
 
 	_, err := meter.Int64ObservableGauge(
 		"DiskUsage",
@@ -73,7 +73,7 @@ func ExampleMeter_asynchronous_single() {
 }
 
 func ExampleMeter_asynchronous_multiple() {
-	meter := global.Meter("github.com/humans-group/otel/metric#MultiAsyncExample")
+	meter := global.Meter("github.com/humans-group/opentelemetry-go/metric#MultiAsyncExample")
 
 	// This is just a sample of memory stats to record from the Memstats
 	heapAlloc, _ := meter.Int64ObservableUpDownCounter("heapAllocs")

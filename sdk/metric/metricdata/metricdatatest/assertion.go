@@ -14,14 +14,14 @@
 
 // Package metricdatatest provides testing functionality for use with the
 // metricdata package.
-package metricdatatest // import "github.com/humans-group/otel/sdk/metric/metricdata/metricdatatest"
+package metricdatatest // import "github.com/humans-group/opentelemetry-go/sdk/metric/metricdata/metricdatatest"
 
 import (
 	"fmt"
 	"testing"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 )
 
 // Datatypes are the concrete data-types the metricdata package provides.

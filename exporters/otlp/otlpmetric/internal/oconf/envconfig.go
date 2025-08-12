@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package oconf // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/oconf"
+package oconf // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/oconf"
 
 import (
 	"crypto/tls"
@@ -23,7 +23,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/humans-group/otel/exporters/otlp/internal/envconfig"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal/envconfig"
 )
 
 // DefaultEnvOptionsReader is the default environments reader.

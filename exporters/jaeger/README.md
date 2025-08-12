@@ -1,13 +1,13 @@
 # OpenTelemetry-Go Jaeger Exporter
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/humans-group/otel/exporters/jaeger.svg)](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger)
+[![Go Reference](https://pkg.go.dev/badge/github.com/humans-group/opentelemetry-go/exporters/jaeger.svg)](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger)
 
 [OpenTelemetry span exporter for Jaeger](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/sdk_exporters/jaeger.md) implementation.
 
 ## Installation
 
 ```
-go get -u github.com/humans-group/otel/exporters/jaeger
+go get -u github.com/humans-group/opentelemetry-go/exporters/jaeger
 ```
 
 ## Example
@@ -19,9 +19,9 @@ See [../../example/jaeger](../../example/jaeger).
 The exporter can be used to send spans to:
 
 - Jaeger agent using `jaeger.thrift` over compact thrift protocol via
-  [`WithAgentEndpoint`](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger#WithAgentEndpoint) option.
+  [`WithAgentEndpoint`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger#WithAgentEndpoint) option.
 - Jaeger collector using `jaeger.thrift` over HTTP via
-  [`WithCollectorEndpoint`](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger#WithCollectorEndpoint) option.
+  [`WithCollectorEndpoint`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger#WithCollectorEndpoint) option.
 
 ### Environment Variables
 
@@ -30,11 +30,11 @@ The following environment variables can be used
 
 | Environment variable              | Option                                                                                        | Default value                       |
 | --------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------- |
-| `OTEL_EXPORTER_JAEGER_AGENT_HOST` | [`WithAgentHost`](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger#WithAgentHost) | `localhost`                         |
-| `OTEL_EXPORTER_JAEGER_AGENT_PORT` | [`WithAgentPort`](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger#WithAgentPort) | `6831`                              |
-| `OTEL_EXPORTER_JAEGER_ENDPOINT`   | [`WithEndpoint`](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger#WithEndpoint)   | `http://localhost:14268/api/traces` |
-| `OTEL_EXPORTER_JAEGER_USER`       | [`WithUsername`](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger#WithUsername)   |                                     |
-| `OTEL_EXPORTER_JAEGER_PASSWORD`   | [`WithPassword`](https://pkg.go.dev/github.com/humans-group/otel/exporters/jaeger#WithPassword)   |                                     |
+| `OTEL_EXPORTER_JAEGER_AGENT_HOST` | [`WithAgentHost`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger#WithAgentHost) | `localhost`                         |
+| `OTEL_EXPORTER_JAEGER_AGENT_PORT` | [`WithAgentPort`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger#WithAgentPort) | `6831`                              |
+| `OTEL_EXPORTER_JAEGER_ENDPOINT`   | [`WithEndpoint`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger#WithEndpoint)   | `http://localhost:14268/api/traces` |
+| `OTEL_EXPORTER_JAEGER_USER`       | [`WithUsername`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger#WithUsername)   |                                     |
+| `OTEL_EXPORTER_JAEGER_PASSWORD`   | [`WithPassword`](https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/jaeger#WithPassword)   |                                     |
 
 Configuration using options have precedence over the environment variables.
 

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "github.com/humans-group/otel/sdk/trace"
+package trace // import "github.com/humans-group/opentelemetry-go/sdk/trace"
 
 import (
 	"context"
@@ -25,13 +25,13 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
-	"github.com/humans-group/otel/sdk/instrumentation"
-	"github.com/humans-group/otel/sdk/internal"
-	"github.com/humans-group/otel/sdk/resource"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
+	"github.com/humans-group/opentelemetry-go/sdk/internal"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // ReadOnlySpan allows reading information from the data structure underlying a

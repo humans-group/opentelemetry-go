@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlptracehttp // import "github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracehttp"
+package otlptracehttp // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracehttp"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/exporters/otlp/otlptrace"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace"
 )
 
 // New constructs a new Exporter and starts it.

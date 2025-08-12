@@ -15,7 +15,7 @@
 //go:build linux
 // +build linux
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 var platformHostIDReader hostIDReader = &hostIDReaderLinux{
 	readFile: readFile,

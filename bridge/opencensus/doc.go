@@ -32,4 +32,4 @@
 // - Conversion of custom OpenCensus Samplers to OpenTelemetry is not
 // implemented. An error will be sent to the OpenTelemetry default
 // ErrorHandler if this is attempted.
-package opencensus // import "github.com/humans-group/otel/bridge/opencensus"
+package opencensus // import "github.com/humans-group/opentelemetry-go/bridge/opencensus"

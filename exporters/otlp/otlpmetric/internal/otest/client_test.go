@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otest // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/otest"
+package otest // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/otest"
 
 import (
 	"context"
 	"testing"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/exporters/otlp/internal"
-	ominternal "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal"
-	"github.com/humans-group/otel/sdk/metric"
-	"github.com/humans-group/otel/sdk/metric/aggregation"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal"
+	ominternal "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 	cpb "go.opentelemetry.io/proto/otlp/collector/metrics/v1"
 	mpb "go.opentelemetry.io/proto/otlp/metrics/v1"
 )

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package stdouttrace // import "github.com/humans-group/otel/exporters/stdout/stdouttrace"
+package stdouttrace // import "github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace"
 
 import (
 	"context"
@@ -20,8 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/humans-group/otel/sdk/trace"
-	"github.com/humans-group/otel/sdk/trace/tracetest"
+	"github.com/humans-group/opentelemetry-go/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
 )
 
 var zeroTime time.Time

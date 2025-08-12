@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlptracetest // import "github.com/humans-group/otel/exporters/otlp/otlptrace/internal/otlptracetest"
+package otlptracetest // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/otlptracetest"
 
 import (
 	"time"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
-	"github.com/humans-group/otel/sdk/instrumentation"
-	"github.com/humans-group/otel/sdk/resource"
-	tracesdk "github.com/humans-group/otel/sdk/trace"
-	"github.com/humans-group/otel/sdk/trace/tracetest"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	tracesdk "github.com/humans-group/opentelemetry-go/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // SingleReadOnlySpan returns a one-element slice with a read-only span. It

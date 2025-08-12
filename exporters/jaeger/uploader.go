@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package jaeger // import "github.com/humans-group/otel/exporters/jaeger"
+package jaeger // import "github.com/humans-group/opentelemetry-go/exporters/jaeger"
 
 import (
 	"bytes"
@@ -26,8 +26,8 @@ import (
 	"github.com/go-logr/logr"
 	"github.com/go-logr/stdr"
 
-	gen "github.com/humans-group/otel/exporters/jaeger/internal/gen-go/jaeger"
-	"github.com/humans-group/otel/exporters/jaeger/internal/third_party/thrift/lib/go/thrift"
+	gen "github.com/humans-group/opentelemetry-go/exporters/jaeger/internal/gen-go/jaeger"
+	"github.com/humans-group/opentelemetry-go/exporters/jaeger/internal/third_party/thrift/lib/go/thrift"
 )
 
 // batchUploader send a batch of spans to Jaeger.

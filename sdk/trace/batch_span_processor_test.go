@@ -24,17 +24,17 @@ import (
 	"testing"
 	"time"
 
-	ottest "github.com/humans-group/otel/internal/internaltest"
+	ottest "github.com/humans-group/opentelemetry-go/internal/internaltest"
 
 	"github.com/go-logr/logr/funcr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/internal/global"
-	"github.com/humans-group/otel/sdk/internal/env"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
-	"github.com/humans-group/otel/sdk/trace/tracetest"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/internal/global"
+	"github.com/humans-group/opentelemetry-go/sdk/internal/env"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 type testBatchExporter struct {

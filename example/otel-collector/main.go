@@ -14,7 +14,7 @@
 
 // Example using OTLP exporters + collector + third-party backends. For
 // information about using the exporter, see:
-// https://pkg.go.dev/github.com/humans-group/otel/exporters/otlp?tab=doc#example-package-Insecure
+// https://pkg.go.dev/github.com/humans-group/opentelemetry-go/exporters/otlp?tab=doc#example-package-Insecure
 package main
 
 import (
@@ -28,14 +28,14 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracegrpc"
-	"github.com/humans-group/otel/propagation"
-	"github.com/humans-group/otel/sdk/resource"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracegrpc"
+	"github.com/humans-group/opentelemetry-go/propagation"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // Initializes an OTLP exporter, and configures the corresponding trace and

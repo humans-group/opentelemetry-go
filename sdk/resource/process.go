@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 import (
 	"context"
@@ -22,7 +22,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
 )
 
 type pidProvider func() int

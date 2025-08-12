@@ -23,7 +23,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/internal/baggage"
+	"github.com/humans-group/opentelemetry-go/internal/baggage"
 )
 
 var rng *rand.Rand

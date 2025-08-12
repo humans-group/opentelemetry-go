@@ -23,7 +23,7 @@
 // +build !windows
 // +build !zos
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 // platformOSDescription is a placeholder implementation for OSes
 // for which this project currently doesn't support os.description

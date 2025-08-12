@@ -14,7 +14,7 @@
 
 // Package aggregation contains configuration types that define the
 // aggregation operation used to summarizes recorded measurements.
-package aggregation // import "github.com/humans-group/otel/sdk/metric/aggregation"
+package aggregation // import "github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
 
 import (
 	"errors"
@@ -56,7 +56,7 @@ func (Drop) Err() error { return nil }
 // make an aggregation selection based on instrument kind that differs from
 // the default. This aggregation ensures the default is used.
 //
-// See the "github.com/humans-group/otel/sdk/metric".DefaultAggregationSelector
+// See the "github.com/humans-group/opentelemetry-go/sdk/metric".DefaultAggregationSelector
 // for information about the default instrument kind selection mapping.
 type Default struct{} // Default has no parameters.
 

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "github.com/humans-group/otel/internal/global"
+package global // import "github.com/humans-group/opentelemetry-go/internal/global"
 
 /*
 This file contains the forwarding implementation of the TracerProvider used as
@@ -36,9 +36,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // tracerProvider is a placeholder for a configured SDK TracerProvider.

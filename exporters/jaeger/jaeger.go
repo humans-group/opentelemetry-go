@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package jaeger // import "github.com/humans-group/otel/exporters/jaeger"
+package jaeger // import "github.com/humans-group/opentelemetry-go/exporters/jaeger"
 
 import (
 	"context"
@@ -21,13 +21,13 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
-	gen "github.com/humans-group/otel/exporters/jaeger/internal/gen-go/jaeger"
-	"github.com/humans-group/otel/sdk/resource"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
+	gen "github.com/humans-group/opentelemetry-go/exporters/jaeger/internal/gen-go/jaeger"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 const (

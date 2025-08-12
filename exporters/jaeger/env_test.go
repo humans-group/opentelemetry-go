@@ -21,7 +21,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	ottest "github.com/humans-group/otel/internal/internaltest"
+	ottest "github.com/humans-group/opentelemetry-go/internal/internaltest"
 )
 
 func TestNewRawExporterWithDefault(t *testing.T) {

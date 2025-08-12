@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package migration // import "github.com/humans-group/otel/bridge/opentracing/migration"
+package migration // import "github.com/humans-group/opentelemetry-go/bridge/opentracing/migration"
 
 import (
 	"context"

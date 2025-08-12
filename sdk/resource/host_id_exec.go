@@ -14,7 +14,7 @@
 
 //go:build bsd || darwin
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 import "os/exec"
 

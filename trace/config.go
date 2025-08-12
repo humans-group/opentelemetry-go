@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "github.com/humans-group/otel/trace"
+package trace // import "github.com/humans-group/opentelemetry-go/trace"
 
 import (
 	"time"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 // TracerConfig is a group of options for a Tracer.

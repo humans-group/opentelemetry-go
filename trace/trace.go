@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "github.com/humans-group/otel/trace"
+package trace // import "github.com/humans-group/opentelemetry-go/trace"
 
 import (
 	"bytes"
@@ -20,8 +20,8 @@ import (
 	"encoding/hex"
 	"encoding/json"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/codes"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/codes"
 )
 
 const (
@@ -516,7 +516,7 @@ type Tracer interface {
 //
 // Commonly, instrumentation code will accept a TracerProvider implementation
 // at runtime from its users or it can simply use the globally registered one
-// (see https://pkg.go.dev/github.com/humans-group/otel#GetTracerProvider).
+// (see https://pkg.go.dev/github.com/humans-group/opentelemetry-go#GetTracerProvider).
 //
 // Warning: methods may be added to this interface in minor releases.
 type TracerProvider interface {

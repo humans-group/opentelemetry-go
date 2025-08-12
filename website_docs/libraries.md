@@ -50,8 +50,8 @@ import (
 	"time"
 
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 // Package-level tracer.

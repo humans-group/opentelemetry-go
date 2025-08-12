@@ -13,4 +13,4 @@
 // limitations under the License.
 
 // Package zipkin contains an OpenTelemetry tracing exporter for Zipkin.
-package zipkin // import "github.com/humans-group/otel/exporters/zipkin"
+package zipkin // import "github.com/humans-group/opentelemetry-go/exporters/zipkin"

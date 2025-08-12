@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package ast // import "github.com/humans-group/otel/schema/v1.1/ast"
+package ast // import "github.com/humans-group/opentelemetry-go/schema/v1.1/ast"
 
 import (
-	ast10 "github.com/humans-group/otel/schema/v1.0/ast"
-	"github.com/humans-group/otel/schema/v1.1/types"
+	ast10 "github.com/humans-group/opentelemetry-go/schema/v1.0/ast"
+	"github.com/humans-group/opentelemetry-go/schema/v1.1/types"
 )
 
 // Schema represents a Schema file in FileFormat 1.1.0 as defined in

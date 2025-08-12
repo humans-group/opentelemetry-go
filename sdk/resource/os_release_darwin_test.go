@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
 )
 
 func TestParsePlistFile(t *testing.T) {

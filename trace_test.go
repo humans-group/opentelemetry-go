@@ -19,7 +19,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 type testTracerProvider struct{}

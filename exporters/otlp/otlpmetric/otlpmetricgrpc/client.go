@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlpmetricgrpc // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetricgrpc"
+package otlpmetricgrpc // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/otlpmetricgrpc"
 
 import (
 	"context"
@@ -24,14 +24,14 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/exporters/otlp/internal"
-	"github.com/humans-group/otel/exporters/otlp/internal/retry"
-	ominternal "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal"
-	"github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/oconf"
-	"github.com/humans-group/otel/sdk/metric"
-	"github.com/humans-group/otel/sdk/metric/aggregation"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry"
+	ominternal "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/oconf"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 	colmetricpb "go.opentelemetry.io/proto/otlp/collector/metrics/v1"
 	metricpb "go.opentelemetry.io/proto/otlp/metrics/v1"
 )

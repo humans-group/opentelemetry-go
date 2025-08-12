@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/metric"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
 )
 
 // Float64Counter is an instrument that records increasing float64 values.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [github.com/humans-group/otel/metric] package documentation on API
+// [github.com/humans-group/opentelemetry-go/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Float64Counter interface {
@@ -70,7 +70,7 @@ type Float64CounterOption interface {
 // float64 values.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [github.com/humans-group/otel/metric] package documentation on API
+// [github.com/humans-group/opentelemetry-go/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Float64UpDownCounter interface {
@@ -118,7 +118,7 @@ type Float64UpDownCounterOption interface {
 // values.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [github.com/humans-group/otel/metric] package documentation on API
+// [github.com/humans-group/opentelemetry-go/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Float64Histogram interface {

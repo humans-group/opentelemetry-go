@@ -18,7 +18,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/humans-group/otel/internal/internaltest"
+	"github.com/humans-group/opentelemetry-go/internal/internaltest"
 )
 
 func TestTextMapPropagatorDelegation(t *testing.T) {

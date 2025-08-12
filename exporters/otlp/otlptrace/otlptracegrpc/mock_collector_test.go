@@ -26,7 +26,7 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/humans-group/otel/exporters/otlp/otlptrace/internal/otlptracetest"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/otlptracetest"
 	collectortracepb "go.opentelemetry.io/proto/otlp/collector/trace/v1"
 	tracepb "go.opentelemetry.io/proto/otlp/trace/v1"
 )

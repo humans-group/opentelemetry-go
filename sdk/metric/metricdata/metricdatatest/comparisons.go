@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metricdatatest // import "github.com/humans-group/otel/sdk/metric/metricdata/metricdatatest"
+package metricdatatest // import "github.com/humans-group/opentelemetry-go/sdk/metric/metricdata/metricdatatest"
 
 import (
 	"bytes"
 	"fmt"
 	"reflect"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 )
 
 // equalResourceMetrics returns reasons ResourceMetrics are not equal. If they

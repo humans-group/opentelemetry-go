@@ -20,9 +20,9 @@ To create spans, you'll need to acquire or initialize a tracer first.
 Ensure you have the right packages installed:
 
 ```sh
-go get github.com/humans-group/otel \
-  github.com/humans-group/otel/trace \
-  github.com/humans-group/otel/sdk \
+go get github.com/humans-group/opentelemetry-go \
+  github.com/humans-group/opentelemetry-go/trace \
+  github.com/humans-group/opentelemetry-go/sdk \
 ```
 
 Then initialize an exporter, resources, tracer provider, and finally a tracer.
@@ -35,12 +35,12 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/exporters/otlp/otlptrace"
-	"github.com/humans-group/otel/sdk/resource"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 var tracer trace.Tracer
@@ -188,7 +188,7 @@ Semantic Attributes are attributes that are defined by the [OpenTelemetry
 Specification][] in order to provide a shared set of attribute keys across
 multiple languages, frameworks, and runtimes for common concepts like HTTP
 methods, status codes, user agents, and more. These attributes are available in
-the `github.com/humans-group/otel/semconv/v1.12.0` package.
+the `github.com/humans-group/opentelemetry-go/semconv/v1.12.0` package.
 
 For details, see [Trace semantic conventions][].
 
@@ -227,7 +227,7 @@ in the operation a span is tracking - .`Error`.
 ```go
 import (
 	// ...
-	"github.com/humans-group/otel/codes"
+	"github.com/humans-group/opentelemetry-go/codes"
 	// ...
 )
 
@@ -250,7 +250,7 @@ produced, you can record that error.
 ```go
 import (
 	// ...
-	"github.com/humans-group/otel/codes"
+	"github.com/humans-group/opentelemetry-go/codes"
 	// ...
 )
 
@@ -282,8 +282,8 @@ registered with the OpenTelemetry API.
 
 ```go
 import (
-  "github.com/humans-group/otel"
-  "github.com/humans-group/otel/propagation"
+  "github.com/humans-group/opentelemetry-go"
+  "github.com/humans-group/opentelemetry-go/propagation"
 )
 ...
 otel.SetTextMapPropagator(propagation.TraceContext{})

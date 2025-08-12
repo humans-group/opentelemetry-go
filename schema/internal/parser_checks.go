@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package internal // import "github.com/humans-group/otel/schema/internal"
+package internal // import "github.com/humans-group/opentelemetry-go/schema/internal"
 
 import (
 	"errors"

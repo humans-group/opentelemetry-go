@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/metric"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
 )
 
 // MeterProvider provides access to named Meter instances, for instrumenting

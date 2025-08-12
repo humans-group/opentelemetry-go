@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package transform // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/transform"
+package transform // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/transform"
 
 import (
 	"fmt"
 
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 	cpb "go.opentelemetry.io/proto/otlp/common/v1"
 	mpb "go.opentelemetry.io/proto/otlp/metrics/v1"
 	rpb "go.opentelemetry.io/proto/otlp/resource/v1"

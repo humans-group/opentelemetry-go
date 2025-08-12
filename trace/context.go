@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "github.com/humans-group/otel/trace"
+package trace // import "github.com/humans-group/opentelemetry-go/trace"
 
 import "context"
 

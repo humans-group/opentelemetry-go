@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otest // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/otest"
+package otest // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/otest"
 
 import (
 	"bytes"
@@ -39,7 +39,7 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/oconf"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/oconf"
 	collpb "go.opentelemetry.io/proto/otlp/collector/metrics/v1"
 	mpb "go.opentelemetry.io/proto/otlp/metrics/v1"
 )

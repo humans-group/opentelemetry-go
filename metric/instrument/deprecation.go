@@ -15,11 +15,11 @@
 // Package instrument provides the OpenTelemetry API instruments used to make
 // measurements.
 //
-// Deprecated: Use github.com/humans-group/otel/metric instead.
-package instrument // import "github.com/humans-group/otel/metric/instrument"
+// Deprecated: Use github.com/humans-group/opentelemetry-go/metric instead.
+package instrument // import "github.com/humans-group/opentelemetry-go/metric/instrument"
 
 import (
-	"github.com/humans-group/otel/metric"
+	"github.com/humans-group/opentelemetry-go/metric"
 )
 
 // Float64Observable is an alias for [metric.Float64Observable].

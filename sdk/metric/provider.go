@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "github.com/humans-group/otel/sdk/metric"
+package metric // import "github.com/humans-group/opentelemetry-go/sdk/metric"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/metric/embedded"
-	"github.com/humans-group/otel/sdk/instrumentation"
+	"github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
 )
 
 // MeterProvider handles the creation and coordination of Meters. All Meters
@@ -60,7 +60,7 @@ func NewMeterProvider(options ...Option) *MeterProvider {
 // telemetry. This name may be the same as the instrumented code only if that
 // code provides built-in instrumentation.
 //
-// If name is empty, the default (github.com/humans-group/otel/sdk/meter) will be
+// If name is empty, the default (github.com/humans-group/opentelemetry-go/sdk/meter) will be
 // used.
 //
 // Calls to the Meter method after Shutdown has been called will return Meters

@@ -19,16 +19,16 @@ the otel package provide an implementation of the OpenTelemetry API.
 The provided API is used to instrument code and measure data about that code's
 performance and operation. The measured data, by default, is not processed or
 transmitted anywhere. An implementation of the OpenTelemetry SDK, like the
-default SDK implementation (github.com/humans-group/otel/sdk), and associated
+default SDK implementation (github.com/humans-group/opentelemetry-go/sdk), and associated
 exporters are used to process and transport this data.
 
 To read the getting started guide, see https://opentelemetry.io/docs/go/getting-started/.
 
-To read more about tracing, see github.com/humans-group/otel/trace.
+To read more about tracing, see github.com/humans-group/opentelemetry-go/trace.
 
-To read more about metrics, see github.com/humans-group/otel/metric.
+To read more about metrics, see github.com/humans-group/opentelemetry-go/metric.
 
-To read more about propagation, see github.com/humans-group/otel/propagation and
-github.com/humans-group/otel/baggage.
+To read more about propagation, see github.com/humans-group/opentelemetry-go/propagation and
+github.com/humans-group/opentelemetry-go/baggage.
 */
-package otel // import "github.com/humans-group/otel"
+package otel // import "github.com/humans-group/opentelemetry-go"

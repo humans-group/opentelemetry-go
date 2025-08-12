@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package opencensus // import "github.com/humans-group/otel/bridge/opencensus"
+package opencensus // import "github.com/humans-group/opentelemetry-go/bridge/opencensus"
 
 import (
 	"context"
@@ -21,15 +21,15 @@ import (
 	"go.opencensus.io/metric/metricexport"
 	"go.opencensus.io/metric/metricproducer"
 
-	"github.com/humans-group/otel"
-	internal "github.com/humans-group/otel/bridge/opencensus/internal/ocmetric"
-	"github.com/humans-group/otel/sdk/instrumentation"
-	"github.com/humans-group/otel/sdk/metric"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
-	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/opentelemetry-go"
+	internal "github.com/humans-group/opentelemetry-go/bridge/opencensus/internal/ocmetric"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
 )
 
-const scopeName = "github.com/humans-group/otel/bridge/opencensus"
+const scopeName = "github.com/humans-group/opentelemetry-go/bridge/opencensus"
 
 type producer struct {
 	manager *metricproducer.Manager

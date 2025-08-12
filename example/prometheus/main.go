@@ -26,10 +26,10 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/exporters/prometheus"
-	api "github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/exporters/prometheus"
+	api "github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
 )
 
 func main() {

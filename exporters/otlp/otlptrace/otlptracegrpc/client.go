@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlptracegrpc // import "github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracegrpc"
+package otlptracegrpc // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/otlptracegrpc"
 
 import (
 	"context"
@@ -26,11 +26,11 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/exporters/otlp/internal"
-	"github.com/humans-group/otel/exporters/otlp/internal/retry"
-	"github.com/humans-group/otel/exporters/otlp/otlptrace"
-	"github.com/humans-group/otel/exporters/otlp/otlptrace/internal/otlpconfig"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/otlpconfig"
 	coltracepb "go.opentelemetry.io/proto/otlp/collector/trace/v1"
 	tracepb "go.opentelemetry.io/proto/otlp/trace/v1"
 )

@@ -15,12 +15,12 @@
 // Package migration provides interfaces and functions that are useful for
 // providing a cooperation of the OpenTelemetry tracers with the
 // OpenTracing API.
-package migration // import "github.com/humans-group/otel/bridge/opentracing/migration"
+package migration // import "github.com/humans-group/opentelemetry-go/bridge/opentracing/migration"
 
 import (
 	"context"
 
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 // DeferredContextSetupTracerExtension is an interface an

@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "github.com/humans-group/otel/sdk/trace"
+package trace // import "github.com/humans-group/opentelemetry-go/sdk/trace"
 
 import (
 	"time"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 // Event is a thing that happened during a Span's lifetime.

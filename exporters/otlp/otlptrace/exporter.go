@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlptrace // import "github.com/humans-group/otel/exporters/otlp/otlptrace"
+package otlptrace // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace"
 
 import (
 	"context"
 	"errors"
 	"sync"
 
-	"github.com/humans-group/otel/exporters/otlp/internal"
-	"github.com/humans-group/otel/exporters/otlp/otlptrace/internal/tracetransform"
-	tracesdk "github.com/humans-group/otel/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/tracetransform"
+	tracesdk "github.com/humans-group/opentelemetry-go/sdk/trace"
 )
 
 var (

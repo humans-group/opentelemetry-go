@@ -22,8 +22,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/sdk/trace/tracetest"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
 )
 
 func TestNewAgentClientUDPWithParamsBadHostport(t *testing.T) {

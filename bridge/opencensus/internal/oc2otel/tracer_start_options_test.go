@@ -19,7 +19,7 @@ import (
 
 	octrace "go.opencensus.io/trace"
 
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 func TestStartOptionsSpanKind(t *testing.T) {

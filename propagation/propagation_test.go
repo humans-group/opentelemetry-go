@@ -22,7 +22,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/propagation"
+	"github.com/humans-group/opentelemetry-go/propagation"
 )
 
 type ctxKeyType uint

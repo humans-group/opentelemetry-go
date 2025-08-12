@@ -18,11 +18,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/humans-group/otel/attribute"
-	"github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/metric/embedded"
-	"github.com/humans-group/otel/sdk/metric/aggregation"
-	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	"github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/metric/embedded"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/metricdata"
 )
 
 type meter struct {

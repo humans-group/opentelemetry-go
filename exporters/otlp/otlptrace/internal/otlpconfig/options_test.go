@@ -21,8 +21,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/exporters/otlp/internal/envconfig"
-	"github.com/humans-group/otel/exporters/otlp/otlptrace/internal/otlpconfig"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/internal/envconfig"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/otlpconfig"
 )
 
 const (

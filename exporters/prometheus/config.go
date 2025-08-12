@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package prometheus // import "github.com/humans-group/otel/exporters/prometheus"
+package prometheus // import "github.com/humans-group/opentelemetry-go/exporters/prometheus"
 
 import (
 	"strings"
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/humans-group/otel/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
 )
 
 // config contains options for the exporter.

@@ -1,4 +1,4 @@
-module github.com/humans-group/otel/schema
+module github.com/humans-group/opentelemetry-go/schema
 
 go 1.19
 

@@ -17,7 +17,7 @@ package attribute_test
 import (
 	"testing"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 // Store results in a file scope var to ensure compiler does not optimize the

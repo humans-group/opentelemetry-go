@@ -20,10 +20,10 @@ import (
 
 	octrace "go.opencensus.io/trace"
 
-	"github.com/humans-group/otel/bridge/opencensus/internal"
-	"github.com/humans-group/otel/bridge/opencensus/internal/oc2otel"
-	"github.com/humans-group/otel/bridge/opencensus/internal/otel2oc"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/bridge/opencensus/internal"
+	"github.com/humans-group/opentelemetry-go/bridge/opencensus/internal/oc2otel"
+	"github.com/humans-group/opentelemetry-go/bridge/opencensus/internal/otel2oc"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 type handler struct{ err error }

@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "github.com/humans-group/otel/internal/global"
+package global // import "github.com/humans-group/opentelemetry-go/internal/global"
 
 import (
 	"context"
 	"sync"
 
-	"github.com/humans-group/otel/propagation"
+	"github.com/humans-group/opentelemetry-go/propagation"
 )
 
 // textMapPropagator is a default TextMapPropagator that delegates calls to a

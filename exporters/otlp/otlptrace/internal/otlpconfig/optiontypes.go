@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package otlpconfig // import "github.com/humans-group/otel/exporters/otlp/otlptrace/internal/otlpconfig"
+package otlpconfig // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/otlpconfig"
 
 const (
 	// DefaultCollectorGRPCPort is the default gRPC port of the collector.

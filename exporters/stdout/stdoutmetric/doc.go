@@ -20,4 +20,4 @@
 // format for OpenTelemetry that is supported with any stability or
 // compatibility guarantees. If these are needed features, please use the OTLP
 // exporter instead.
-package stdoutmetric // import "github.com/humans-group/otel/exporters/stdout/stdoutmetric"
+package stdoutmetric // import "github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric"

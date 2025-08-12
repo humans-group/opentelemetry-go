@@ -21,4 +21,4 @@ package is the W3C Trace Context encoding
 (https://www.w3.org/TR/trace-context/), and W3C Baggage
 (https://www.w3.org/TR/baggage/).
 */
-package propagation // import "github.com/humans-group/otel/propagation"
+package propagation // import "github.com/humans-group/opentelemetry-go/propagation"

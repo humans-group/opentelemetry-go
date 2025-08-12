@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package transform // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/transform"
+package transform // import "github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric/internal/transform"
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go/attribute"
 	cpb "go.opentelemetry.io/proto/otlp/common/v1"
 )
 

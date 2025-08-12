@@ -30,8 +30,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/humans-group/otel/exporters/otlp/otlptrace/internal/otlpconfig"
-	"github.com/humans-group/otel/exporters/otlp/otlptrace/internal/otlptracetest"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/otlpconfig"
+	"github.com/humans-group/opentelemetry-go/exporters/otlp/otlptrace/internal/otlptracetest"
 	collectortracepb "go.opentelemetry.io/proto/otlp/collector/trace/v1"
 	tracepb "go.opentelemetry.io/proto/otlp/trace/v1"
 )

@@ -24,12 +24,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/humans-group/otel/attribute"
-	otelmetric "github.com/humans-group/otel/metric"
-	"github.com/humans-group/otel/sdk/metric"
-	"github.com/humans-group/otel/sdk/metric/aggregation"
-	"github.com/humans-group/otel/sdk/resource"
-	semconv "github.com/humans-group/otel/semconv/v1.17.0"
+	"github.com/humans-group/opentelemetry-go/attribute"
+	otelmetric "github.com/humans-group/opentelemetry-go/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
+	"github.com/humans-group/opentelemetry-go/sdk/metric/aggregation"
+	"github.com/humans-group/opentelemetry-go/sdk/resource"
+	semconv "github.com/humans-group/opentelemetry-go/semconv/v1.17.0"
 )
 
 func TestPrometheusExporter(t *testing.T) {

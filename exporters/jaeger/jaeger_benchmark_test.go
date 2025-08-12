@@ -20,10 +20,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/humans-group/otel/sdk/instrumentation"
-	tracesdk "github.com/humans-group/otel/sdk/trace"
-	"github.com/humans-group/otel/sdk/trace/tracetest"
-	"github.com/humans-group/otel/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/instrumentation"
+	tracesdk "github.com/humans-group/opentelemetry-go/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
+	"github.com/humans-group/opentelemetry-go/trace"
 )
 
 var (

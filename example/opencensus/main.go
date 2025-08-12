@@ -28,12 +28,12 @@ import (
 	"go.opencensus.io/tag"
 	octrace "go.opencensus.io/trace"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/bridge/opencensus"
-	"github.com/humans-group/otel/exporters/stdout/stdoutmetric"
-	"github.com/humans-group/otel/exporters/stdout/stdouttrace"
-	"github.com/humans-group/otel/sdk/metric"
-	sdktrace "github.com/humans-group/otel/sdk/trace"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/bridge/opencensus"
+	"github.com/humans-group/opentelemetry-go/exporters/stdout/stdoutmetric"
+	"github.com/humans-group/opentelemetry-go/exporters/stdout/stdouttrace"
+	"github.com/humans-group/opentelemetry-go/sdk/metric"
+	sdktrace "github.com/humans-group/opentelemetry-go/sdk/trace"
 )
 
 var (

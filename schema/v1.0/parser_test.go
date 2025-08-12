@@ -20,8 +20,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/humans-group/otel/schema/v1.0/ast"
-	"github.com/humans-group/otel/schema/v1.0/types"
+	"github.com/humans-group/opentelemetry-go/schema/v1.0/ast"
+	"github.com/humans-group/opentelemetry-go/schema/v1.0/types"
 )
 
 func TestParseSchemaFile(t *testing.T) {

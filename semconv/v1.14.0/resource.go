@@ -14,9 +14,9 @@
 
 // Code generated from semantic convention specification. DO NOT EDIT.
 
-package semconv // import "github.com/humans-group/otel/semconv/v1.14.0"
+package semconv // import "github.com/humans-group/opentelemetry-go/semconv/v1.14.0"
 
-import "github.com/humans-group/otel/attribute"
+import "github.com/humans-group/opentelemetry-go/attribute"
 
 // The web browser in which the application represented by the resource is running. The `browser.*` attributes MUST be used only for resources that represent applications running in a web browser (regardless of whether running on a mobile or desktop device).
 const (

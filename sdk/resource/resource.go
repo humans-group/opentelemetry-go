@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package resource // import "github.com/humans-group/otel/sdk/resource"
+package resource // import "github.com/humans-group/opentelemetry-go/sdk/resource"
 
 import (
 	"context"
 	"errors"
 	"sync"
 
-	"github.com/humans-group/otel"
-	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/opentelemetry-go"
+	"github.com/humans-group/opentelemetry-go/attribute"
 )
 
 // Resource describes an entity about which identifying information

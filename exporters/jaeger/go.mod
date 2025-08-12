@@ -1,4 +1,4 @@
-module github.com/humans-group/otel/exporters/jaeger
+module github.com/humans-group/opentelemetry-go/exporters/jaeger
 
 go 1.19
 
@@ -7,9 +7,9 @@ require (
 	github.com/go-logr/stdr v1.2.2
 	github.com/google/go-cmp v0.5.9
 	github.com/stretchr/testify v1.8.2
-	github.com/humans-group/otel v1.15.1
-	github.com/humans-group/otel/sdk v1.15.1
-	github.com/humans-group/otel/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.1
+	github.com/humans-group/opentelemetry-go/sdk v1.15.1
+	github.com/humans-group/opentelemetry-go/trace v1.15.1
 )
 
 require (
@@ -20,8 +20,8 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/humans-group/otel/trace => ../../trace
+replace github.com/humans-group/opentelemetry-go/trace => ../../trace
 
-replace github.com/humans-group/otel => ../..
+replace github.com/humans-group/opentelemetry-go => ../..
 
-replace github.com/humans-group/otel/sdk => ../../sdk
+replace github.com/humans-group/opentelemetry-go/sdk => ../../sdk

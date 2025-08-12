@@ -15,13 +15,13 @@
 // Package tracetest is a testing helper package for the SDK. User can
 // configure no-op or in-memory exporters to verify different SDK behaviors or
 // custom instrumentation.
-package tracetest // import "github.com/humans-group/otel/sdk/trace/tracetest"
+package tracetest // import "github.com/humans-group/opentelemetry-go/sdk/trace/tracetest"
 
 import (
 	"context"
 	"sync"
 
-	"github.com/humans-group/otel/sdk/trace"
+	"github.com/humans-group/opentelemetry-go/sdk/trace"
 )
 
 var _ trace.SpanExporter = (*NoopExporter)(nil)
