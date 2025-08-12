@@ -9,10 +9,10 @@ replace (
 )
 
 require (
-	github.com/humans-group/opentelemetry-go v1.15.1
-	github.com/humans-group/opentelemetry-go/exporters/zipkin v1.15.1
-	github.com/humans-group/opentelemetry-go/sdk v1.15.1
-	github.com/humans-group/opentelemetry-go/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.5
+	github.com/humans-group/opentelemetry-go/exporters/zipkin v1.15.5
+	github.com/humans-group/opentelemetry-go/sdk v1.15.5
+	github.com/humans-group/opentelemetry-go/trace v1.15.5
 )
 
 require (

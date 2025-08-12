@@ -8,9 +8,9 @@ require (
 	github.com/google/go-cmp v0.5.9
 	github.com/openzipkin/zipkin-go v0.4.1
 	github.com/stretchr/testify v1.8.2
-	github.com/humans-group/opentelemetry-go v1.15.1
-	github.com/humans-group/opentelemetry-go/sdk v1.15.1
-	github.com/humans-group/opentelemetry-go/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.5
+	github.com/humans-group/opentelemetry-go/sdk v1.15.5
+	github.com/humans-group/opentelemetry-go/trace v1.15.5
 )
 
 require (

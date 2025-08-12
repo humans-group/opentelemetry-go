@@ -9,8 +9,8 @@ replace github.com/humans-group/opentelemetry-go/trace => ../../trace
 require (
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/stretchr/testify v1.8.2
-	github.com/humans-group/opentelemetry-go v1.15.1
-	github.com/humans-group/opentelemetry-go/trace v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.5
+	github.com/humans-group/opentelemetry-go/trace v1.15.5
 )
 
 require (

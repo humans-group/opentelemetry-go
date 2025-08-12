@@ -5,10 +5,10 @@ go 1.19
 require (
 	github.com/stretchr/testify v1.8.2
 	go.opencensus.io v0.24.0
-	github.com/humans-group/opentelemetry-go v1.15.1
-	github.com/humans-group/opentelemetry-go/sdk v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.5
+	github.com/humans-group/opentelemetry-go/sdk v1.15.5
 	github.com/humans-group/opentelemetry-go/sdk/metric v0.38.1
-	github.com/humans-group/opentelemetry-go/trace v1.15.1
+	github.com/humans-group/opentelemetry-go/trace v1.15.5
 )
 
 require (

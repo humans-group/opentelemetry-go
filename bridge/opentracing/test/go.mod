@@ -12,8 +12,8 @@ require (
 	github.com/opentracing-contrib/go-grpc v0.0.0-20210225150812-73cb765af46e
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/stretchr/testify v1.8.2
-	github.com/humans-group/opentelemetry-go v1.15.1
-	github.com/humans-group/opentelemetry-go/bridge/opentracing v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.5
+	github.com/humans-group/opentelemetry-go/bridge/opentracing v1.15.5
 	google.golang.org/grpc v1.54.0
 )
 
@@ -23,7 +23,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/humans-group/opentelemetry-go/trace v1.15.1 // indirect
+	github.com/humans-group/opentelemetry-go/trace v1.15.5 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.7.0 // indirect
 	golang.org/x/text v0.8.0 // indirect

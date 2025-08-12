@@ -6,8 +6,8 @@ retract v0.32.2 // Contains unresolvable dependencies.
 
 require (
 	github.com/stretchr/testify v1.8.2
-	github.com/humans-group/opentelemetry-go v1.15.1
-	github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry v1.15.1
+	github.com/humans-group/opentelemetry-go v1.15.5
+	github.com/humans-group/opentelemetry-go/exporters/otlp/internal/retry v1.15.5
 	github.com/humans-group/opentelemetry-go/exporters/otlp/otlpmetric v0.38.1
 	github.com/humans-group/opentelemetry-go/metric v0.38.1
 	github.com/humans-group/opentelemetry-go/sdk/metric v0.38.1
@@ -24,8 +24,8 @@ require (
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/humans-group/opentelemetry-go/sdk v1.15.1 // indirect
-	github.com/humans-group/opentelemetry-go/trace v1.15.1 // indirect
+	github.com/humans-group/opentelemetry-go/sdk v1.15.5 // indirect
+	github.com/humans-group/opentelemetry-go/trace v1.15.5 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.7.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
