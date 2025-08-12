@@ -24,13 +24,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
-	"go.opentelemetry.io/otel/sdk/resource"
-	tracesdk "go.opentelemetry.io/otel/sdk/trace"
-	"go.opentelemetry.io/otel/sdk/trace/tracetest"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/codes"
+	"github.com/humans-group/otel/exporters/stdout/stdouttrace"
+	"github.com/humans-group/otel/sdk/resource"
+	tracesdk "github.com/humans-group/otel/sdk/trace"
+	"github.com/humans-group/otel/sdk/trace/tracetest"
+	"github.com/humans-group/otel/trace"
 )
 
 func TestExporterExportSpan(t *testing.T) {

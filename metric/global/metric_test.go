@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "go.opentelemetry.io/otel/metric/global"
+package global // import "github.com/humans-group/otel/metric/global"
 
 import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 
-	"go.opentelemetry.io/otel/metric"
-	"go.opentelemetry.io/otel/metric/embedded"
-	"go.opentelemetry.io/otel/metric/noop"
+	"github.com/humans-group/otel/metric"
+	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/otel/metric/noop"
 )
 
 type testMeterProvider struct{ embedded.MeterProvider }

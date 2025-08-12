@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "go.opentelemetry.io/otel/metric/global"
+package global // import "github.com/humans-group/otel/metric/global"
 
 import (
-	"go.opentelemetry.io/otel/metric"
-	"go.opentelemetry.io/otel/metric/internal/global"
+	"github.com/humans-group/otel/metric"
+	"github.com/humans-group/otel/metric/internal/global"
 )
 
 // Meter returns a Meter from the global MeterProvider. The name must be the

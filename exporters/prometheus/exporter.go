@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package prometheus // import "go.opentelemetry.io/otel/exporters/prometheus"
+package prometheus // import "github.com/humans-group/otel/exporters/prometheus"
 
 import (
 	"context"
@@ -28,13 +28,13 @@ import (
 	dto "github.com/prometheus/client_model/go"
 	"google.golang.org/protobuf/proto"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/sdk/instrumentation"
-	"go.opentelemetry.io/otel/sdk/metric"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata"
-	"go.opentelemetry.io/otel/sdk/resource"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/sdk/instrumentation"
+	"github.com/humans-group/otel/sdk/metric"
+	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/otel/sdk/resource"
 )
 
 const (

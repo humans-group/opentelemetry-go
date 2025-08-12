@@ -9,13 +9,13 @@ The following exporter packages are provided with the following OpenTelemetry si
 
 | Exporter Package                                                                | Metrics | Traces |
 | :-----------------------------------------------------------------------------: | :-----: | :----: |
-| [go.opentelemetry.io/otel/exporters/jaeger](./jaeger)                           |         | ✓      |
-| [go.opentelemetry.io/otel/exporters/otlp/otlpmetric](./otlp/otlpmetric)         | ✓       |        |
-| [go.opentelemetry.io/otel/exporters/otlp/otlptrace](./otlp/otlptrace)           |         | ✓      |
-| [go.opentelemetry.io/otel/exporters/prometheus](./prometheus)                   | ✓       |        |
-| [go.opentelemetry.io/otel/exporters/stdout/stdoutmetric](./stdout/stdoutmetric) | ✓       |        |
-| [go.opentelemetry.io/otel/exporters/stdout/stdouttrace](./stdout/stdouttrace)   |         | ✓      |
-| [go.opentelemetry.io/otel/exporters/zipkin](./zipkin)                           |         | ✓      |
+| [github.com/humans-group/otel/exporters/jaeger](./jaeger)                           |         | ✓      |
+| [github.com/humans-group/otel/exporters/otlp/otlpmetric](./otlp/otlpmetric)         | ✓       |        |
+| [github.com/humans-group/otel/exporters/otlp/otlptrace](./otlp/otlptrace)           |         | ✓      |
+| [github.com/humans-group/otel/exporters/prometheus](./prometheus)                   | ✓       |        |
+| [github.com/humans-group/otel/exporters/stdout/stdoutmetric](./stdout/stdoutmetric) | ✓       |        |
+| [github.com/humans-group/otel/exporters/stdout/stdouttrace](./stdout/stdouttrace)   |         | ✓      |
+| [github.com/humans-group/otel/exporters/zipkin](./zipkin)                           |         | ✓      |
 
 See the [OpenTelemetry registry] for 3rd-part exporters compatible with this project.
 

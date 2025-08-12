@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "go.opentelemetry.io/otel/sdk/metric"
+package metric // import "github.com/humans-group/otel/sdk/metric"
 
 import (
 	"container/list"
@@ -22,14 +22,14 @@ import (
 	"strings"
 	"sync"
 
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/metric"
-	"go.opentelemetry.io/otel/metric/embedded"
-	"go.opentelemetry.io/otel/sdk/instrumentation"
-	"go.opentelemetry.io/otel/sdk/metric/aggregation"
-	"go.opentelemetry.io/otel/sdk/metric/internal"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata"
-	"go.opentelemetry.io/otel/sdk/resource"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/metric"
+	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/otel/sdk/instrumentation"
+	"github.com/humans-group/otel/sdk/metric/aggregation"
+	"github.com/humans-group/otel/sdk/metric/internal"
+	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/otel/sdk/resource"
 )
 
 var (

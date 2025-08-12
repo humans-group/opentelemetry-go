@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "go.opentelemetry.io/otel/metric"
+package metric // import "github.com/humans-group/otel/metric"
 
 import (
 	"sync"
@@ -20,7 +20,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"go.opentelemetry.io/otel/attribute"
+	"github.com/humans-group/otel/attribute"
 )
 
 type attrConf interface {

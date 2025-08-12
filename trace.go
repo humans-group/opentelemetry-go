@@ -15,8 +15,8 @@
 package otel // import "go.opentelemetry.io/otel"
 
 import (
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/trace"
 )
 
 // Tracer creates a named tracer that implements Tracer interface.

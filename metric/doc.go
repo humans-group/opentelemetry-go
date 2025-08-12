@@ -17,7 +17,7 @@ Package metric provides the OpenTelemetry API used to measure metrics about
 source code operation.
 
 This API is separate from its implementation so the instrumentation built from
-it is reusable. See [go.opentelemetry.io/otel/sdk/metric] for the official
+it is reusable. See [github.com/humans-group/otel/sdk/metric] for the official
 OpenTelemetry implementation of this API.
 
 All measurements made with this package are made via instruments. These
@@ -86,14 +86,14 @@ make:
   - Default to another implementation
 
 All interfaces in this API embed a corresponding interface from
-[go.opentelemetry.io/otel/metric/embedded]. If an author wants the default
+[github.com/humans-group/otel/metric/embedded]. If an author wants the default
 behavior of their implementations to be a compilation failure, signaling to
 their users they need to update to the latest version of that implementation,
 they need to embed the corresponding interface from
-[go.opentelemetry.io/otel/metric/embedded] in their implementation. For
+[github.com/humans-group/otel/metric/embedded] in their implementation. For
 example,
 
-	import "go.opentelemetry.io/otel/metric/embedded"
+	import "github.com/humans-group/otel/metric/embedded"
 
 	type MeterProvider struct {
 		embedded.MeterProvider
@@ -103,7 +103,7 @@ example,
 If an author wants the default behavior of their implementations to a panic,
 they need to embed the API interface directly.
 
-	import "go.opentelemetry.io/otel/metric"
+	import "github.com/humans-group/otel/metric"
 
 	type MeterProvider struct {
 		metric.MeterProvider
@@ -112,14 +112,14 @@ they need to embed the API interface directly.
 
 This is not a recommended behavior as it could lead to publishing packages that
 contain runtime panics when users update other package that use newer versions
-of [go.opentelemetry.io/otel/metric].
+of [github.com/humans-group/otel/metric].
 
 Finally, an author can embed another implementation in theirs. The embedded
 implementation will be used for methods not defined by the author. For example,
 an author who want to default to silently dropping the call can use
-[go.opentelemetry.io/otel/metric/noop]:
+[github.com/humans-group/otel/metric/noop]:
 
-	import "go.opentelemetry.io/otel/metric/noop"
+	import "github.com/humans-group/otel/metric/noop"
 
 	type MeterProvider struct {
 		noop.MeterProvider
@@ -127,11 +127,11 @@ an author who want to default to silently dropping the call can use
 	}
 
 It is strongly recommended that authors only embed
-[go.opentelemetry.io/otel/metric/noop] if they choose this default behavior.
+[github.com/humans-group/otel/metric/noop] if they choose this default behavior.
 That implementation is the only one OpenTelemetry authors can guarantee will
 fully implement all the API interfaces when a user updates their API.
 
 [OpenTelemetry documentation]: https://opentelemetry.io/docs/concepts/signals/metrics/
-[GetMeterProvider]: https://pkg.go.dev/go.opentelemetry.io/otel#GetMeterProvider
+[GetMeterProvider]: https://pkg.go.dev/github.com/humans-group/otel#GetMeterProvider
 */
-package metric // import "go.opentelemetry.io/otel/metric"
+package metric // import "github.com/humans-group/otel/metric"

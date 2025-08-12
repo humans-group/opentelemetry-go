@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package baggage // import "go.opentelemetry.io/otel/baggage"
+package baggage // import "github.com/humans-group/otel/baggage"
 
 import (
 	"errors"
@@ -21,7 +21,7 @@ import (
 	"regexp"
 	"strings"
 
-	"go.opentelemetry.io/otel/internal/baggage"
+	"github.com/humans-group/otel/internal/baggage"
 )
 
 const (

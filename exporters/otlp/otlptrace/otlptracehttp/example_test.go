@@ -19,13 +19,13 @@ import (
 	"fmt"
 	"log"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
-	"go.opentelemetry.io/otel/sdk/resource"
-	sdktrace "go.opentelemetry.io/otel/sdk/trace"
-	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/exporters/otlp/otlptrace"
+	"github.com/humans-group/otel/exporters/otlp/otlptrace/otlptracehttp"
+	"github.com/humans-group/otel/sdk/resource"
+	sdktrace "github.com/humans-group/otel/sdk/trace"
+	semconv "github.com/humans-group/otel/semconv/v1.17.0"
+	"github.com/humans-group/otel/trace"
 )
 
 const (

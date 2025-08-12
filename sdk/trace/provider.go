@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "go.opentelemetry.io/otel/sdk/trace"
+package trace // import "github.com/humans-group/otel/sdk/trace"
 
 import (
 	"context"
@@ -20,15 +20,15 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/sdk/instrumentation"
-	"go.opentelemetry.io/otel/sdk/resource"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/sdk/instrumentation"
+	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/otel/trace"
 )
 
 const (
-	defaultTracerName = "go.opentelemetry.io/otel/sdk/tracer"
+	defaultTracerName = "github.com/humans-group/otel/sdk/tracer"
 )
 
 // tracerProviderConfig.

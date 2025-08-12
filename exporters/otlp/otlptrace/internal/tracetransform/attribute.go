@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package tracetransform // import "go.opentelemetry.io/otel/exporters/otlp/otlptrace/internal/tracetransform"
+package tracetransform // import "github.com/humans-group/otel/exporters/otlp/otlptrace/internal/tracetransform"
 
 import (
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/sdk/resource"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/sdk/resource"
 	commonpb "go.opentelemetry.io/proto/otlp/common/v1"
 )
 

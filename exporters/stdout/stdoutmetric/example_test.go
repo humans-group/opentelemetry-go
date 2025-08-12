@@ -20,13 +20,13 @@ import (
 	"os"
 	"time"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/exporters/stdout/stdoutmetric"
-	"go.opentelemetry.io/otel/sdk/instrumentation"
-	"go.opentelemetry.io/otel/sdk/metric"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata"
-	"go.opentelemetry.io/otel/sdk/resource"
-	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/exporters/stdout/stdoutmetric"
+	"github.com/humans-group/otel/sdk/instrumentation"
+	"github.com/humans-group/otel/sdk/metric"
+	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/otel/sdk/resource"
+	semconv "github.com/humans-group/otel/semconv/v1.17.0"
 )
 
 var (

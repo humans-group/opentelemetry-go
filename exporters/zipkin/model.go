@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package zipkin // import "go.opentelemetry.io/otel/exporters/zipkin"
+package zipkin // import "github.com/humans-group/otel/exporters/zipkin"
 
 import (
 	"encoding/binary"
@@ -24,12 +24,12 @@ import (
 
 	zkmodel "github.com/openzipkin/zipkin-go/model"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/sdk/resource"
-	tracesdk "go.opentelemetry.io/otel/sdk/trace"
-	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/codes"
+	"github.com/humans-group/otel/sdk/resource"
+	tracesdk "github.com/humans-group/otel/sdk/trace"
+	semconv "github.com/humans-group/otel/semconv/v1.17.0"
+	"github.com/humans-group/otel/trace"
 )
 
 const (

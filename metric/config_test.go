@@ -19,8 +19,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/metric"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/metric"
 )
 
 func TestConfig(t *testing.T) {

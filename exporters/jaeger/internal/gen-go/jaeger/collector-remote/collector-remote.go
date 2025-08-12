@@ -13,8 +13,8 @@ import (
 	"strconv"
 	"strings"
 
-	"go.opentelemetry.io/otel/exporters/jaeger/internal/gen-go/jaeger"
-	"go.opentelemetry.io/otel/exporters/jaeger/internal/third_party/thrift/lib/go/thrift"
+	"github.com/humans-group/otel/exporters/jaeger/internal/gen-go/jaeger"
+	"github.com/humans-group/otel/exporters/jaeger/internal/third_party/thrift/lib/go/thrift"
 )
 
 var _ = jaeger.GoUnusedProtection__

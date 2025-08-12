@@ -21,12 +21,12 @@ import (
 	"os"
 	"os/signal"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
-	"go.opentelemetry.io/otel/sdk/resource"
-	"go.opentelemetry.io/otel/sdk/trace"
-	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/exporters/stdout/stdouttrace"
+	"github.com/humans-group/otel/sdk/resource"
+	"github.com/humans-group/otel/sdk/trace"
+	semconv "github.com/humans-group/otel/semconv/v1.17.0"
 )
 
 // newExporter returns a console exporter.

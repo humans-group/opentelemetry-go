@@ -15,7 +15,7 @@
 package otel // import "go.opentelemetry.io/otel"
 
 import (
-	"go.opentelemetry.io/otel/internal/global"
+	"github.com/humans-group/otel/internal/global"
 )
 
 var (

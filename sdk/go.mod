@@ -1,15 +1,15 @@
-module go.opentelemetry.io/otel/sdk
+module github.com/humans-group/otel/sdk
 
 go 1.19
 
-replace go.opentelemetry.io/otel => ../
+replace github.com/humans-group/otel => ../
 
 require (
 	github.com/go-logr/logr v1.2.4
 	github.com/google/go-cmp v0.5.9
 	github.com/stretchr/testify v1.8.2
-	go.opentelemetry.io/otel v1.15.1
-	go.opentelemetry.io/otel/trace v1.15.1
+	github.com/humans-group/otel v1.15.1
+	github.com/humans-group/otel/trace v1.15.1
 	golang.org/x/sys v0.7.0
 )
 
@@ -20,4 +20,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace go.opentelemetry.io/otel/trace => ../trace
+replace github.com/humans-group/otel/trace => ../trace

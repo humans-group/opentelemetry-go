@@ -18,9 +18,9 @@ import (
 	"context"
 	"testing"
 
-	"go.opentelemetry.io/otel/metric"
-	"go.opentelemetry.io/otel/metric/embedded"
-	"go.opentelemetry.io/otel/metric/noop"
+	"github.com/humans-group/otel/metric"
+	"github.com/humans-group/otel/metric/embedded"
+	"github.com/humans-group/otel/metric/noop"
 )
 
 func testFloat64Race(interact func(float64), setDelegate func(metric.Meter)) {

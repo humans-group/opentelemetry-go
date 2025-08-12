@@ -14,9 +14,9 @@
 
 // Code generated from semantic convention specification. DO NOT EDIT.
 
-package semconv // import "go.opentelemetry.io/otel/semconv/v1.18.0"
+package semconv // import "github.com/humans-group/otel/semconv/v1.18.0"
 
-import "go.opentelemetry.io/otel/attribute"
+import "github.com/humans-group/otel/attribute"
 
 // This semantic convention defines the attributes used to represent a feature
 // flag evaluation as an event.

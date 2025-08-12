@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "go.opentelemetry.io/otel/sdk/trace"
+package trace // import "github.com/humans-group/otel/sdk/trace"
 
 import (
 	"context"
 	"sync"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/internal/global"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/internal/global"
 )
 
 // simpleSpanProcessor is a SpanProcessor that synchronously sends all

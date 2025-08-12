@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package trace // import "go.opentelemetry.io/otel/sdk/trace"
+package trace // import "github.com/humans-group/otel/sdk/trace"
 
 import (
 	"context"
@@ -21,10 +21,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/sdk/internal/env"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/sdk/internal/env"
+	"github.com/humans-group/otel/trace"
 )
 
 // Defaults for BatchSpanProcessorOptions.

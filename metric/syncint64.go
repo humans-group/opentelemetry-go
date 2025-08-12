@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "go.opentelemetry.io/otel/metric"
+package metric // import "github.com/humans-group/otel/metric"
 
 import (
 	"context"
 
-	"go.opentelemetry.io/otel/metric/embedded"
+	"github.com/humans-group/otel/metric/embedded"
 )
 
 // Int64Counter is an instrument that records increasing int64 values.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [go.opentelemetry.io/otel/metric] package documentation on API
+// [github.com/humans-group/otel/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Int64Counter interface {
@@ -70,7 +70,7 @@ type Int64CounterOption interface {
 // int64 values.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [go.opentelemetry.io/otel/metric] package documentation on API
+// [github.com/humans-group/otel/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Int64UpDownCounter interface {
@@ -118,7 +118,7 @@ type Int64UpDownCounterOption interface {
 // values.
 //
 // Warning: Methods may be added to this interface in minor releases. See
-// [go.opentelemetry.io/otel/metric] package documentation on API
+// [github.com/humans-group/otel/metric] package documentation on API
 // implementation for information on how to set default behavior for
 // unimplemented methods.
 type Int64Histogram interface {

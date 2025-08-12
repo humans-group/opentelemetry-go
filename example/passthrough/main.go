@@ -21,12 +21,12 @@ import (
 	"net/http"
 	"time"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/example/passthrough/handler"
-	"go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
-	"go.opentelemetry.io/otel/propagation"
-	sdktrace "go.opentelemetry.io/otel/sdk/trace"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/example/passthrough/handler"
+	"github.com/humans-group/otel/exporters/stdout/stdouttrace"
+	"github.com/humans-group/otel/propagation"
+	sdktrace "github.com/humans-group/otel/sdk/trace"
+	"github.com/humans-group/otel/trace"
 )
 
 func main() {

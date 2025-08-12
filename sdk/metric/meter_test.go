@@ -26,15 +26,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/metric"
-	"go.opentelemetry.io/otel/metric/global"
-	"go.opentelemetry.io/otel/sdk/instrumentation"
-	"go.opentelemetry.io/otel/sdk/metric/aggregation"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata/metricdatatest"
-	"go.opentelemetry.io/otel/sdk/resource"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/metric"
+	"github.com/humans-group/otel/metric/global"
+	"github.com/humans-group/otel/sdk/instrumentation"
+	"github.com/humans-group/otel/sdk/metric/aggregation"
+	"github.com/humans-group/otel/sdk/metric/metricdata"
+	"github.com/humans-group/otel/sdk/metric/metricdata/metricdatatest"
+	"github.com/humans-group/otel/sdk/resource"
 )
 
 // A meter should be able to make instruments concurrently.

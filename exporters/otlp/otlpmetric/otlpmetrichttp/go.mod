@@ -1,4 +1,4 @@
-module go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp
+module github.com/humans-group/otel/exporters/otlp/otlpmetric/otlpmetrichttp
 
 go 1.19
 
@@ -6,11 +6,11 @@ retract v0.32.2 // Contains unresolvable dependencies.
 
 require (
 	github.com/stretchr/testify v1.8.2
-	go.opentelemetry.io/otel v1.15.1
-	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.15.1
-	go.opentelemetry.io/otel/exporters/otlp/otlpmetric v0.38.1
-	go.opentelemetry.io/otel/metric v0.38.1
-	go.opentelemetry.io/otel/sdk/metric v0.38.1
+	github.com/humans-group/otel v1.15.1
+	github.com/humans-group/otel/exporters/otlp/internal/retry v1.15.1
+	github.com/humans-group/otel/exporters/otlp/otlpmetric v0.38.1
+	github.com/humans-group/otel/metric v0.38.1
+	github.com/humans-group/otel/sdk/metric v0.38.1
 	go.opentelemetry.io/proto/otlp v0.19.0
 	google.golang.org/protobuf v1.30.0
 )
@@ -24,8 +24,8 @@ require (
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	go.opentelemetry.io/otel/sdk v1.15.1 // indirect
-	go.opentelemetry.io/otel/trace v1.15.1 // indirect
+	github.com/humans-group/otel/sdk v1.15.1 // indirect
+	github.com/humans-group/otel/trace v1.15.1 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.7.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
@@ -34,16 +34,16 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace go.opentelemetry.io/otel => ../../../..
+replace github.com/humans-group/otel => ../../../..
 
-replace go.opentelemetry.io/otel/sdk => ../../../../sdk
+replace github.com/humans-group/otel/sdk => ../../../../sdk
 
-replace go.opentelemetry.io/otel/sdk/metric => ../../../../sdk/metric
+replace github.com/humans-group/otel/sdk/metric => ../../../../sdk/metric
 
-replace go.opentelemetry.io/otel/exporters/otlp/otlpmetric => ../
+replace github.com/humans-group/otel/exporters/otlp/otlpmetric => ../
 
-replace go.opentelemetry.io/otel/metric => ../../../../metric
+replace github.com/humans-group/otel/metric => ../../../../metric
 
-replace go.opentelemetry.io/otel/trace => ../../../../trace
+replace github.com/humans-group/otel/trace => ../../../../trace
 
-replace go.opentelemetry.io/otel/exporters/otlp/internal/retry => ../../internal/retry
+replace github.com/humans-group/otel/exporters/otlp/internal/retry => ../../internal/retry

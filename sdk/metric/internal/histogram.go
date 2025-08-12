@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package internal // import "go.opentelemetry.io/otel/sdk/metric/internal"
+package internal // import "github.com/humans-group/otel/sdk/metric/internal"
 
 import (
 	"sort"
 	"sync"
 	"time"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/sdk/metric/aggregation"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/sdk/metric/aggregation"
+	"github.com/humans-group/otel/sdk/metric/metricdata"
 )
 
 type buckets[N int64 | float64] struct {

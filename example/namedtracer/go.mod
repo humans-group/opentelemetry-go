@@ -1,18 +1,18 @@
-module go.opentelemetry.io/otel/example/namedtracer
+module github.com/humans-group/otel/example/namedtracer
 
 go 1.19
 
 replace (
-	go.opentelemetry.io/otel => ../..
-	go.opentelemetry.io/otel/sdk => ../../sdk
+	github.com/humans-group/otel => ../..
+	github.com/humans-group/otel/sdk => ../../sdk
 )
 
 require (
 	github.com/go-logr/stdr v1.2.2
-	go.opentelemetry.io/otel v1.15.1
-	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.15.1
-	go.opentelemetry.io/otel/sdk v1.15.1
-	go.opentelemetry.io/otel/trace v1.15.1
+	github.com/humans-group/otel v1.15.1
+	github.com/humans-group/otel/exporters/stdout/stdouttrace v1.15.1
+	github.com/humans-group/otel/sdk v1.15.1
+	github.com/humans-group/otel/trace v1.15.1
 )
 
 require (
@@ -20,6 +20,6 @@ require (
 	golang.org/x/sys v0.7.0 // indirect
 )
 
-replace go.opentelemetry.io/otel/trace => ../../trace
+replace github.com/humans-group/otel/trace => ../../trace
 
-replace go.opentelemetry.io/otel/exporters/stdout/stdouttrace => ../../exporters/stdout/stdouttrace
+replace github.com/humans-group/otel/exporters/stdout/stdouttrace => ../../exporters/stdout/stdouttrace

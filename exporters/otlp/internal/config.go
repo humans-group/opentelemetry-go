@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Package internal contains common functionality for all OTLP exporters.
-package internal // import "go.opentelemetry.io/otel/exporters/otlp/internal"
+package internal // import "github.com/humans-group/otel/exporters/otlp/internal"
 
 import (
 	"fmt"

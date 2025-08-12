@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package internal // import "go.opentelemetry.io/otel/semconv/internal"
+package internal // import "github.com/humans-group/otel/semconv/internal"
 
 import (
 	"fmt"
@@ -21,9 +21,9 @@ import (
 	"strconv"
 	"strings"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/codes"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/codes"
+	"github.com/humans-group/otel/trace"
 )
 
 // SemanticConventions are the semantic convention values defined for a

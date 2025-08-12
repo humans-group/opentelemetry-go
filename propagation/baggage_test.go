@@ -24,8 +24,8 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/assert"
 
-	"go.opentelemetry.io/otel/baggage"
-	"go.opentelemetry.io/otel/propagation"
+	"github.com/humans-group/otel/baggage"
+	"github.com/humans-group/otel/propagation"
 )
 
 type property struct {

@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package opentracing // import "go.opentelemetry.io/otel/bridge/opentracing"
+package opentracing // import "github.com/humans-group/otel/bridge/opentracing"
 
 import (
 	"context"
 
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel/trace"
 )
 
 // NewTracerPair is a utility function that creates a BridgeTracer and a

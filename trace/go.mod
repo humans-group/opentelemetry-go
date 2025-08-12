@@ -1,13 +1,13 @@
-module go.opentelemetry.io/otel/trace
+module github.com/humans-group/otel/trace
 
 go 1.19
 
-replace go.opentelemetry.io/otel => ../
+replace github.com/humans-group/otel => ../
 
 require (
 	github.com/google/go-cmp v0.5.9
 	github.com/stretchr/testify v1.8.2
-	go.opentelemetry.io/otel v1.15.1
+	github.com/humans-group/otel v1.15.1
 )
 
 require (

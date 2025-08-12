@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "go.opentelemetry.io/otel/metric"
+package metric // import "github.com/humans-group/otel/metric"
 
-import "go.opentelemetry.io/otel/attribute"
+import "github.com/humans-group/otel/attribute"
 
 // Observable is used as a grouping mechanism for all instruments that are
 // updated within a Callback.

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package metric // import "go.opentelemetry.io/otel/sdk/metric"
+package metric // import "github.com/humans-group/otel/sdk/metric"
 
 import (
 	"context"
@@ -21,9 +21,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/sdk/metric/aggregation"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/sdk/metric/aggregation"
+	"github.com/humans-group/otel/sdk/metric/metricdata"
 )
 
 // manualReader is a simple Reader that allows an application to

@@ -21,7 +21,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/sys/windows/registry"
 
-	"go.opentelemetry.io/otel/sdk/resource"
+	"github.com/humans-group/otel/sdk/resource"
 )
 
 func TestPlatformOSDescription(t *testing.T) {

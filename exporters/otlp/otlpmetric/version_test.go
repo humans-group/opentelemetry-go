@@ -20,7 +20,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"go.opentelemetry.io/otel/exporters/otlp/otlpmetric"
+	"github.com/humans-group/otel/exporters/otlp/otlpmetric"
 )
 
 // regex taken from https://github.com/Masterminds/semver/tree/v3.1.1

@@ -23,8 +23,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	sdktrace "go.opentelemetry.io/otel/sdk/trace"
-	"go.opentelemetry.io/otel/trace"
+	sdktrace "github.com/humans-group/otel/sdk/trace"
+	"github.com/humans-group/otel/trace"
 )
 
 var (

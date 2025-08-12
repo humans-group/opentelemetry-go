@@ -22,8 +22,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
-	"go.opentelemetry.io/otel/sdk/trace/tracetest"
+	"github.com/humans-group/otel/exporters/otlp/otlptrace"
+	"github.com/humans-group/otel/sdk/trace/tracetest"
 	tracepb "go.opentelemetry.io/proto/otlp/trace/v1"
 )
 

@@ -21,11 +21,11 @@ import (
 
 	ot "github.com/opentracing/opentracing-go"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/baggage"
-	"go.opentelemetry.io/otel/bridge/opentracing/internal"
-	"go.opentelemetry.io/otel/trace"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/baggage"
+	"github.com/humans-group/otel/bridge/opentracing/internal"
+	"github.com/humans-group/otel/trace"
 )
 
 type mixedAPIsTestCase struct {

@@ -15,8 +15,8 @@
 package otel // import "go.opentelemetry.io/otel"
 
 import (
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/propagation"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/propagation"
 )
 
 // GetTextMapPropagator returns the global TextMapPropagator. If none has been

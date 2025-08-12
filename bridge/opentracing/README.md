@@ -2,14 +2,14 @@
 
 ## Getting started
 
-`go get go.opentelemetry.io/otel/bridge/opentracing`
+`go get github.com/humans-group/otel/bridge/opentracing`
 
 Assuming you have configured an OpenTelemetry `TracerProvider`, these will be the steps to follow to wire up the bridge:
 
 ```go
 import (
-	"go.opentelemetry.io/otel"
-	otelBridge "go.opentelemetry.io/otel/bridge/opentracing"
+	"github.com/humans-group/otel"
+	otelBridge "github.com/humans-group/otel/bridge/opentracing"
 )
 
 func main() {
@@ -43,7 +43,7 @@ When you have started an OpenTracing Span, make sure the OpenTelemetry knows abo
 
 The bridge functionality can be extended beyond the OpenTracing API.
 
-Any [`trace.SpanContext`](https://pkg.go.dev/go.opentelemetry.io/otel/trace#SpanContext) method can be accessed as following:
+Any [`trace.SpanContext`](https://pkg.go.dev/github.com/humans-group/otel/trace#SpanContext) method can be accessed as following:
 
 ```go
 type spanContextProvider interface {

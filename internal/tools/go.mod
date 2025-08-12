@@ -1,4 +1,4 @@
-module go.opentelemetry.io/otel/internal/tools
+module github.com/humans-group/otel/internal/tools
 
 go 1.19
 

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package internal // import "go.opentelemetry.io/otel/bridge/opencensus/internal/ocmetric"
+package internal // import "github.com/humans-group/otel/bridge/opencensus/internal/ocmetric"
 
 import (
 	"errors"
@@ -20,8 +20,8 @@ import (
 
 	ocmetricdata "go.opencensus.io/metric/metricdata"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/sdk/metric/metricdata"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/sdk/metric/metricdata"
 )
 
 var (

@@ -19,9 +19,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/sdk/resource"
-	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/sdk/resource"
+	semconv "github.com/humans-group/otel/semconv/v1.17.0"
 )
 
 func mockRuntimeProviders() {

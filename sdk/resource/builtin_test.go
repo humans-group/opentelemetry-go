@@ -22,8 +22,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/sdk/resource"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/sdk/resource"
 )
 
 func TestBuiltinStringDetector(t *testing.T) {

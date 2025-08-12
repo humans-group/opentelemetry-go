@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package noop // import "go.opentelemetry.io/otel/metric/noop"
+package noop // import "github.com/humans-group/otel/metric/noop"
 
 import (
 	"reflect"
@@ -20,7 +20,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"go.opentelemetry.io/otel/metric"
+	"github.com/humans-group/otel/metric"
 )
 
 func TestImplementationNoPanics(t *testing.T) {

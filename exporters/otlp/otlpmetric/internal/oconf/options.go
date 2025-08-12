@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package oconf // import "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/internal/oconf"
+package oconf // import "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal/oconf"
 
 import (
 	"crypto/tls"
@@ -25,12 +25,12 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/encoding/gzip"
 
-	"go.opentelemetry.io/otel/exporters/otlp/internal"
-	"go.opentelemetry.io/otel/exporters/otlp/internal/retry"
-	ominternal "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/internal"
-	"go.opentelemetry.io/otel/internal/global"
-	"go.opentelemetry.io/otel/sdk/metric"
-	"go.opentelemetry.io/otel/sdk/metric/aggregation"
+	"github.com/humans-group/otel/exporters/otlp/internal"
+	"github.com/humans-group/otel/exporters/otlp/internal/retry"
+	ominternal "github.com/humans-group/otel/exporters/otlp/otlpmetric/internal"
+	"github.com/humans-group/otel/internal/global"
+	"github.com/humans-group/otel/sdk/metric"
+	"github.com/humans-group/otel/sdk/metric/aggregation"
 )
 
 const (

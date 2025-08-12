@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package global // import "go.opentelemetry.io/otel/metric/internal/global"
+package global // import "github.com/humans-group/otel/metric/internal/global"
 
 import (
 	"container/list"
 	"sync"
 	"sync/atomic"
 
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/metric"
-	"go.opentelemetry.io/otel/metric/embedded"
+	"github.com/humans-group/otel"
+	"github.com/humans-group/otel/metric"
+	"github.com/humans-group/otel/metric/embedded"
 )
 
 // meterProvider is a placeholder for a configured SDK MeterProvider.

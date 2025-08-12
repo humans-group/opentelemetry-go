@@ -18,8 +18,8 @@ import (
 	"context"
 	"testing"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/sdk/metric/internal"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/sdk/metric/internal"
 )
 
 func BenchmarkInstrument(b *testing.B) {

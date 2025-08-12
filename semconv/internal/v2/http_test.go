@@ -23,8 +23,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/codes"
+	"github.com/humans-group/otel/attribute"
+	"github.com/humans-group/otel/codes"
 )
 
 var hc = &HTTPConv{
